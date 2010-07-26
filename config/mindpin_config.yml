@@ -5,5 +5,3 @@ development:
 test:
   ATTACHED_FILE_PATH_ROOT: /root/mindpin_base/mindpin_education_files/
   ATTACHED_FILE_URL_ROOT: http://img.edu.mindpin.com/
-
-production:
