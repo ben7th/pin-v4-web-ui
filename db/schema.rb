@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100712071010) do
+ActiveRecord::Schema.define(:version => 20100714070426) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "user_id"
@@ -20,6 +20,12 @@ ActiveRecord::Schema.define(:version => 20100712071010) do
 
   add_index "achievements", ["honor"], :name => "index_achievementings_on_achievement_id"
   add_index "achievements", ["user_id"], :name => "index_achievementings_on_user_id"
+
+  create_table "announcements", :force => true do |t|
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -75,6 +81,16 @@ ActiveRecord::Schema.define(:version => 20100712071010) do
 
   add_index "combo_links", ["tag_combo_id"], :name => "index_combo_links_on_tag_combo_id"
   add_index "combo_links", ["tag_id"], :name => "index_combo_links_on_tag_id"
+
+  create_table "comments", :force => true do |t|
+    t.text     "content"
+    t.integer  "creator_id"
+    t.integer  "markable_id"
+    t.string   "markable_type"
+    t.integer  "reply_to"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "contactings", :force => true do |t|
     t.integer  "host_id"

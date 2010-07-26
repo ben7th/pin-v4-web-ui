@@ -1,1 +1,1069 @@
-# Logfile created on Mon Jul 26 14:02:31 +0800 2010
+# Logfile created on Mon Jul 26 14:02:31 +0800 2010DEPRECATION WARNING: require "activesupport" is deprecated and will be removed in Rails 3. Use require "active_support" instead. (called from /usr/local/bin/rubyee/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/activesupport.rb:2)
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead. (called from /usr/local/bin/rubyee/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/activerecord.rb:2)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (13.3ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (20.9ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAllTables (20091219031919)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mCREATE TABLE `answer_selections` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question_option_id` int(11), `question_answer_id` int(11), `content` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `answer_selections`[0m
+  [4;35;1mSQL (10.3ms)[0m   [0mCREATE INDEX `index_answer_selections_on_question_option_id` ON `answer_selections` (`question_option_id`)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `answer_selections`[0m
+  [4;35;1mSQL (33.8ms)[0m   [0mCREATE INDEX `index_answer_selections_on_question_answer_id` ON `answer_selections` (`question_answer_id`)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (6.5ms)[0m   [0mCREATE TABLE `attentions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `resource_entry_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW KEYS FROM `attentions`[0m
+  [4;35;1mSQL (8.9ms)[0m   [0mCREATE INDEX `index_attentions_on_user_id` ON `attentions` (`user_id`)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `attentions`[0m
+  [4;35;1mSQL (13.4ms)[0m   [0mCREATE INDEX `index_attentions_on_resource_entry_id` ON `attentions` (`resource_entry_id`)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (11.2ms)[0m   [0mCREATE TABLE `combo_links` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11) NOT NULL, `tag_combo_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `combo_links`[0m
+  [4;35;1mSQL (11.7ms)[0m   [0mCREATE INDEX `index_combo_links_on_tag_id` ON `combo_links` (`tag_id`)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `combo_links`[0m
+  [4;35;1mSQL (19.2ms)[0m   [0mCREATE INDEX `index_combo_links_on_tag_combo_id` ON `combo_links` (`tag_combo_id`)[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (9.0ms)[0m   [0mCREATE TABLE `constraints` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `task_id` int(11) NOT NULL, `requirement` varchar(255) DEFAULT '' NOT NULL, `status` varchar(255) DEFAULT '', `time_point` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `constraints`[0m
+  [4;35;1mSQL (10.3ms)[0m   [0mCREATE INDEX `index_constraints_on_task_id` ON `constraints` (`task_id`)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (5.1ms)[0m   [0mCREATE TABLE `executions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text NOT NULL, `user_id` int(11) NOT NULL, `task_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `executions`[0m
+  [4;35;1mSQL (10.3ms)[0m   [0mCREATE INDEX `index_executions_on_user_id` ON `executions` (`user_id`)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `executions`[0m
+  [4;35;1mSQL (20.0ms)[0m   [0mCREATE INDEX `index_executions_on_task_id` ON `executions` (`task_id`)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (9.1ms)[0m   [0mCREATE TABLE `file_entries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `content_file_name` varchar(255), `content_content_type` varchar(255), `content_file_size` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (6.1ms)[0m   [0mCREATE TABLE `folders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) DEFAULT '' NOT NULL, `creator_id` int(11) NOT NULL, `status` varchar(255) DEFAULT 'PUBLIC', `hashed_password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `folders`[0m
+  [4;35;1mSQL (11.2ms)[0m   [0mCREATE INDEX `index_folders_on_creator_id` ON `folders` (`creator_id`)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (14.1ms)[0m   [0mCREATE TABLE `group_bundles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `type` varchar(255), `parent_id` int(11) NOT NULL, `parent_type` varchar(255) DEFAULT '' NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `group_bundles`[0m
+  [4;35;1mSQL (11.7ms)[0m   [0mCREATE INDEX `index_group_bundles_on_parent_id_and_parent_type` ON `group_bundles` (`parent_id`, `parent_type`)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (9.1ms)[0m   [0mCREATE TABLE `groups` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT '' NOT NULL, `hidden` tinyint(1) DEFAULT 0, `approve_level` varchar(255) DEFAULT 'FREE', `type` varchar(255), `status` varchar(255), `subject` text, `creator_id` int(11), `group_bundle_id` int(11), `task_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `groups`[0m
+  [4;35;1mSQL (18.8ms)[0m   [0mCREATE INDEX `index_groups_on_creator_id` ON `groups` (`creator_id`)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `groups`[0m
+  [4;35;1mSQL (12.8ms)[0m   [0mCREATE INDEX `index_groups_on_group_bundle_id` ON `groups` (`group_bundle_id`)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `groups`[0m
+  [4;35;1mSQL (12.0ms)[0m   [0mCREATE INDEX `index_groups_on_task_id` ON `groups` (`task_id`)[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (16.4ms)[0m   [0mCREATE TABLE `link_entries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) NOT NULL, `resource_entry_id` int(11) NOT NULL, `serialization` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `link_entries`[0m
+  [4;35;1mSQL (16.1ms)[0m   [0mCREATE INDEX `index_link_entries_on_user_id` ON `link_entries` (`user_id`)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `link_entries`[0m
+  [4;35;1mSQL (10.9ms)[0m   [0mCREATE INDEX `index_link_entries_on_resource_entry_id` ON `link_entries` (`resource_entry_id`)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (5.5ms)[0m   [0mCREATE TABLE `memberships` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) NOT NULL, `group_id` int(11) NOT NULL, `status` varchar(255) DEFAULT 'APPROVE', `role` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW KEYS FROM `memberships`[0m
+  [4;35;1mSQL (23.7ms)[0m   [0mCREATE INDEX `index_memberships_on_user_id` ON `memberships` (`user_id`)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `memberships`[0m
+  [4;35;1mSQL (12.4ms)[0m   [0mCREATE INDEX `index_memberships_on_group_id` ON `memberships` (`group_id`)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (5.7ms)[0m   [0mCREATE TABLE `message_readings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `message_topic_id` int(11) NOT NULL, `receiver_id` int(11) NOT NULL, `unread_count` int(11) DEFAULT 1, `hidden` tinyint(1) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1mSHOW KEYS FROM `message_readings`[0m
+  [4;35;1mSQL (13.8ms)[0m   [0mCREATE INDEX `index_message_readings_on_message_topic_id` ON `message_readings` (`message_topic_id`)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `message_readings`[0m
+  [4;35;1mSQL (12.3ms)[0m   [0mCREATE INDEX `index_message_readings_on_receiver_id` ON `message_readings` (`receiver_id`)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (5.7ms)[0m   [0mCREATE TABLE `message_topics` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (7.9ms)[0m   [0mCREATE TABLE `messages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sender_id` int(11) NOT NULL, `message_topic_id` int(11) NOT NULL, `content` varchar(255) DEFAULT '' NOT NULL, `hidden` tinyint(1) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW KEYS FROM `messages`[0m
+  [4;35;1mSQL (18.5ms)[0m   [0mCREATE INDEX `index_messages_on_sender_id` ON `messages` (`sender_id`)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `messages`[0m
+  [4;35;1mSQL (11.9ms)[0m   [0mCREATE INDEX `index_messages_on_message_topic_id` ON `messages` (`message_topic_id`)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (8.2ms)[0m   [0mCREATE TABLE `online_records` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `key` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW KEYS FROM `online_records`[0m
+  [4;35;1mSQL (20.8ms)[0m   [0mCREATE INDEX `index_online_records_on_key` ON `online_records` (`key`)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `online_records`[0m
+  [4;35;1mSQL (12.1ms)[0m   [0mCREATE INDEX `index_online_records_on_user_id` ON `online_records` (`user_id`)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (16.1ms)[0m   [0mCREATE TABLE `operations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) NOT NULL, `at_id` int(11), `at_type` varchar(255), `action` varchar(255) DEFAULT '' NOT NULL, `target_id` int(11), `target_type` varchar(255), `target_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSHOW KEYS FROM `operations`[0m
+  [4;35;1mSQL (18.2ms)[0m   [0mCREATE INDEX `index_operations_on_user_id` ON `operations` (`user_id`)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `operations`[0m
+  [4;35;1mSQL (11.9ms)[0m   [0mCREATE INDEX `index_operations_on_at_id_and_at_type` ON `operations` (`at_id`, `at_type`)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `operations`[0m
+  [4;35;1mSQL (14.4ms)[0m   [0mCREATE INDEX `index_operations_on_target_id_and_target_type` ON `operations` (`target_id`, `target_type`)[0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (8.7ms)[0m   [0mCREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` varchar(255) DEFAULT '' NOT NULL, `user_id` int(11) NOT NULL, `topic_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime, `status` varchar(255) DEFAULT '') ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `posts`[0m
+  [4;35;1mSQL (9.6ms)[0m   [0mCREATE INDEX `index_posts_on_user_id` ON `posts` (`user_id`)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `posts`[0m
+  [4;35;1mSQL (22.1ms)[0m   [0mCREATE INDEX `index_posts_on_topic_id` ON `posts` (`topic_id`)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (10.4ms)[0m   [0mCREATE TABLE `preferences` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) NOT NULL, `auto_popup_msg` tinyint(1) DEFAULT 1, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW KEYS FROM `preferences`[0m
+  [4;35;1mSQL (12.0ms)[0m   [0mCREATE INDEX `index_preferences_on_user_id` ON `preferences` (`user_id`)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (9.9ms)[0m   [0mCREATE TABLE `question_answers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question_id` int(11), `survey_result_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `question_answers`[0m
+  [4;35;1mSQL (16.8ms)[0m   [0mCREATE INDEX `index_question_answers_on_question_id` ON `question_answers` (`question_id`)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `question_answers`[0m
+  [4;35;1mSQL (9.9ms)[0m   [0mCREATE INDEX `index_question_answers_on_survey_result_id` ON `question_answers` (`survey_result_id`)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (9.1ms)[0m   [0mCREATE TABLE `question_options` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `question_id` int(11), `kind` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `question_options`[0m
+  [4;35;1mSQL (11.6ms)[0m   [0mCREATE INDEX `index_question_options_on_question_id` ON `question_options` (`question_id`)[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (11.8ms)[0m   [0mCREATE TABLE `questions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `survey_id` int(11), `kind` varchar(255) DEFAULT 'SINGLE', `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `questions`[0m
+  [4;35;1mSQL (21.1ms)[0m   [0mCREATE INDEX `index_questions_on_survey_id` ON `questions` (`survey_id`)[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (15.2ms)[0m   [0mCREATE TABLE `quotings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `container_id` int(11) NOT NULL, `resource_entry_id` int(11) NOT NULL, `position` int(11), `container_type` varchar(255), `nesting_level` int(11) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `quotings`[0m
+  [4;35;1mSQL (13.9ms)[0m   [0mCREATE INDEX `index_quotings_on_container_id` ON `quotings` (`container_id`)[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1mSHOW KEYS FROM `quotings`[0m
+  [4;35;1mSQL (22.4ms)[0m   [0mCREATE INDEX `index_quotings_on_resource_entry_id` ON `quotings` (`resource_entry_id`)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (7.5ms)[0m   [0mCREATE TABLE `readings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `resource_entry_id` int(11) NOT NULL, `user_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `readings`[0m
+  [4;35;1mSQL (30.9ms)[0m   [0mCREATE INDEX `index_readings_on_resource_entry_id` ON `readings` (`resource_entry_id`)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (8.2ms)[0m   [0mCREATE TABLE `remarks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text NOT NULL, `creator_id` int(11) NOT NULL, `markable_id` int(11) NOT NULL, `markable_type` varchar(255) DEFAULT '' NOT NULL, `symbol` varchar(255), `version` int(11), `to` int(11), `from` int(11), `paragraph_number` int(11), `at` int(11), `type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW KEYS FROM `remarks`[0m
+  [4;35;1mSQL (16.2ms)[0m   [0mCREATE INDEX `index_remarks_on_creator_id` ON `remarks` (`creator_id`)[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW KEYS FROM `remarks`[0m
+  [4;35;1mSQL (32.2ms)[0m   [0mCREATE INDEX `index_remarks_on_markable_id_and_markable_type` ON `remarks` (`markable_id`, `markable_type`)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (7.6ms)[0m   [0mCREATE TABLE `resource_entries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `resource_id` int(11), `resource_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW KEYS FROM `resource_entries`[0m
+  [4;35;1mSQL (21.4ms)[0m   [0mCREATE INDEX `index_resource_entries_on_user_id` ON `resource_entries` (`user_id`)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `resource_entries`[0m
+  [4;35;1mSQL (15.1ms)[0m   [0mCREATE INDEX `index_resource_entries_on_resource_id_and_resource_type` ON `resource_entries` (`resource_id`, `resource_type`)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (17.2ms)[0m   [0mCREATE TABLE `roles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT '' NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW KEYS FROM `roles`[0m
+  [4;35;1mSQL (11.5ms)[0m   [0mCREATE INDEX `index_roles_on_name` ON `roles` (`name`)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (17.6ms)[0m   [0mCREATE TABLE `rss_entries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) DEFAULT '' NOT NULL, `url` varchar(255), `yaml` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (11.8ms)[0m   [0mCREATE TABLE `structures` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `container_id` int(11) NOT NULL, `container_type` varchar(255) DEFAULT '' NOT NULL, `map` text NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW KEYS FROM `structures`[0m
+  [4;35;1mSQL (20.2ms)[0m   [0mCREATE INDEX `index_structures_on_container_id_and_container_type` ON `structures` (`container_id`, `container_type`)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (11.7ms)[0m   [0mCREATE TABLE `survey_results` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `survey_id` int(11), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW KEYS FROM `survey_results`[0m
+  [4;35;1mSQL (12.7ms)[0m   [0mCREATE INDEX `index_survey_results_on_survey_id` ON `survey_results` (`survey_id`)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `survey_results`[0m
+  [4;35;1mSQL (10.8ms)[0m   [0mCREATE INDEX `index_survey_results_on_user_id` ON `survey_results` (`user_id`)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (17.8ms)[0m   [0mCREATE TABLE `surveys` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `published` tinyint(1) DEFAULT 0, `type` varchar(255), `post_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `surveys`[0m
+  [4;35;1mSQL (15.1ms)[0m   [0mCREATE INDEX `index_surveys_on_post_id` ON `surveys` (`post_id`)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mCREATE TABLE `system_settings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `footer_info` text, `login_info` text, `logo_file_name` varchar(255), `logo_content_type` varchar(255), `logo_file_size` int(11), `logo_updated_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (19.6ms)[0m   [0mCREATE TABLE `tag_combos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT '' NOT NULL, `creator_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW KEYS FROM `tag_combos`[0m
+  [4;35;1mSQL (12.4ms)[0m   [0mCREATE INDEX `index_tag_combos_on_creator_id` ON `tag_combos` (`creator_id`)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (16.1ms)[0m   [0mCREATE TABLE `taggings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11), `taggable_id` int(11), `taggable_type` varchar(255), `user_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `taggings`[0m
+  [4;35;1mSQL (11.7ms)[0m   [0mCREATE INDEX `index_taggings_on_tag_id` ON `taggings` (`tag_id`)[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW KEYS FROM `taggings`[0m
+  [4;35;1mSQL (21.7ms)[0m   [0mCREATE INDEX `index_taggings_on_taggable_id_and_taggable_type` ON `taggings` (`taggable_id`, `taggable_type`)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `taggings`[0m
+  [4;35;1mSQL (16.5ms)[0m   [0mCREATE INDEX `index_taggings_on_user_id` ON `taggings` (`user_id`)[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (7.8ms)[0m   [0mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `value` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (5.5ms)[0m   [0mCREATE TABLE `task_allocations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `task_id` int(11) NOT NULL, `user_id` int(11) NOT NULL, `status` varchar(255) DEFAULT '', `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `task_allocations`[0m
+  [4;35;1mSQL (10.9ms)[0m   [0mCREATE INDEX `index_task_allocations_on_task_id` ON `task_allocations` (`task_id`)[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW KEYS FROM `task_allocations`[0m
+  [4;35;1mSQL (14.9ms)[0m   [0mCREATE INDEX `index_task_allocations_on_user_id` ON `task_allocations` (`user_id`)[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (24.9ms)[0m   [0mCREATE TABLE `tasks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) DEFAULT '' NOT NULL, `content` text NOT NULL, `user_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW KEYS FROM `tasks`[0m
+  [4;35;1mSQL (16.4ms)[0m   [0mCREATE INDEX `index_tasks_on_user_id` ON `tasks` (`user_id`)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (12.4ms)[0m   [0mCREATE TABLE `text_entries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text NOT NULL, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (7.1ms)[0m   [0mCREATE TABLE `todos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text NOT NULL, `user_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `todos`[0m
+  [4;35;1mSQL (10.5ms)[0m   [0mCREATE INDEX `index_todos_on_user_id` ON `todos` (`user_id`)[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (16.5ms)[0m   [0mCREATE TABLE `topics` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) DEFAULT '' NOT NULL, `content` varchar(255) DEFAULT '' NOT NULL, `user_id` int(11) NOT NULL, `host_id` int(11) NOT NULL, `host_type` varchar(255), `kind` varchar(255) DEFAULT 'NORMAL', `status` varchar(255) DEFAULT '', `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `topics`[0m
+  [4;35;1mSQL (14.9ms)[0m   [0mCREATE INDEX `index_topics_on_user_id` ON `topics` (`user_id`)[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW KEYS FROM `topics`[0m
+  [4;35;1mSQL (15.3ms)[0m   [0mCREATE INDEX `index_topics_on_host_id_and_host_type` ON `topics` (`host_id`, `host_type`)[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (7.9ms)[0m   [0mCREATE TABLE `user_roles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) NOT NULL, `role_id` int(11) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `user_roles`[0m
+  [4;35;1mSQL (17.6ms)[0m   [0mCREATE INDEX `index_user_roles_on_role_id` ON `user_roles` (`role_id`)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `user_roles`[0m
+  [4;35;1mSQL (14.3ms)[0m   [0mCREATE INDEX `index_user_roles_on_user_id` ON `user_roles` (`user_id`)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (6.1ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login` varchar(255) DEFAULT '' NOT NULL, `name` varchar(255) DEFAULT '' NOT NULL, `hashed_password` varchar(255) DEFAULT '' NOT NULL, `salt` varchar(255) DEFAULT '' NOT NULL, `email` varchar(255) DEFAULT '' NOT NULL, `sign` varchar(255), `active_code` varchar(255), `activated` tinyint(1) NOT NULL, `logo_file_name` varchar(255), `logo_content_type` varchar(255), `logo_file_size` int(11), `logo_updated_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (18.3ms)[0m   [0mCREATE INDEX `index_users_on_login` ON `users` (`login`)[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (8.9ms)[0m   [0mCREATE TABLE `versions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) NOT NULL, `version_name` varchar(255), `version` int(11) NOT NULL, `source_id` int(11) NOT NULL, `source_type` varchar(255) DEFAULT '' NOT NULL, `serialization` text NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `versions`[0m
+  [4;35;1mSQL (15.2ms)[0m   [0mCREATE INDEX `index_versions_on_user_id` ON `versions` (`user_id`)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `versions`[0m
+  [4;35;1mSQL (10.1ms)[0m   [0mCREATE INDEX `index_versions_on_source_id_and_source_type` ON `versions` (`source_id`, `source_type`)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCREATE TABLE `view_records` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) NOT NULL, `source_id` int(11) NOT NULL, `source_type` varchar(255) DEFAULT '' NOT NULL, `views` int(11) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `view_records`[0m
+  [4;35;1mSQL (13.2ms)[0m   [0mCREATE INDEX `index_view_records_on_source_id_and_source_type` ON `view_records` (`source_id`, `source_type`)[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW KEYS FROM `view_records`[0m
+  [4;35;1mSQL (20.9ms)[0m   [0mCREATE INDEX `index_view_records_on_user_id` ON `view_records` (`user_id`)[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091219031919')[0m
+Migrating to CreateTeachingLessons (20091219070618)
+  [4;35;1mSQL (38.2ms)[0m   [0mCREATE TABLE `teaching_lessons` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `subject` text, `published` tinyint(1) DEFAULT 0, `creator_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (16.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091219070618')[0m
+Migrating to CreateTeachingUnits (20091220012232)
+  [4;35;1mSQL (11.1ms)[0m   [0mCREATE TABLE `teaching_units` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `subject` text, `teaching_lesson_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (14.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091220012232')[0m
+Migrating to DeleteStatusFromConstriantsAndTaskAllocations (20091220064709)
+  [4;35;1mSQL (9.8ms)[0m   [0mALTER TABLE `constraints` DROP `status`[0m
+  [4;36;1mSQL (18.9ms)[0m   [0;1mALTER TABLE `task_allocations` DROP `status`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091220064709')[0m
+Migrating to DeleteStatusAddDeletedAtToTopicsAndPosts (20091220073316)
+  [4;36;1mSQL (20.5ms)[0m   [0;1mALTER TABLE `topics` DROP `status`[0m
+  [4;35;1mSQL (16.7ms)[0m   [0mALTER TABLE `posts` DROP `status`[0m
+  [4;36;1mSQL (14.2ms)[0m   [0;1mALTER TABLE `topics` ADD `deleted_at` datetime[0m
+  [4;35;1mSQL (16.6ms)[0m   [0mALTER TABLE `posts` ADD `deleted_at` datetime[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091220073316')[0m
+Migrating to MakeMessageReadingAndMessageHiddenNotNull (20091220082957)
+  [4;35;1mSQL (1.8ms)[0m   [0mSHOW FIELDS FROM `message_readings`[0m
+  [4;36;1mSQL (12.4ms)[0m   [0;1mALTER TABLE `message_readings` CHANGE `hidden` `hidden` tinyint(1) DEFAULT 0 NOT NULL[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSHOW FIELDS FROM `messages`[0m
+  [4;36;1mSQL (14.2ms)[0m   [0;1mALTER TABLE `messages` CHANGE `hidden` `hidden` tinyint(1) DEFAULT 0 NOT NULL[0m
+  [4;35;1mSQL (20.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091220082957')[0m
+Migrating to AddCreatorIdToTeachingUnits (20091221005351)
+  [4;36;1mSQL (12.0ms)[0m   [0;1mALTER TABLE `teaching_units` ADD `creator_id` int(11) NOT NULL[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091221005351')[0m
+Migrating to CreateTeachingProcedures (20091221005850)
+  [4;36;1mSQL (16.0ms)[0m   [0;1mCREATE TABLE `teaching_procedures` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `subject` text, `creator_id` int(11) NOT NULL, `teaching_unit_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091221005850')[0m
+Migrating to ModifyTeachingIdsToId (20091221023126)
+  [4;36;1mSQL (3.5ms)[0m   [0;1mSHOW FIELDS FROM `teaching_units`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSHOW COLUMNS FROM `teaching_units` LIKE 'teaching_lesson_id'[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mALTER TABLE `teaching_units` CHANGE `teaching_lesson_id` `lesson_id` int(11) NOT NULL[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSHOW FIELDS FROM `teaching_procedures`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW COLUMNS FROM `teaching_procedures` LIKE 'teaching_unit_id'[0m
+  [4;35;1mSQL (20.7ms)[0m   [0mALTER TABLE `teaching_procedures` CHANGE `teaching_unit_id` `unit_id` int(11) NOT NULL[0m
+  [4;36;1mSQL (4.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091221023126')[0m
+Migrating to AddIndexOfTeachingUnitsLessonsProcedures (20091221050625)
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `teaching_lessons`[0m
+  [4;36;1mSQL (12.6ms)[0m   [0;1mCREATE INDEX `index_teaching_lessons_on_creator_id` ON `teaching_lessons` (`creator_id`)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `teaching_procedures`[0m
+  [4;36;1mSQL (13.2ms)[0m   [0;1mCREATE INDEX `index_teaching_procedures_on_creator_id` ON `teaching_procedures` (`creator_id`)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `teaching_procedures`[0m
+  [4;36;1mSQL (22.5ms)[0m   [0;1mCREATE INDEX `index_teaching_procedures_on_unit_id` ON `teaching_procedures` (`unit_id`)[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW KEYS FROM `teaching_units`[0m
+  [4;36;1mSQL (11.6ms)[0m   [0;1mCREATE INDEX `index_teaching_units_on_creator_id` ON `teaching_units` (`creator_id`)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `teaching_units`[0m
+  [4;36;1mSQL (12.1ms)[0m   [0;1mCREATE INDEX `index_teaching_units_on_lesson_id` ON `teaching_units` (`lesson_id`)[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091221050625')[0m
+Migrating to CreateTeachingReferences (20091223072723)
+  [4;36;1mSQL (14.4ms)[0m   [0;1mCREATE TABLE `teaching_references` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `procedure_id` int(11) NOT NULL, `source_id` int(11) NOT NULL, `source_type` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `teaching_references`[0m
+  [4;36;1mSQL (12.3ms)[0m   [0;1mCREATE INDEX `index_teaching_references_on_source_id` ON `teaching_references` (`source_id`)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `teaching_references`[0m
+  [4;36;1mSQL (28.6ms)[0m   [0;1mCREATE INDEX `index_teaching_references_on_source_type_and_procedure_id` ON `teaching_references` (`source_type`, `procedure_id`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091223072723')[0m
+Migrating to CreateTeachingBoards (20091223090135)
+  [4;36;1mSQL (7.5ms)[0m   [0;1mCREATE TABLE `teaching_boards` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `procedure_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `teaching_boards`[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1mCREATE INDEX `index_teaching_boards_on_procedure_id` ON `teaching_boards` (`procedure_id`)[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091223090135')[0m
+Migrating to AddHostIdAndHostTypeToTasks (20091227014407)
+  [4;36;1mSQL (13.0ms)[0m   [0;1mALTER TABLE `tasks` ADD `host_id` int(11)[0m
+  [4;35;1mSQL (12.9ms)[0m   [0mALTER TABLE `tasks` ADD `host_type` varchar(255)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091227014407')[0m
+Migrating to CreateTeachingAssigns (20091228012701)
+  [4;35;1mSQL (8.0ms)[0m   [0mCREATE TABLE `teaching_assigns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `procedure_id` int(11) NOT NULL, `user_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `teaching_assigns`[0m
+  [4;35;1mSQL (14.3ms)[0m   [0mCREATE INDEX `index_teaching_assigns_on_procedure_id` ON `teaching_assigns` (`procedure_id`)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `teaching_assigns`[0m
+  [4;35;1mSQL (11.4ms)[0m   [0mCREATE INDEX `index_teaching_assigns_on_user_id` ON `teaching_assigns` (`user_id`)[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091228012701')[0m
+Migrating to ModifyTaskIdToConstraintIdInExecutions (20091228102020)
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `executions`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW COLUMNS FROM `executions` LIKE 'task_id'[0m
+  [4;35;1mSQL (25.7ms)[0m   [0mALTER TABLE `executions` CHANGE `task_id` `constraint_id` int(11) NOT NULL[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `executions`[0m
+  [4;35;1mSQL (18.2ms)[0m   [0mCREATE INDEX `index_executions_on_constraint_id` ON `executions` (`constraint_id`)[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091228102020')[0m
+Migrating to AddIsCompletedToExectionsAndAddSubjectToConstraints (20091228172751)
+  [4;35;1mSQL (27.7ms)[0m   [0mALTER TABLE `executions` ADD `is_completed` tinyint(1) DEFAULT 0[0m
+  [4;36;1mSQL (23.1ms)[0m   [0;1mALTER TABLE `constraints` ADD `subject` text[0m
+  [4;35;1mSQL (4.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091228172751')[0m
+Migrating to ChangeExecutionContentDefault (20091229163233)
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSHOW FIELDS FROM `executions`[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mSHOW FIELDS FROM `executions`[0m
+  [4;36;1mSQL (17.4ms)[0m   [0;1mALTER TABLE `executions` CHANGE `content` `content` text DEFAULT '' NOT NULL[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091229163233')[0m
+Migrating to CreateTeachingScores (20100105011352)
+  [4;36;1mSQL (17.0ms)[0m   [0;1mCREATE TABLE `teaching_scores` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `execution_id` int(11) NOT NULL, `creator_id` int(11) NOT NULL, `score` float NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100105011352')[0m
+Migrating to CreateTeachingInterComments (20100106015207)
+  [4;36;1mSQL (10.8ms)[0m   [0;1mCREATE TABLE `teaching_inter_comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `creator_id` int(11) NOT NULL, `procedure_id` int(11) NOT NULL, `subject` text NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100106015207')[0m
+Migrating to CreateTeachingInterCommentAllocations (20100106015226)
+  [4;36;1mSQL (8.5ms)[0m   [0;1mCREATE TABLE `teaching_inter_comment_allocations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `inter_comment_id` int(11), `execution_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100106015226')[0m
+Migrating to DropTeachingBoards (20100109012512)
+  [4;36;1mSQL (2.0ms)[0m   [0;1mDROP TABLE `teaching_boards`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100109012512')[0m
+Migrating to RemoveReferencesAddEntryIdToProcedure (20100109013335)
+  [4;36;1mSQL (8.5ms)[0m   [0;1mDROP TABLE `teaching_references`[0m
+  [4;35;1mSQL (14.6ms)[0m   [0mALTER TABLE `teaching_procedures` ADD `entry_id` int(11) NOT NULL[0m
+  [4;36;1mSQL (8.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100109013335')[0m
+Migrating to RemoveNameSubjectFromProcedures (20100109021135)
+  [4;35;1mSQL (13.1ms)[0m   [0mALTER TABLE `teaching_procedures` DROP `name`[0m
+  [4;36;1mSQL (12.9ms)[0m   [0;1mALTER TABLE `teaching_procedures` DROP `subject`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100109021135')[0m
+Migrating to ModifyConstraintsTaskId (20100109022453)
+  [4;36;1mSQL (3.5ms)[0m   [0;1mSHOW FIELDS FROM `constraints`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW COLUMNS FROM `constraints` LIKE 'task_id'[0m
+  [4;36;1mSQL (10.5ms)[0m   [0;1mALTER TABLE `constraints` CHANGE `task_id` `host_id` int(11) NOT NULL[0m
+  [4;35;1mSQL (21.3ms)[0m   [0mALTER TABLE `constraints` ADD `host_type` varchar(255)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100109022453')[0m
+Migrating to RenameConstraintsToRequirements (20100109073042)
+  [4;35;1mSQL (12.9ms)[0m   [0mRENAME TABLE `constraints` TO `requirements`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100109073042')[0m
+Migrating to ModifyRequirementsRequirementToKind (20100109073135)
+  [4;35;1mSQL (2.1ms)[0m   [0mSHOW FIELDS FROM `requirements`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW COLUMNS FROM `requirements` LIKE 'requirement'[0m
+  [4;35;1mSQL (11.8ms)[0m   [0mALTER TABLE `requirements` CHANGE `requirement` `kind` varchar(255) DEFAULT '' NOT NULL[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100109073135')[0m
+Migrating to ModifyExecutionsConstraintIdToRequirementId (20100109074958)
+  [4;35;1mSQL (3.3ms)[0m   [0mSHOW FIELDS FROM `executions`[0m
+  [4;36;1mSQL (3.7ms)[0m   [0;1mSHOW COLUMNS FROM `executions` LIKE 'constraint_id'[0m
+  [4;35;1mSQL (17.2ms)[0m   [0mALTER TABLE `executions` CHANGE `constraint_id` `requirement_id` int(11) NOT NULL[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100109074958')[0m
+Migrating to AddSubjectToFileEntries (20100110010635)
+  [4;35;1mSQL (9.9ms)[0m   [0mALTER TABLE `file_entries` ADD `subject` text[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100110010635')[0m
+Migrating to CreateTeachingSections (20100110031633)
+  [4;35;1mSQL (12.2ms)[0m   [0mCREATE TABLE `teaching_sections` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `parent_id` int(11) NOT NULL, `parent_type` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100110031633')[0m
+Migrating to AddSectionIdToProcedures (20100110031703)
+  [4;35;1mSQL (12.3ms)[0m   [0mALTER TABLE `teaching_procedures` ADD `section_id` int(11)[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100110031703')[0m
+Migrating to ChangeTeachingInterCommentsProcedureIdToRequirementId (20100111074947)
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `teaching_inter_comments`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW COLUMNS FROM `teaching_inter_comments` LIKE 'procedure_id'[0m
+  [4;35;1mSQL (15.2ms)[0m   [0mALTER TABLE `teaching_inter_comments` CHANGE `procedure_id` `requirement_id` int(11) NOT NULL[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100111074947')[0m
+Migrating to CreateTeachingProcedureAttachments (20100113011801)
+  [4;35;1mSQL (24.5ms)[0m   [0mCREATE TABLE `teaching_procedure_attachments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `procedure_id` int(11) NOT NULL, `entry_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100113011801')[0m
+Migrating to AddPositionToTeachingProcedures (20100113011825)
+  [4;35;1mSQL (12.8ms)[0m   [0mALTER TABLE `teaching_procedures` ADD `position` int(11)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100113011825')[0m
+Migrating to AddPostionToTeachingSections (20100113075041)
+  [4;35;1mSQL (12.2ms)[0m   [0mALTER TABLE `teaching_sections` ADD `position` int(11)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100113075041')[0m
+Migrating to AddPostionToTeachingUnits (20100113075056)
+  [4;35;1mSQL (12.1ms)[0m   [0mALTER TABLE `teaching_units` ADD `position` int(11)[0m
+  [4;36;1mSQL (3.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100113075056')[0m
+Migrating to AddKindTypeInterComments (20100116012024)
+  [4;35;1mSQL (14.8ms)[0m   [0mALTER TABLE `teaching_inter_comments` ADD `kind` varchar(255) NOT NULL[0m
+  [4;36;1mSQL (9.7ms)[0m   [0;1mALTER TABLE `teaching_inter_comments` ADD `rand_count` int(11)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100116012024')[0m
+Migrating to AddDetailToTeachingProcedureAttachments (20100117030850)
+  [4;36;1mSQL (10.0ms)[0m   [0;1mALTER TABLE `teaching_procedure_attachments` ADD `detail` varchar(255) DEFAULT 'Min'[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100117030850')[0m
+Migrating to AddSecretToTeachingInterComment (20100118012024)
+  [4;36;1mSQL (11.2ms)[0m   [0;1mALTER TABLE `teaching_inter_comments` ADD `secret` tinyint(1) DEFAULT 0[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100118012024')[0m
+Migrating to CreateRemarkRates (20100118045948)
+  [4;36;1mSQL (7.4ms)[0m   [0;1mCREATE TABLE `remark_rates` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) NOT NULL, `rateable_id` int(11) NOT NULL, `rateable_type` varchar(255) NOT NULL, `rate` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100118045948')[0m
+Migrating to CreateAttachments (20100118050530)
+  [4;36;1mSQL (6.5ms)[0m   [0;1mCREATE TABLE `attachments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `host_type` varchar(255) NOT NULL, `host_id` int(11) NOT NULL, `entry_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100118050530')[0m
+Migrating to DeleteTeachingAttachments (20100118050618)
+  [4;36;1mSQL (2.6ms)[0m   [0;1mDROP TABLE `teaching_procedure_attachments`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100118050618')[0m
+Migrating to AddDetailToAttachments (20100118055451)
+  [4;36;1mSQL (8.7ms)[0m   [0;1mALTER TABLE `attachments` ADD `detail` varchar(255) DEFAULT 'Min'[0m
+  [4;35;1mSQL (7.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100118055451')[0m
+Migrating to AddCanRateToInterComments (20100118062730)
+  [4;36;1mSQL (8.5ms)[0m   [0;1mALTER TABLE `teaching_inter_comments` ADD `can_rate` tinyint(1) DEFAULT 0[0m
+  [4;35;1mSQL (4.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100118062730')[0m
+Migrating to AddLftAndRgtToTeachingSections (20100118084230)
+  [4;36;1mSQL (16.1ms)[0m   [0;1mALTER TABLE `teaching_sections` ADD `lft` int(11)[0m
+  [4;35;1mSQL (11.5ms)[0m   [0mALTER TABLE `teaching_sections` ADD `rgt` int(11)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100118084230')[0m
+Migrating to AddLessonIdToTeachingSections (20100118091557)
+  [4;35;1mSQL (10.8ms)[0m   [0mALTER TABLE `teaching_sections` ADD `lesson_id` int(11)[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100118091557')[0m
+Migrating to DeleteParentTypeFromTeachingSections (20100118093237)
+  [4;35;1mSQL (13.0ms)[0m   [0mALTER TABLE `teaching_sections` DROP `parent_type`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100118093237')[0m
+Migrating to ChangeParentIdInTeachingSections (20100118101329)
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `teaching_sections`[0m
+  [4;36;1mSQL (13.1ms)[0m   [0;1mALTER TABLE `teaching_sections` CHANGE `parent_id` `parent_id` int(11) DEFAULT NULL[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100118101329')[0m
+Migrating to RemoveUnitIdFromTeachingProcedures (20100118102123)
+  [4;36;1mSQL (12.7ms)[0m   [0;1mALTER TABLE `teaching_procedures` DROP `unit_id`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100118102123')[0m
+Migrating to AddCreatorIdAndSubjectToTeachingSections (20100119011933)
+  [4;36;1mSQL (11.9ms)[0m   [0;1mALTER TABLE `teaching_sections` ADD `creator_id` int(11) NOT NULL[0m
+  [4;35;1mSQL (10.9ms)[0m   [0mALTER TABLE `teaching_sections` ADD `subject` text[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100119011933')[0m
+Migrating to DeleteTeachingUnits (20100119104813)
+  [4;35;1mSQL (3.4ms)[0m   [0mDROP TABLE `teaching_units`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100119104813')[0m
+Migrating to DropAssigns (20100123025659)
+  [4;35;1mSQL (3.6ms)[0m   [0mDROP TABLE `teaching_assigns`[0m
+  [4;36;1mSQL (15.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100123025659')[0m
+Migrating to CreateTeachingAssignRules (20100123032519)
+  [4;35;1mSQL (7.7ms)[0m   [0mCREATE TABLE `teaching_assign_rules` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `res_id` int(11) NOT NULL, `uset_id` int(11) NOT NULL, `res_type` varchar(255) NOT NULL, `uset_type` varchar(255) NOT NULL, `status` varchar(255) DEFAULT 0 NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100123032519')[0m
+Migrating to AddLessonIdAndEclassIdToAssignRules (20100123061403)
+  [4;35;1mSQL (10.8ms)[0m   [0mALTER TABLE `teaching_assign_rules` ADD `lesson_id` int(11) NOT NULL[0m
+  [4;36;1mSQL (24.9ms)[0m   [0;1mALTER TABLE `teaching_assign_rules` ADD `eclass_id` int(11) NOT NULL[0m
+  [4;35;1mSQL (3.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100123061403')[0m
+Migrating to ChangStatusToBoolean (20100123072144)
+  [4;36;1mSQL (2.7ms)[0m   [0;1mSHOW FIELDS FROM `teaching_assign_rules`[0m
+  [4;35;1mSQL (11.4ms)[0m   [0mALTER TABLE `teaching_assign_rules` CHANGE `status` `status` tinyint(1) DEFAULT 0 NOT NULL[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100123072144')[0m
+Migrating to ChangContentToTextAreaToMessages (20100131062522)
+  [4;35;1mSQL (3.4ms)[0m   [0mSHOW FIELDS FROM `messages`[0m
+  [4;36;1mSQL (13.0ms)[0m   [0;1mALTER TABLE `messages` CHANGE `content` `content` text DEFAULT '' NOT NULL[0m
+  [4;35;1mSQL (18.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100131062522')[0m
+Migrating to AddAttachmentsDisplayStyleToTeachingProcedures (20100202010138)
+  [4;36;1mSQL (12.6ms)[0m   [0;1mALTER TABLE `teaching_procedures` ADD `attachments_display_style` varchar(255) DEFAULT 'nest'[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100202010138')[0m
+Migrating to AddShowTooltipToPreferences (20100206020808)
+  [4;36;1mSQL (28.7ms)[0m   [0;1mALTER TABLE `preferences` ADD `show_tooltip` tinyint(1) DEFAULT 1[0m
+  [4;35;1mSQL (3.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100206020808')[0m
+Migrating to AddDeletedAtToFileEntries (20100206030728)
+  [4;36;1mSQL (10.6ms)[0m   [0;1mALTER TABLE `file_entries` ADD `deleted_at` datetime[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100206030728')[0m
+Migrating to AddDeletedAtToTextEntries (20100206073554)
+  [4;36;1mSQL (15.8ms)[0m   [0;1mALTER TABLE `text_entries` ADD `deleted_at` datetime[0m
+  [4;35;1mSQL (5.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100206073554')[0m
+Migrating to RemoveDeletedAtFromFileEntryAndTextEntryAddDeletedAtToResourceEntries (20100206082243)
+  [4;36;1mSQL (24.6ms)[0m   [0;1mALTER TABLE `text_entries` DROP `deleted_at`[0m
+  [4;35;1mSQL (10.6ms)[0m   [0mALTER TABLE `file_entries` DROP `deleted_at`[0m
+  [4;36;1mSQL (12.2ms)[0m   [0;1mALTER TABLE `resource_entries` ADD `deleted_at` datetime[0m
+  [4;35;1mSQL (10.3ms)[0m   [0mALTER TABLE `teaching_procedures` ADD `deleted_at` datetime[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100206082243')[0m
+Migrating to RemoveDeletedAtFromProcedures (20100206095125)
+  [4;35;1mSQL (18.1ms)[0m   [0mALTER TABLE `teaching_procedures` DROP `deleted_at`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100206095125')[0m
+Migrating to AddUnreadToMessageReadings (20100210055734)
+  [4;35;1mSQL (16.6ms)[0m   [0mALTER TABLE `message_readings` ADD `unread` tinyint(1) DEFAULT 1[0m
+  [4;36;1mSQL (5.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100210055734')[0m
+Migrating to AddUnreadToMessages (20100220065046)
+  [4;35;1mSQL (9.3ms)[0m   [0mALTER TABLE `messages` ADD `unread` tinyint(1) DEFAULT 0[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100220065046')[0m
+Migrating to AddReceiverIdsToMessage (20100222024718)
+  [4;35;1mSQL (13.1ms)[0m   [0mALTER TABLE `messages` ADD `receiver_ids` varchar(255) NOT NULL[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100222024718')[0m
+Migrating to ModifyProcedureAttachmentsDisplayStyle (20100222044544)
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `teaching_procedures`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `teaching_procedures`[0m
+  [4;35;1mSQL (25.2ms)[0m   [0mALTER TABLE `teaching_procedures` CHANGE `attachments_display_style` `attachments_display_style` varchar(255) DEFAULT '--- \n:default: list\n'[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100222044544')[0m
+Migrating to AddShowInInboxToMessageReading (20100222085014)
+  [4;35;1mSQL (15.4ms)[0m   [0mALTER TABLE `message_readings` ADD `show_in_inbox` tinyint(1) NOT NULL[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100222085014')[0m
+Migrating to AddReplyToAndTitleToMessages (20100224010555)
+  [4;35;1mSQL (11.8ms)[0m   [0mALTER TABLE `messages` ADD `reply_to` int(11)[0m
+  [4;36;1mSQL (26.5ms)[0m   [0;1mALTER TABLE `messages` ADD `title` varchar(255) NOT NULL[0m
+  [4;35;1mSQL (4.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100224010555')[0m
+Migrating to ModifyProcedureAttachmentsDisplayStyleAgain (20100224054644)
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `teaching_procedures`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `teaching_procedures`[0m
+  [4;36;1mSQL (10.5ms)[0m   [0;1mALTER TABLE `teaching_procedures` CHANGE `attachments_display_style` `attachments_display_style` varchar(255) DEFAULT 'list'[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100224054644')[0m
+Migrating to AddDraftToMessages (20100227081006)
+  [4;36;1mSQL (12.9ms)[0m   [0;1mALTER TABLE `messages` ADD `draft` tinyint(1) DEFAULT 0[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100227081006')[0m
+Migrating to AddUuidToMessages (20100302015924)
+  [4;36;1mSQL (10.3ms)[0m   [0;1mALTER TABLE `messages` ADD `uuid` varchar(255)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100302015924')[0m
+Migrating to CreateMessageModelings (20100304104456)
+  [4;36;1mSQL (8.0ms)[0m   [0;1mCREATE TABLE `message_modelings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `model_id` int(11) NOT NULL, `model_type` varchar(255) NOT NULL, `message_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100304104456')[0m
+Migrating to AddNamespaceToMessages (20100304111445)
+  [4;36;1mSQL (18.1ms)[0m   [0;1mALTER TABLE `messages` ADD `namespace` varchar(255) DEFAULT 'site_mail'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100304111445')[0m
+Migrating to CreateTeachingDiscussions (20100306024824)
+  [4;36;1mSQL (14.7ms)[0m   [0;1mCREATE TABLE `teaching_discussions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `procedure_id` int(11) NOT NULL, `creator_id` int(11) NOT NULL, `title` varchar(255) NOT NULL, `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (5.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100306024824')[0m
+Migrating to ChangeMessagesAndMessageReadingsAndRemoveMessageTopics (20100306190246)
+  [4;36;1mSQL (5.8ms)[0m   [0;1mDROP TABLE `message_topics`[0m
+  [4;35;1mSQL (12.0ms)[0m   [0mALTER TABLE `message_readings` DROP `message_topic_id`[0m
+  [4;36;1mSQL (17.2ms)[0m   [0;1mALTER TABLE `message_readings` ADD `message_id` int(11) NOT NULL[0m
+  [4;35;1mSQL (15.7ms)[0m   [0mALTER TABLE `messages` DROP `message_topic_id`[0m
+  [4;36;1mSQL (19.5ms)[0m   [0;1mALTER TABLE `messages` DROP `reply_to`[0m
+  [4;35;1mSQL (11.9ms)[0m   [0mALTER TABLE `messages` ADD `parent_id` int(11)[0m
+  [4;36;1mSQL (12.2ms)[0m   [0;1mALTER TABLE `messages` ADD `lft` int(11)[0m
+  [4;35;1mSQL (13.2ms)[0m   [0mALTER TABLE `messages` ADD `rgt` int(11)[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100306190246')[0m
+Migrating to ChangeMessageReceiverIdsToAllowNull (20100312095257)
+  [4;35;1mSQL (1.9ms)[0m   [0mSHOW FIELDS FROM `messages`[0m
+  [4;36;1mSQL (13.3ms)[0m   [0;1mALTER TABLE `messages` CHANGE `receiver_ids` `receiver_ids` varchar(255) DEFAULT ''[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100312095257')[0m
+Migrating to CreateTeachingHomeworks (20100313193036)
+  [4;36;1mSQL (9.0ms)[0m   [0;1mCREATE TABLE `teaching_homeworks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `procedure_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100313193036')[0m
+Migrating to DeleteQuotingsAndExecutions (20100314011354)
+  [4;36;1mSQL (18.2ms)[0m   [0;1mDROP TABLE `quotings`[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mDROP TABLE `executions`[0m
+  [4;36;1mSQL (7.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100314011354')[0m
+Migrating to CreateQuotes (20100314011840)
+  [4;35;1mSQL (7.9ms)[0m   [0mCREATE TABLE `quotes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `host_type` varchar(255) NOT NULL, `host_id` int(11) NOT NULL, `entry_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100314011840')[0m
+Migrating to DeleteTasks (20100314041759)
+  [4;35;1mSQL (3.0ms)[0m   [0mDROP TABLE `task_allocations`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mDROP TABLE `tasks`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100314041759')[0m
+Migrating to DeleteTopicsAndPosts (20100314044527)
+  [4;36;1mSQL (1.7ms)[0m   [0;1mDROP TABLE `topics`[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mDROP TABLE `posts`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100314044527')[0m
+Migrating to RemoveTablesAboutSurvey (20100317231235)
+  [4;35;1mSQL (3.8ms)[0m   [0mDROP TABLE `survey_results`[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mDROP TABLE `surveys`[0m
+  [4;35;1mSQL (4.4ms)[0m   [0mDROP TABLE `question_answers`[0m
+  [4;36;1mSQL (10.6ms)[0m   [0;1mDROP TABLE `question_options`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mDROP TABLE `questions`[0m
+  [4;36;1mSQL (5.2ms)[0m   [0;1mDROP TABLE `answer_selections`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100317231235')[0m
+Migrating to DropTablesAboutBundlesAndStructures (20100318000915)
+  [4;36;1mSQL (2.9ms)[0m   [0;1mDROP TABLE `group_bundles`[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mDROP TABLE `structures`[0m
+  [4;36;1mSQL (22.6ms)[0m   [0;1mALTER TABLE `groups` DROP `group_bundle_id`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100318000915')[0m
+Migrating to AddHostToResourceEntries (20100318222818)
+  [4;36;1mSQL (12.1ms)[0m   [0;1mALTER TABLE `resource_entries` ADD `host_id` int(11)[0m
+  [4;35;1mSQL (18.1ms)[0m   [0mALTER TABLE `resource_entries` ADD `host_type` varchar(255)[0m
+  [4;36;1mSQL (4.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100318222818')[0m
+Migrating to AddDetailToFileEntries (20100318230059)
+  [4;35;1mSQL (11.2ms)[0m   [0mALTER TABLE `file_entries` ADD `detail` varchar(255)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100318230059')[0m
+Migrating to RemoveAttachmentsAndQuotes (20100318232438)
+  [4;35;1mSQL (2.3ms)[0m   [0mDROP TABLE `attachments`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mDROP TABLE `quotes`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100318232438')[0m
+Migrating to DropTablesNotUsed (20100322000059)
+  [4;36;1mSQL (3.7ms)[0m   [0;1mDROP TABLE `teaching_assign_rules`[0m
+  [4;35;1mSQL (14.1ms)[0m   [0mDROP TABLE `teaching_discussions`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mDROP TABLE `teaching_homeworks`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mDROP TABLE `teaching_inter_comment_allocations`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mDROP TABLE `teaching_inter_comments`[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mDROP TABLE `teaching_lessons`[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mDROP TABLE `teaching_procedures`[0m
+  [4;35;1mSQL (17.9ms)[0m   [0mDROP TABLE `teaching_scores`[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mDROP TABLE `teaching_sections`[0m
+  [4;35;1mSQL (3.7ms)[0m   [0mDROP TABLE `attentions`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mDROP TABLE `folders`[0m
+  [4;35;1mSQL (4.1ms)[0m   [0mDROP TABLE `groups`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mDROP TABLE `link_entries`[0m
+  [4;35;1mSQL (5.3ms)[0m   [0mDROP TABLE `memberships`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mDROP TABLE `operations`[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mDROP TABLE `rss_entries`[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mDROP TABLE `todos`[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mDROP TABLE `versions`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100322000059')[0m
+Migrating to RemoveUnreadAndHiddenFromMessages (20100322013631)
+  [4;35;1mSQL (19.4ms)[0m   [0mALTER TABLE `messages` DROP `unread`[0m
+  [4;36;1mSQL (12.1ms)[0m   [0;1mALTER TABLE `messages` DROP `hidden`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100322013631')[0m
+Migrating to RemoveShowInInboxFromMessageReadings (20100322191937)
+  [4;36;1mSQL (11.4ms)[0m   [0;1mALTER TABLE `message_readings` DROP `show_in_inbox`[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100322191937')[0m
+Migrating to ModifyMessagesSenderIdToCreatorAndRemoveReceiverIds (20100322201024)
+  [4;36;1mSQL (14.6ms)[0m   [0;1mALTER TABLE `messages` DROP `receiver_ids`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `messages`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW COLUMNS FROM `messages` LIKE 'sender_id'[0m
+  [4;35;1mSQL (18.1ms)[0m   [0mALTER TABLE `messages` CHANGE `sender_id` `creator_id` int(11) NOT NULL[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100322201024')[0m
+Migrating to CreateParticipatings (20100322202158)
+  [4;35;1mSQL (17.5ms)[0m   [0mCREATE TABLE `participatings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `message_id` int(11) NOT NULL, `user_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100322202158')[0m
+Migrating to AddLengthToTextEntries (20100324200244)
+  [4;35;1mSQL (12.4ms)[0m   [0mALTER TABLE `text_entries` ADD `length` int(11) DEFAULT 0[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100324200244')[0m
+Migrating to AddIndexForParticipatings (20100325003651)
+  [4;35;1mSQL (2.8ms)[0m   [0mSHOW KEYS FROM `participatings`[0m
+  [4;36;1mSQL (21.0ms)[0m   [0;1mCREATE INDEX `index_participatings_on_user_id` ON `participatings` (`user_id`)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `participatings`[0m
+  [4;36;1mSQL (11.5ms)[0m   [0;1mCREATE INDEX `index_participatings_on_message_id` ON `participatings` (`message_id`)[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100325003651')[0m
+Migrating to AddUserIdToTagsAndRemoveUserIdFromTaggings (20100326004107)
+  [4;36;1mSQL (16.2ms)[0m   [0;1mALTER TABLE `tags` ADD `user_id` int(11) NOT NULL[0m
+  [4;35;1mSQL (11.5ms)[0m   [0mALTER TABLE `taggings` DROP `user_id`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100326004107')[0m
+Migrating to CreateApps (20100331053017)
+  [4;35;1mSQL (5.9ms)[0m   [0mCREATE TABLE `apps` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `title` varchar(255), `callback_url` varchar(255), `port` int(11) DEFAULT 80, `secret_key` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `apps`[0m
+  [4;35;1mSQL (9.7ms)[0m   [0mCREATE INDEX `index_apps_on_name` ON `apps` (`name`)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100331053017')[0m
+Migrating to CreateInstallings (20100331053029)
+  [4;35;1mSQL (8.4ms)[0m   [0mCREATE TABLE `installings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `app_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `installings`[0m
+  [4;35;1mSQL (12.0ms)[0m   [0mCREATE INDEX `index_installings_on_user_id` ON `installings` (`user_id`)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW KEYS FROM `installings`[0m
+  [4;35;1mSQL (10.3ms)[0m   [0mCREATE INDEX `index_installings_on_app_id` ON `installings` (`app_id`)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100331053029')[0m
+Migrating to CreateContacts (20100401070507)
+  [4;35;1mSQL (19.4ms)[0m   [0mCREATE TABLE `contacts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `host_id` int(11), `friend_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `contacts`[0m
+  [4;35;1mSQL (12.9ms)[0m   [0mCREATE INDEX `index_contacts_on_host_id` ON `contacts` (`host_id`)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `contacts`[0m
+  [4;35;1mSQL (9.9ms)[0m   [0mCREATE INDEX `index_contacts_on_friend_id` ON `contacts` (`friend_id`)[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100401070507')[0m
+Migrating to RemoveLoginFromUsers (20100402010356)
+  [4;35;1mSQL (21.1ms)[0m   [0mALTER TABLE `users` DROP `login`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100402010356')[0m
+Migrating to DeleteActivatedFromUsersAndAddActivatedAt (20100402013824)
+  [4;35;1mSQL (13.0ms)[0m   [0mALTER TABLE `users` DROP `activated`[0m
+  [4;36;1mSQL (11.9ms)[0m   [0;1mALTER TABLE `users` ADD `activated_at` datetime[0m
+  [4;35;1mSQL (4.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW COLUMNS FROM `users` LIKE 'active_code'[0m
+  [4;35;1mSQL (21.8ms)[0m   [0mALTER TABLE `users` CHANGE `active_code` `activation_code` varchar(255) DEFAULT NULL[0m
+  [4;36;1mSQL (7.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100402013824')[0m
+Migrating to AddResetPasswordCodeAndResetPasswordUntilToUsers (20100402055733)
+  [4;35;1mSQL (9.7ms)[0m   [0mALTER TABLE `users` ADD `reset_password_code` varchar(255)[0m
+  [4;36;1mSQL (38.8ms)[0m   [0;1mALTER TABLE `users` ADD `reset_password_code_until` datetime[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100402055733')[0m
+Migrating to CreateInvitations (20100402081615)
+  [4;36;1mSQL (14.5ms)[0m   [0;1mCREATE TABLE `invitations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `host_id` int(11), `friend_email` varchar(255), `uuid` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW KEYS FROM `invitations`[0m
+  [4;36;1mSQL (23.2ms)[0m   [0;1mCREATE INDEX `index_invitations_on_host_id` ON `invitations` (`host_id`)[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100402081615')[0m
+Migrating to AddThemeToPreferences (20100402104228)
+  [4;36;1mSQL (12.8ms)[0m   [0;1mALTER TABLE `preferences` ADD `theme` varchar(255)[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100402104228')[0m
+Migrating to RenameContactToContacting (20100406020315)
+  [4;36;1mSQL (17.9ms)[0m   [0;1mRENAME TABLE `contacts` TO `contactings`[0m
+  [4;35;1mSQL (7.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100406020315')[0m
+Migrating to ModifyContactings (20100406020940)
+  [4;36;1mSQL (2.9ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW COLUMNS FROM `contactings` LIKE 'friend_id'[0m
+  [4;36;1mSQL (12.4ms)[0m   [0;1mALTER TABLE `contactings` CHANGE `friend_id` `contact_id` int(11) DEFAULT NULL[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100406020940')[0m
+Migrating to ChangeInvitationsFriendEmailToContactEmail (20100406160932)
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW FIELDS FROM `invitations`[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSHOW COLUMNS FROM `invitations` LIKE 'friend_email'[0m
+  [4;36;1mSQL (20.2ms)[0m   [0;1mALTER TABLE `invitations` CHANGE `friend_email` `contact_email` varchar(255) DEFAULT NULL[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100406160932')[0m
+Migrating to AddAttachmentsLogoToApp (20100407011818)
+  [4;36;1mSQL (13.5ms)[0m   [0;1mALTER TABLE `apps` ADD `logo_file_name` varchar(255)[0m
+  [4;35;1mSQL (19.4ms)[0m   [0mALTER TABLE `apps` ADD `logo_content_type` varchar(255)[0m
+  [4;36;1mSQL (22.5ms)[0m   [0;1mALTER TABLE `apps` ADD `logo_file_size` int(11)[0m
+  [4;35;1mSQL (17.3ms)[0m   [0mALTER TABLE `apps` ADD `logo_updated_at` datetime[0m
+  [4;36;1mSQL (12.5ms)[0m   [0;1mALTER TABLE `apps` ADD `developer` varchar(255)[0m
+  [4;35;1mSQL (22.0ms)[0m   [0mALTER TABLE `apps` ADD `subject` text[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100407011818')[0m
+Migrating to RenameResourceEntryToEntry (20100410015020)
+  [4;35;1mSQL (4.6ms)[0m   [0mRENAME TABLE `resource_entries` TO `entries`[0m
+  [4;36;1mSQL (5.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100410015020')[0m
+Migrating to ChangeResourceEntryIdToEntryIdInReadings (20100410022732)
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `readings`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW COLUMNS FROM `readings` LIKE 'resource_entry_id'[0m
+  [4;35;1mSQL (16.8ms)[0m   [0mALTER TABLE `readings` CHANGE `resource_entry_id` `entry_id` int(11) NOT NULL[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100410022732')[0m
+Migrating to AddFromToEntries (20100412050151)
+  [4;35;1mSQL (20.7ms)[0m   [0mALTER TABLE `entries` ADD `from` varchar(255)[0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100412050151')[0m
+Migrating to CreateWebSites (20100413050219)
+  [4;35;1mSQL (6.7ms)[0m   [0mCREATE TABLE `web_sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `url` varchar(255), `site` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100413050219')[0m
+Migrating to CreateBookmarkEntries (20100413050246)
+  [4;35;1mSQL (8.7ms)[0m   [0mCREATE TABLE `bookmark_entries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `url` varchar(255), `site` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100413050246')[0m
+Migrating to AddTitleSnapshotToBookmarkEntries (20100414054224)
+  [4;35;1mSQL (15.1ms)[0m   [0mALTER TABLE `bookmark_entries` ADD `title` varchar(255)[0m
+  [4;36;1mSQL (12.6ms)[0m   [0;1mALTER TABLE `bookmark_entries` ADD `snapshot` text[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100414054224')[0m
+Migrating to AddImageMarkColumnsToRemarks (20100415021703)
+  [4;36;1mSQL (14.7ms)[0m   [0;1mALTER TABLE `remarks` ADD `left` float[0m
+  [4;35;1mSQL (14.8ms)[0m   [0mALTER TABLE `remarks` ADD `top` float[0m
+  [4;36;1mSQL (11.5ms)[0m   [0;1mALTER TABLE `remarks` ADD `width` float[0m
+  [4;35;1mSQL (11.0ms)[0m   [0mALTER TABLE `remarks` ADD `height` float[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100415021703')[0m
+Migrating to CreateReports (20100419060057)
+  [4;35;1mSQL (8.2ms)[0m   [0mCREATE TABLE `reports` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `entry_id` int(11), `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW KEYS FROM `reports`[0m
+  [4;35;1mSQL (10.0ms)[0m   [0mCREATE INDEX `index_reports_on_entry_id` ON `reports` (`entry_id`)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100419060057')[0m
+Migrating to AddCreatorIdToReports (20100419065510)
+  [4;35;1mSQL (11.0ms)[0m   [0mALTER TABLE `reports` ADD `creator_id` int(11)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `reports`[0m
+  [4;35;1mSQL (11.3ms)[0m   [0mCREATE INDEX `index_reports_on_creator_id` ON `reports` (`creator_id`)[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100419065510')[0m
+Migrating to CreateShares (20100419075822)
+  [4;35;1mSQL (9.3ms)[0m   [0mCREATE TABLE `shares` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `entry_id` int(11), `creator_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `shares`[0m
+  [4;35;1mSQL (25.6ms)[0m   [0mCREATE INDEX `index_shares_on_entry_id` ON `shares` (`entry_id`)[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW KEYS FROM `shares`[0m
+  [4;35;1mSQL (13.2ms)[0m   [0mCREATE INDEX `index_shares_on_creator_id` ON `shares` (`creator_id`)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100419075822')[0m
+Migrating to AddFeelingToReadings (20100419094127)
+  [4;35;1mSQL (19.7ms)[0m   [0mALTER TABLE `readings` ADD `feeling` varchar(255)[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100419094127')[0m
+Migrating to AddImageSrcAndVideoHtmlToBookmarkEntries (20100421015306)
+  [4;35;1mSQL (12.0ms)[0m   [0mALTER TABLE `bookmark_entries` ADD `image_src` varchar(255)[0m
+  [4;36;1mSQL (14.8ms)[0m   [0;1mALTER TABLE `bookmark_entries` ADD `video_html` varchar(255)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100421015306')[0m
+Migrating to ChangeVideoHtmlTypeInBookmarkEntries (20100421023359)
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `bookmark_entries`[0m
+  [4;35;1mSQL (9.7ms)[0m   [0mALTER TABLE `bookmark_entries` CHANGE `video_html` `video_html` text DEFAULT NULL[0m
+  [4;36;1mSQL (4.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100421023359')[0m
+Migrating to ChangeVideoHtmlToVideoSrcInBookmarkEntries (20100421031025)
+  [4;35;1mSQL (3.3ms)[0m   [0mSHOW FIELDS FROM `bookmark_entries`[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mSHOW COLUMNS FROM `bookmark_entries` LIKE 'video_html'[0m
+  [4;35;1mSQL (10.6ms)[0m   [0mALTER TABLE `bookmark_entries` CHANGE `video_html` `video_src` text DEFAULT NULL[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100421031025')[0m
+Migrating to CreateFeelings (20100422051518)
+  [4;35;1mSQL (7.6ms)[0m   [0mCREATE TABLE `feelings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `feelable_id` int(11), `feelable_type` varchar(255), `user_id` int(11), `evaluation` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100422051518')[0m
+Migrating to RemoveFeelingFromReadings (20100422055456)
+  [4;35;1mSQL (29.3ms)[0m   [0mALTER TABLE `readings` DROP `feeling`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100422055456')[0m
+Migrating to CreateWebSiteIntroductions (20100422092736)
+  [4;35;1mSQL (7.7ms)[0m   [0mCREATE TABLE `web_site_introductions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `version` int(11), `user_id` int(11), `web_site_id` int(11), `checked` tinyint(1), `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100422092736')[0m
+Migrating to RemoveUrlFromWebSites (20100423085505)
+  [4;35;1mSQL (25.0ms)[0m   [0mALTER TABLE `web_sites` DROP `url`[0m
+  [4;36;1mSQL (5.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100423085505')[0m
+Migrating to AddPageRankToWebSites (20100426052748)
+  [4;35;1mSQL (16.0ms)[0m   [0mALTER TABLE `web_sites` ADD `page_rank` int(11)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100426052748')[0m
+Migrating to AddDefaultAndUsuallyUsedToInstallings (20100426075634)
+  [4;35;1mSQL (23.1ms)[0m   [0mALTER TABLE `installings` ADD `is_default` tinyint(1)[0m
+  [4;36;1mSQL (12.9ms)[0m   [0;1mALTER TABLE `installings` ADD `usually_used` tinyint(1)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100426075634')[0m
+Migrating to AddReasonToReports (20100426085939)
+  [4;36;1mSQL (15.3ms)[0m   [0;1mALTER TABLE `reports` ADD `reason` varchar(255)[0m
+  [4;35;1mSQL (5.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100426085939')[0m
+Migrating to AddForbiddenToEntries (20100427012352)
+  [4;36;1mSQL (31.3ms)[0m   [0;1mALTER TABLE `entries` ADD `forbidden` tinyint(1)[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100427012352')[0m
+Migrating to AddHandledToReports (20100427014812)
+  [4;36;1mSQL (13.4ms)[0m   [0;1mALTER TABLE `reports` ADD `handled` tinyint(1)[0m
+  [4;35;1mSQL (5.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100427014812')[0m
+Migrating to AddReplyToToRemarks (20100427021027)
+  [4;36;1mSQL (22.2ms)[0m   [0;1mALTER TABLE `remarks` ADD `reply_to` int(11)[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100427021027')[0m
+Migrating to CreateRssFeeds (20100427064501)
+  [4;36;1mSQL (8.0ms)[0m   [0;1mCREATE TABLE `rss_feeds` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `source` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100427064501')[0m
+Migrating to CreateRssItems (20100427064517)
+  [4;36;1mSQL (16.1ms)[0m   [0;1mCREATE TABLE `rss_items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `link` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100427064517')[0m
+Migrating to CreateSubscriptionEntries (20100427064612)
+  [4;36;1mSQL (7.5ms)[0m   [0;1mCREATE TABLE `subscription_entries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `rss_feed_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW KEYS FROM `subscription_entries`[0m
+  [4;36;1mSQL (12.3ms)[0m   [0;1mCREATE INDEX `index_subscription_entries_on_user_id` ON `subscription_entries` (`user_id`)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `subscription_entries`[0m
+  [4;36;1mSQL (11.3ms)[0m   [0;1mCREATE INDEX `index_subscription_entries_on_rss_feed_id` ON `subscription_entries` (`rss_feed_id`)[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100427064612')[0m
+Migrating to AddRssFeedIdToRssItems (20100427070835)
+  [4;36;1mSQL (24.4ms)[0m   [0;1mALTER TABLE `rss_items` ADD `rss_feed_id` int(11)[0m
+  [4;35;1mSQL (5.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100427070835')[0m
+Migrating to RenameWebSiteIntroductions (20100428074833)
+  [4;36;1mSQL (1.7ms)[0m   [0;1mRENAME TABLE `web_site_introductions` TO `introductions`[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100428074833')[0m
+Migrating to ChangeSomeColumnsInIntroductions (20100428075807)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `introductions`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW COLUMNS FROM `introductions` LIKE 'web_site_id'[0m
+  [4;36;1mSQL (12.2ms)[0m   [0;1mALTER TABLE `introductions` CHANGE `web_site_id` `introductable_id` int(11) DEFAULT NULL[0m
+  [4;35;1mSQL (13.6ms)[0m   [0mALTER TABLE `introductions` ADD `introductable_type` varchar(255)[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100428075807')[0m
+Migrating to AddTitleAndModifySiteToDomainToWebSites (20100429055814)
+  [4;35;1mSQL (14.2ms)[0m   [0mALTER TABLE `web_sites` ADD `title` varchar(255)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW FIELDS FROM `web_sites`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW COLUMNS FROM `web_sites` LIKE 'site'[0m
+  [4;36;1mSQL (11.5ms)[0m   [0;1mALTER TABLE `web_sites` CHANGE `site` `domain` varchar(255) DEFAULT NULL[0m
+  [4;35;1mSQL (3.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100429055814')[0m
+Migrating to ModifyEntryIdToReadableIdAndReadableTypeToReads (20100429074920)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSHOW FIELDS FROM `readings`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW COLUMNS FROM `readings` LIKE 'entry_id'[0m
+  [4;36;1mSQL (15.2ms)[0m   [0;1mALTER TABLE `readings` CHANGE `entry_id` `readable_id` int(11) NOT NULL[0m
+  [4;35;1mSQL (10.8ms)[0m   [0mALTER TABLE `readings` ADD `readable_type` varchar(255)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100429074920')[0m
+Migrating to ModifySharesAndReportsToPolymopic (20100429091718)
+  [4;35;1mSQL (18.4ms)[0m   [0mALTER TABLE `shares` ADD `shareable_type` varchar(255)[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mSHOW FIELDS FROM `shares`[0m
+  [4;35;1mSQL (5.6ms)[0m   [0mSHOW COLUMNS FROM `shares` LIKE 'entry_id'[0m
+  [4;36;1mSQL (9.8ms)[0m   [0;1mALTER TABLE `shares` CHANGE `entry_id` `shareable_id` int(11) DEFAULT NULL[0m
+  [4;35;1mSQL (10.3ms)[0m   [0mALTER TABLE `reports` ADD `reportable_type` varchar(255)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `reports`[0m
+  [4;35;1mSQL (3.2ms)[0m   [0mSHOW COLUMNS FROM `reports` LIKE 'entry_id'[0m
+  [4;36;1mSQL (12.5ms)[0m   [0;1mALTER TABLE `reports` CHANGE `entry_id` `reportable_id` int(11) DEFAULT NULL[0m
+  [4;35;1mSQL (3.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100429091718')[0m
+Migrating to AddAuthorToRssItems (20100430023315)
+  [4;36;1mSQL (10.1ms)[0m   [0;1mALTER TABLE `rss_items` ADD `author` varchar(255)[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100430023315')[0m
+Migrating to AddDescriptionToRssFeed (20100430045525)
+  [4;36;1mSQL (12.1ms)[0m   [0;1mALTER TABLE `rss_feeds` ADD `description` varchar(255)[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100430045525')[0m
+Migrating to AddKeyWordAndDescriptionToWebSites (20100430083632)
+  [4;36;1mSQL (15.8ms)[0m   [0;1mALTER TABLE `web_sites` ADD `key_words` varchar(255)[0m
+  [4;35;1mSQL (11.2ms)[0m   [0mALTER TABLE `web_sites` ADD `description` varchar(255)[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100430083632')[0m
+Migrating to AddV09AndV09UpToUsers (20100504052617)
+  [4;35;1mSQL (13.1ms)[0m   [0mALTER TABLE `users` ADD `v09` tinyint(1)[0m
+  [4;36;1mSQL (14.2ms)[0m   [0;1mALTER TABLE `users` ADD `v09_up` tinyint(1)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100504052617')[0m
+Migrating to CreateAchievements (20100504090514)
+  [4;36;1mSQL (6.4ms)[0m   [0;1mCREATE TABLE `achievements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100504090514')[0m
+Migrating to CreateAchievementings (20100504090612)
+  [4;36;1mSQL (19.1ms)[0m   [0;1mCREATE TABLE `achievementings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `achievement_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (10.8ms)[0m   [0mSHOW KEYS FROM `achievementings`[0m
+  [4;36;1mSQL (11.0ms)[0m   [0;1mCREATE INDEX `index_achievementings_on_user_id` ON `achievementings` (`user_id`)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `achievementings`[0m
+  [4;36;1mSQL (20.8ms)[0m   [0;1mCREATE INDEX `index_achievementings_on_achievement_id` ON `achievementings` (`achievement_id`)[0m
+  [4;35;1mSQL (14.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100504090612')[0m
+Migrating to CreateBugs (20100505032807)
+  [4;36;1mSQL (6.5ms)[0m   [0;1mCREATE TABLE `bugs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `kind` varchar(255), `content` varchar(255), `user_id` int(11), `user_ip` varchar(255), `attachment_file_name` varchar(255), `attachment_content_type` varchar(255), `attachment_file_size` int(11), `attachment_updated_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100505032807')[0m
+Migrating to AddLastLoginTimeToUsers (20100505052107)
+  [4;36;1mSQL (17.1ms)[0m   [0;1mALTER TABLE `users` ADD `last_login_time` datetime[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100505052107')[0m
+Migrating to AddContentToShares (20100506020244)
+  [4;36;1mSQL (13.8ms)[0m   [0;1mALTER TABLE `shares` ADD `content` text[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100506020244')[0m
+Migrating to DropAchievementsAndRenameAchievementings (20100506025309)
+  [4;36;1mSQL (8.7ms)[0m   [0;1mDROP TABLE `achievements`[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mRENAME TABLE `achievementings` TO `achievements`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSHOW FIELDS FROM `achievements`[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mSHOW COLUMNS FROM `achievements` LIKE 'achievement_id'[0m
+  [4;36;1mSQL (16.3ms)[0m   [0;1mALTER TABLE `achievements` CHANGE `achievement_id` `honor` int(11) DEFAULT NULL[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSHOW FIELDS FROM `achievements`[0m
+  [4;36;1mSQL (15.4ms)[0m   [0;1mALTER TABLE `achievements` CHANGE `honor` `honor` varchar(255) DEFAULT NULL[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100506025309')[0m
+Migrating to AddPubDateIntoRssItems (20100507021141)
+  [4;36;1mSQL (12.7ms)[0m   [0;1mALTER TABLE `rss_items` ADD `pub_date` datetime[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100507021141')[0m
+Migrating to AddImgToRssItems (20100511022734)
+  [4;36;1mSQL (11.6ms)[0m   [0;1mALTER TABLE `rss_items` ADD `img_file_name` varchar(255)[0m
+  [4;35;1mSQL (24.6ms)[0m   [0mALTER TABLE `rss_items` ADD `img_content_type` varchar(255)[0m
+  [4;36;1mSQL (13.5ms)[0m   [0;1mALTER TABLE `rss_items` ADD `img_file_size` int(11)[0m
+  [4;35;1mSQL (12.1ms)[0m   [0mALTER TABLE `rss_items` ADD `img_updated_at` datetime[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100511022734')[0m
+Migrating to AddShowShareToContactings (20100513050043)
+  [4;35;1mSQL (22.2ms)[0m   [0mALTER TABLE `contactings` ADD `show_share` tinyint(1)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100513050043')[0m
+Migrating to AddHandledAndClosedToBugs (20100517062452)
+  [4;35;1mSQL (20.1ms)[0m   [0mALTER TABLE `bugs` ADD `handled` tinyint(1) DEFAULT 0[0m
+  [4;36;1mSQL (20.0ms)[0m   [0;1mALTER TABLE `bugs` ADD `closed` tinyint(1) DEFAULT 0[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100517062452')[0m
+Migrating to AddKindToShares (20100521014905)
+  [4;36;1mSQL (22.1ms)[0m   [0;1mALTER TABLE `shares` ADD `kind` varchar(255) DEFAULT 'TALK'[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100521014905')[0m
+Migrating to AddClaimCodeToRssFeeds (20100521020536)
+  [4;36;1mSQL (13.7ms)[0m   [0;1mALTER TABLE `rss_feeds` ADD `claim_code` varchar(255)[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100521020536')[0m
+Migrating to AddUserIdToRssFeeds (20100521023335)
+  [4;36;1mSQL (11.5ms)[0m   [0;1mALTER TABLE `rss_feeds` ADD `user_id` int(11)[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100521023335')[0m
+Migrating to AddLastForwardIdToShares (20100524062406)
+  [4;36;1mSQL (27.4ms)[0m   [0;1mALTER TABLE `shares` ADD `last_forward_id` int(11)[0m
+  [4;35;1mSQL (11.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100524062406')[0m
+Migrating to AddAttachmentToSharesModifyVideoSrcToBookmarkentry (20100525022540)
+  [4;36;1mSQL (14.5ms)[0m   [0;1mALTER TABLE `shares` ADD `entry_id` int(11)[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mSHOW FIELDS FROM `bookmark_entries`[0m
+  [4;36;1mSQL (14.4ms)[0m   [0;1mALTER TABLE `bookmark_entries` CHANGE `video_src` `video_src` varchar(255) DEFAULT NULL[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100525022540')[0m
+Migrating to CreateUsings (20100525030416)
+  [4;36;1mSQL (8.2ms)[0m   [0;1mCREATE TABLE `usings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `share_id` int(11), `entry_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `usings`[0m
+  [4;36;1mSQL (14.6ms)[0m   [0;1mCREATE INDEX `index_usings_on_share_id` ON `usings` (`share_id`)[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSHOW KEYS FROM `usings`[0m
+  [4;36;1mSQL (18.0ms)[0m   [0;1mCREATE INDEX `index_usings_on_entry_id` ON `usings` (`entry_id`)[0m
+  [4;35;1mSQL (4.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100525030416')[0m
+Migrating to AddUserAgentToBugs (20100527015734)
+  [4;36;1mSQL (11.1ms)[0m   [0;1mALTER TABLE `bugs` ADD `user_agent` varchar(255)[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100527015734')[0m
+Migrating to CreateShortUrls (20100527031353)
+  [4;36;1mSQL (8.0ms)[0m   [0;1mCREATE TABLE `short_urls` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `url` varchar(255), `code` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (13.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100527031353')[0m
+Migrating to ChangeImgToImgUrl (20100601090933)
+  [4;36;1mSQL (15.1ms)[0m   [0;1mALTER TABLE `rss_items` DROP `img_file_name`[0m
+  [4;35;1mSQL (11.0ms)[0m   [0mALTER TABLE `rss_items` DROP `img_content_type`[0m
+  [4;36;1mSQL (22.7ms)[0m   [0;1mALTER TABLE `rss_items` DROP `img_file_size`[0m
+  [4;35;1mSQL (19.9ms)[0m   [0mALTER TABLE `rss_items` DROP `img_updated_at`[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mALTER TABLE `rss_items` ADD `img_url` varchar(255)[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100601090933')[0m
+Migrating to CreateSimpleCaptchaData (20100612183558)
+  [4;36;1mSQL (8.2ms)[0m   [0;1mCREATE TABLE `simple_captcha_data` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `key` varchar(40), `value` varchar(6), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100612183558')[0m
+Migrating to ModifyVersionToVerInIntroductions (20100705052802)
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW FIELDS FROM `introductions`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW COLUMNS FROM `introductions` LIKE 'version'[0m
+  [4;36;1mSQL (18.5ms)[0m   [0;1mALTER TABLE `introductions` CHANGE `version` `ver` int(11) DEFAULT NULL[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100705052802')[0m
+Migrating to RemoveVersionFromIntroductions (20100705055014)
+  [4;36;1mSQL (14.1ms)[0m   [0;1mALTER TABLE `introductions` DROP `ver`[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100705055014')[0m
+Migrating to CreateFavorites (20100706062155)
+  [4;36;1mSQL (33.1ms)[0m   [0;1mCREATE TABLE `favorites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `favorable_id` int(11), `favorable_type` varchar(255), `user_id` int(11), `num` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100706062155')[0m
+Migrating to CreateWorkBoards (20100712064359)
+  [4;36;1mSQL (19.2ms)[0m   [0;1mCREATE TABLE `work_boards` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (24.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100712064359')[0m
+Migrating to CreateAnnouncements (20100712064559)
+  [4;36;1mSQL (52.1ms)[0m   [0;1mCREATE TABLE `announcements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100712064559')[0m
+Migrating to CreateWorkBoardQuotings (20100712071010)
+  [4;36;1mSQL (8.6ms)[0m   [0;1mCREATE TABLE `work_board_quotings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `work_board_id` int(11), `entry_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100712071010')[0m
+Migrating to CreateComments (20100714070426)
+  [4;36;1mSQL (26.9ms)[0m   [0;1mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `creator_id` int(11), `markable_id` int(11), `markable_type` varchar(255), `reply_to` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (11.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100714070426')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `achievements`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mdescribe `achievements`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW KEYS FROM `achievements`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `announcements`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mdescribe `announcements`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `announcements`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mdescribe `apps`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `apps`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `bookmark_entries`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mdescribe `bookmark_entries`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `bookmark_entries`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mSHOW FIELDS FROM `bugs`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mdescribe `bugs`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `bugs`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW FIELDS FROM `combo_links`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `combo_links`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSHOW KEYS FROM `combo_links`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mdescribe `comments`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `comments`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mdescribe `contactings`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `contactings`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mdescribe `entries`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `entries`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW FIELDS FROM `favorites`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mdescribe `favorites`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `favorites`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mdescribe `feelings`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `feelings`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW FIELDS FROM `file_entries`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mdescribe `file_entries`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `file_entries`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSHOW FIELDS FROM `installings`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mdescribe `installings`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `installings`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW FIELDS FROM `introductions`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mdescribe `introductions`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `introductions`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `invitations`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mdescribe `invitations`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `invitations`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW FIELDS FROM `message_modelings`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mdescribe `message_modelings`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `message_modelings`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `message_readings`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mdescribe `message_readings`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `message_readings`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mdescribe `messages`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `messages`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `online_records`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mdescribe `online_records`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `online_records`[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSHOW FIELDS FROM `participatings`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mdescribe `participatings`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `participatings`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `preferences`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mdescribe `preferences`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `preferences`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `readings`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `readings`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `readings`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `remark_rates`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mdescribe `remark_rates`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `remark_rates`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW FIELDS FROM `remarks`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mdescribe `remarks`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `remarks`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `reports`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mdescribe `reports`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `reports`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW FIELDS FROM `requirements`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mdescribe `requirements`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `requirements`[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mdescribe `roles`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `roles`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `rss_feeds`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mdescribe `rss_feeds`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `rss_feeds`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `rss_items`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mdescribe `rss_items`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `rss_items`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW FIELDS FROM `shares`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mdescribe `shares`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW KEYS FROM `shares`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `short_urls`[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mdescribe `short_urls`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `short_urls`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW FIELDS FROM `simple_captcha_data`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mdescribe `simple_captcha_data`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `simple_captcha_data`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSHOW FIELDS FROM `subscription_entries`[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mdescribe `subscription_entries`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `subscription_entries`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW FIELDS FROM `system_settings`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mdescribe `system_settings`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `system_settings`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `tag_combos`[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mdescribe `tag_combos`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mSHOW KEYS FROM `tag_combos`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mdescribe `taggings`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `taggings`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `tags`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mdescribe `tags`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `tags`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `text_entries`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mdescribe `text_entries`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `text_entries`[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSHOW FIELDS FROM `user_roles`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `user_roles`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `user_roles`[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `usings`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mdescribe `usings`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `usings`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `view_records`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mdescribe `view_records`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `view_records`[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mSHOW FIELDS FROM `web_sites`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mdescribe `web_sites`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW KEYS FROM `web_sites`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `work_board_quotings`[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mdescribe `work_board_quotings`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `work_board_quotings`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSHOW FIELDS FROM `work_boards`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mdescribe `work_boards`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `work_boards`[0m
