@@ -1,0 +1,19 @@
+<!-- 这里的rss_item描述信息不是截取的字符串，而是全部内容，用在了show 和 随机阅读中,在子模板_show.erb中 -->
+<div class="rss_item_meta" >
+  <h4><%=h rss_item.title %></h4>
+  <div class="author quiet">
+    <span>
+      作者 <%=rss_item.author || '未知'%>
+    </span>
+    <span>
+      发表于 <%= qdatetimefull_with_line(rss_item.pub_date) %>
+    </span>
+  </div>
+  <div class="description">
+    <%=add_target_blank_to_a_in_description rss_item.description %>
+  </div>
+</div>
+
+<% content_for :head do %>
+  <%= stylesheet_link_tag "/stylesheets/views/rss" %>
+<% end %>

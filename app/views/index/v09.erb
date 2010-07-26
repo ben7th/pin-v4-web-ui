@@ -1,0 +1,32 @@
+<div class="v09_up_content">
+  <h3>
+    长期关注MindPin的朋友，您好：
+  </h3>
+  <h3>
+    MindPin已在2010年夏季全新改版 :)
+  </h3>
+  <p>
+    为了更好地进行功能扩展，改版将对你的账户数据进行升级。<br/>
+    您的账户升级完成后，你以后的登录将改用邮箱作为认证。（而不再是用户名）
+  </p>
+  <p>
+    升级方式非常简单，您只需要点击下面的按钮，就可以完成升级。
+  </p>
+  <%=hr%>
+  <p>
+    您目前的邮箱是: <br/>
+    <div class="mail"><%= current_user.email %></div>
+    <span class="tips">请记住您的邮箱地址，升级完成后，您将只能使用邮箱登录</span>
+  </p>
+  <%=hr%>
+  <%form_tag v09_up_path,:method=>:put,:id=>"v09_up_form" do%>
+    <div class="opt">
+      <span><%=check_box_tag "install_mindmap",true,true,:class=>'checkbox'%></span>
+      <span>安装“思维导图”应用，并设置“思维导图”为默认应用</span>
+    </div>
+    <%= link_to "","javascript:void(0)",:class=>"v09_up",:onclick=>"$('v09_up_form').submit();return false;"%>
+  <% end %>
+</div>
+<%content_for :head do%>
+  <%=stylesheet_link_tag "views/v09_up"%>
+<%end%>

@@ -1,0 +1,3 @@
+<!-- 在随机阅读中，在rss_item的show中 -->
+<div><span class='quiet'>当前文章来自 订阅源</span> <%= qlink rss_item.rss_feed %></div>
+<%= render :partial=>"rss_items/meta_rss_item",:locals=>{:rss_item=>rss_item} %>

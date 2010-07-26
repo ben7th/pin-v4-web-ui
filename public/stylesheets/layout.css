@@ -1,0 +1,33 @@
+/*页面基础容器*/
+body {margin:0;}
+.page-container {margin:0;}
+.page-content {overflow:visible;clear:both;}
+
+/*顶部导航条*/
+.nav {clear:both;overflow:hidden;height:36px;}
+  .nav .site-logo{width:120px;height:20px;margin:8px 0 0 10px;float:left;}
+    .nav .site-logo a{width:120px;height:20px;float:left;background-image:url(/images/mindpin.png)}
+  .nav .start{float:right;margin:8px 10px 0 0;overflow:hidden;}
+    .nav .start span{float:left;}
+      .nav .start span.line{width:1px;height:1em;line-height:1em;margin:0.3em 10px 0.2em;overflow:hidden;}
+
+/*这里开始是版面大布局相关*/
+.page-content .PL{position:relative;}
+  .page-content .PL .cell{padding-left:8px;}
+
+/*page layout*/
+#PL-panel {width:200px;float:left;}
+#PL-paper {margin-left:200px;}
+
+/*版面大布局结束*/
+
+#PL-paper {
+  -moz-border-radius:3px;-webkit-border-radius:3px;
+  }
+  #PL-paper .cell{padding:4px 8px 8px 8px;}
+
+/*page-selector*/
+div.page-selector{margin:5px 0 0 0;padding:0 0 0 10px;font-size:14px;line-height:21px;
+  -moz-border-radius-bottomleft:3px;-moz-border-radius-topleft:3px;
+  -webkit-border-bottom-left-radius:3px;-webkit-border-top-left-radius:3px;
+}

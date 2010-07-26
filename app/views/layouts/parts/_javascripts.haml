@@ -1,0 +1,42 @@
+- bundle :js_path=>'/bundle_cache',:compress=>false do
+  = javascript_include_tag :defaults
+  = javascript_include_tag 'scriptaculous'
+  = javascript_include_tag 'builder'
+
+  = javascript_include_tag 'pie/core'
+  = javascript_include_tag 'pie/menu'
+  = javascript_include_tag 'pie/inline-menu'
+
+  = javascript_include_tag 'pie/cell'
+  = javascript_include_tag 'pie/mplist'
+  = javascript_include_tag 'pie/tab'
+
+  = javascript_include_tag 'views/base'
+
+  = javascript_include_tag 'pie/autocompleter'
+
+  = javascript_include_tag "/javascripts/swfupload/swfupload.js"
+  = javascript_include_tag "/javascripts/swfupload/swfupload.queue.js"
+  = javascript_include_tag "/javascripts/swfupload/fileprogress.js"
+  = javascript_include_tag "/javascripts/swfupload/handlers.js"
+
+  = javascript_include_tag "/javascripts/views/mpaccordion.js"
+
+  = javascript_include_tag '/javascripts/kissy_editor/editor_mindpin.js'
+
+  = javascript_include_tag  '/facebox/facebox.js'
+
+  = javascript_include_tag  '/javascripts/views/markable_list_comments.js'
+  = javascript_include_tag  '/javascripts/views/remark'
+  = javascript_include_tag  '/javascripts/views/show_announcement.js'
+  = javascript_include_tag  '/javascripts/pie/notice_tip.js'
+  = javascript_include_tag  '/javascripts/pie/pie_dragdrop.js'
+  = javascript_include_tag  '/javascripts/pie/work_board.js'
+  = javascript_include_tag  '/javascripts/pie/textarea_adapt_height.js'
+  = javascript_include_tag  '/javascripts/lightview/js/lightview.js'
+
+
+:javascript
+  pie.authenticity_token = #{form_authenticity_token.to_json};
+
+= yield :javascripts

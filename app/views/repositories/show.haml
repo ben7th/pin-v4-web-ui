@@ -1,0 +1,10 @@
+-repo_name = params[:repo_name]
+-content_cell do
+  %div
+    =link_to "返回版本库列表", "/repositories"
+    %br
+    ="版本库 #{repo_name} 的文件列表"
+    %br
+    =link_to_remote "添加文件",:url=>add_repo_file_path(repo_name),:method=>"get"
+    -mplist @repository_file_infos,:for=>RepositoryFileInfo do |repository_file_info|
+      =render :partial=>"/repositories/parts/info_repository_file",:locals=>{:repository_file_info=>repository_file_info,:repo_name=>repo_name}

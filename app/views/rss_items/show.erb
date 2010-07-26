@@ -1,0 +1,50 @@
+<% content_cell do %>
+  <div class="cc">
+    <div class="cmain">
+      <div class="cin">
+        <%if logged_in? && @rss_item %>
+          <div class="r_i_actions">
+            <%= render :partial=>"/shares/parts/share_operate",:locals=>{:shareable=>@rss_item} %>
+          </div>
+        <% end %>
+
+        <div class="r_i_content_area">
+          <%= render :partial=>"/rss_items/show",:locals=>{:rss_item=>@rss_item} %>
+        </div>
+
+        <% if @rss_item %>
+          <div class="r_i_comments">
+            <h3>评论</h3>
+            <%= render :partial=>"comments/parts/comments",:locals=>{:markable=>@rss_item} %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+
+    <% if @rss_item %>
+      <div class="cright">
+        <div class="cin">
+          <div>
+            <h3>以下用户最近看过这个条目</h3>
+            <% @rss_item.reading_users.paginate(:page => params[:page] ,:per_page=>5 ).each do |user| %>
+              <%=user_div user%>
+            <% end %>
+          </div>
+
+          <% if logged_in? %>
+            <%=render :partial=>"reader/parts/recent_reading_list",:locals=>{:user=>current_user,:readable=>@rss_item}%>
+          <% end %>
+
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+
+<% end %>
+
+<% content_for :head do %>
+  <%= stylesheet_link_tag "/stylesheets/views/rss" %>
+  <%= stylesheet_link_tag "/stylesheets/views/reader" %>
+<% end %>

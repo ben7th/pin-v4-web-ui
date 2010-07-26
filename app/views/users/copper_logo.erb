@@ -1,0 +1,43 @@
+<%content_cell do -%>
+  <div class="padding5">
+    <div>
+      <div>原始图片</div>
+      <img id="img_with_preview" src="<%=current_user.logo.url(:raw)%>"/>
+    </div>
+    <div>
+      <div>裁切后的效果</div>
+      <div id="preview_wrap"></div>
+    </div>
+    <%form_tag [:logo,current_user],:method=>:put,:id=>"copper_form" do%>
+      <%=hidden_field_tag :copper,"copper"%>
+      <%=hidden_field_tag :x1,100%>
+      <%=hidden_field_tag :y1,100%>
+      <%=hidden_field_tag :width,200%>
+      <%=hidden_field_tag :height,200%>
+      <%=submit_tag "保存设置"%>
+    <%end%>
+  </div>
+<%end%>
+<%content_for :javascripts do%>
+  <%= javascript_include_tag 'jsCropperUi/cropper' %>
+  <script type="text/javascript">
+    pie.load(function(){
+      new Cropper.ImgWithPreview(
+      'img_with_preview',
+      {
+        previewWrap: 'preview_wrap',
+        minWidth: 48,
+        minHeight: 48,
+        ratioDim: { x:48, y:48 },
+        isCenter: true,
+        onEndCrop: function(evt,coords, dimensions){
+          $("copper_form").down("#x1").value = coords.x1
+          $("copper_form").down("#y1").value = coords.y1
+          $("copper_form").down("#width").value = dimensions.width
+          $("copper_form").down("#height").value = dimensions.height
+        }
+      }
+    );
+    })
+  </script>
+<%end%>

@@ -1,0 +1,17 @@
+<span id="feelable_<%=feelable.class.name%>_<%=feelable.id%>_operate">
+  <% class_name = feelable.feel_of(current_user) == Feeling::GOOD ? "read-good" : "unread-good" %>
+  <%= link_to_remote "",
+    :url=>polymorphic_url([feelable,:feeling],:evaluation=>Feeling::GOOD),
+    :success=>"nice_click_success('#feelable_#{feelable.class.name}_#{feelable.id}_operate')",
+    :method=>:put,
+    :html=>{:href=>"",:class=>"#{class_name}",:id=>"reputation_button",:title=>'我喜欢这个'}-%>
+</span>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript">
+    function nice_click_success(id){
+      $$(id+' #reputation_button')[0].toggleClassName('unread-good');
+      $$(id+' #reputation_button')[0].toggleClassName('read-good');
+    }
+  </script>
+<% end %>

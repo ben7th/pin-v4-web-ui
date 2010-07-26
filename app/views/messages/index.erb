@@ -1,0 +1,4 @@
+<% content_for :panel do %>
+  <%= render :partial=>"messages/cell_selector" %>
+<%end%>
+<%= render :partial=>"/messages/parts/cell_box",:locals=>{:messages=>@messages,:display_mode=>params['box']} %>

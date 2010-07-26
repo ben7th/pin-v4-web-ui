@@ -1,0 +1,7 @@
+<% content_cell do %>
+  <% mplist current_user.invitations do |invitation|%>
+    <span>email</span>
+    <span><%= invitation.contact_email %></span>
+    <span><%= invitation_stated(invitation) %></span>
+  <% end %>
+<% end %>

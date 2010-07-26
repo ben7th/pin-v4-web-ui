@@ -1,0 +1,14 @@
+<% content_cell do -%>
+  <% cell_head do %>
+    <%= render :partial=>"tags/parts/operation_bar"%>
+  <% end %>
+  <%mplist tags,:for=>Tag do |tag| %>
+    <%= render :partial=>"tags/info_tag",:locals=>{:tag=>tag} %>
+  <% end %>
+<% end -%>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript">
+    new MplistLiCheckBoxSelect('mplist_tags');
+  </script>
+<% end %>

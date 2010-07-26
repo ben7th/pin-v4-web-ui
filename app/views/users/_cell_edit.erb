@@ -1,0 +1,61 @@
+<%content_cell do -%>
+  <div class="cin">
+    <%=flash_info%>
+    <% mindpin_form_for user,:html=>{:class=>'common_form',:multipart=>true,:target => 'upload_frame'} do |f|%>
+      <h2>基本信息设置</h2>
+      <%=hr%>
+      <div class="p">
+        <div>邮箱地址</div>
+        <div class="mail"><%=current_user.email%></div>
+        <div>
+          <% if current_user.activated? %>
+            <span>已激活</span>
+          <% else %>
+            <span>未激活</span>
+            <span><%= link_to_remote '&gt; 发送激活邮件',:url=>send_activation_mail_users_path,:method=>:get %></span>
+          <% end %>
+        </div>
+      </div>
+      <%=hr%>
+
+      <%=f.text_field(:name)%>
+
+
+      <div class="p">
+        <%=t('page.users.settings_join_time')%>
+        <%=created_at user%>
+      </div>
+
+      <%=hr%>
+
+      <div class="p">
+        <%=logo user,:medium%>
+        <%=logo user,:normal%>
+        <%=logo user,:tiny%>
+        <%=logo user,:mini%>
+        <div>
+          <%=link_to "设置头像",edit_logo_user_path(current_user)%>
+        </div>
+      </div>
+
+      <%=hr%>
+
+      <div class="p indent">
+        <%=t('page.users.settings_password_caption')%>
+      </div>
+      <div class="p">
+        <label><%=t('page.users.settings_password')%></label>
+        <%=password_field :user,:password,:value=>'',:maxlength=>32,:class=>'text'%>
+      </div>
+      <div class="p">
+        <label><%=t('page.users.settings_password_confirmation')%></label>
+        <%=password_field :user,:password_confirmation,:value=>'',:maxlength=>32,:class=>'text'%>
+      </div>
+      <%=hr%>
+      <%=f.submit t('page.users.settings_from_submit')%>
+    <%end%>
+  </div>
+<%end%>
+<% content_for :head do %>
+  <%= stylesheet_link_tag "/stylesheets/views/preference" %>
+<% end %>

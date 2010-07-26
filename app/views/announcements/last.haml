@@ -1,0 +1,6 @@
+%div
+  = @announcement.content
+  %div
+    = qdatetimefull(@announcement.updated_at)
+  .action
+    = link_to "> 点此查看",announcement_path(@announcement)

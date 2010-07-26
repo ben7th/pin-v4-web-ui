@@ -1,0 +1,20 @@
+- require_css 'index',true
+
+.margint60.paddingb3em.push_1.grid_22
+  .grid_7.alpha
+    .index-login.rc10
+      =link_to "v09_login",v09_login_path,:class=>"v09_login"
+      .index_login_panel_content.rc5
+        %h3 欢迎访问 MindPin v4 预览版
+        =render :partial=>'users/parts/login_form'
+        =link_to "忘记密码了？",forgot_password_form_path
+    .index-login.margint10.rc10
+      .index_login_panel_content.rc5
+        =render :partial=>'index/parts/index_bugs'
+
+  .grid_15.omega
+    .padding10.font13.colorddd
+      %div 还没有账号？
+      .blackloud 注册新的 MindPin 账号，只需30秒。
+      %div=link_to "注册",signup_path,:class=>'reg-button hidetext'
+      =render :text=>Announcement.last.content

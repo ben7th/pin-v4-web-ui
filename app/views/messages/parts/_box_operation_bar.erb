@@ -1,0 +1,19 @@
+<%= t('page.form.select') %>
+<%= link_to t('page.messages.all'),"#",:id=>'select_all' %>
+<%= link_to t('page.messages.none'),"#",:id=>'cancel_all_select' %>
+<%= link_to t('page.messages.read'),"#",:id=>'select_read' %>
+<%= link_to t('page.messages.unread'),"#",:id=>'select_unread' %>
+<span class="ui-button-span">
+  <%= mp_submit_to_remote 'read',t('page.messages.to_read'),:ul=>"mplist_messages",:url =>mark_message_readings_path(:unread=>'false',:display_mode=>display_mode),:method=>:put,:html=>{:class=>'ui-button'} %>
+</span>
+<span class="ui-button-span">
+  <%= mp_submit_to_remote 'unread',t('page.messages.to_unread'),:ul=>"mplist_messages", :url =>mark_message_readings_path(:unread=>'true',:display_mode=>display_mode),:method=>:put,:html=>{:class=>'ui-button'} %>
+</span>
+<span class="ui-button-span">
+  <%= mp_submit_to_remote 'edit_tags',t('page.messages.edit_tags'),:ul=>"mplist_messages", :url =>edit_tags_messages_path(:display_mode=>display_mode),:method=>:get,:html=>{:class=>'ui-button'} %>
+</span>
+<span class="ui-button-span">
+  <% delete_title = t('page.form.delete') %>
+  <% delete_title = t('page.messages.delete_draft') if display_mode == 'draft' %>
+  <%= mp_submit_to_remote 'delete',delete_title,:ul=>"mplist_messages", :url =>destroys_message_readings_path(:display_mode=>display_mode),:method=>:put,:html=>{:class=>'ui-button'} %>
+</span>

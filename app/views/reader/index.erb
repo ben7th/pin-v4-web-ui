@@ -1,0 +1,44 @@
+<% content_cell do %>
+  <div class="cc">
+    <div class="cmain">
+      <div class="cin">
+        <%=render :partial=>'reader/parts/readable_actions',:locals=>{:readable=>@readable}%>
+
+        <%=readable_content_area @readable%>
+
+        <% if @readable %>
+          <div class="readable_comments">
+            <h3>评论</h3>
+            <%= render :partial=>"comments/parts/comments",:locals=>{:markable=>@readable} %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+
+    <% if @readable %>
+      <div class="cright">
+        <div class="cin">
+          <div>
+            <h3>以下用户最近看过这个条目</h3>
+            <% @readable.reading_users.paginate(:page => params[:page] ,:per_page=>5 ).each do |user| %>
+              <%=user_div user%>
+            <% end %>
+          </div>
+
+          <% if logged_in? %>
+            <%=render :partial=>"reader/parts/recent_reading_list",:locals=>{:user=>current_user,:readable=>@readable}%>
+          <% end %>
+
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+
+<% end %>
+
+<%content_for :head do%>
+  <%=stylesheet_link_tag "views/share"%>
+  <%=stylesheet_link_tag "views/reader"%>
+<%end%>

@@ -1,0 +1,5 @@
+-content_cell do
+  ="#{current_user.name}的版本库"
+  =link_to_remote "创建一个版本库",:url=>new_repo_path,:method=>:get
+  -mplist @repositories,:for=>RepositoryInfo do |repository|
+    =render :partial=>"/repositories/parts/info_repository",:locals=>{:repository=>repository}

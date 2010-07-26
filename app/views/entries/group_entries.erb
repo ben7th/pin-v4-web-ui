@@ -1,0 +1,33 @@
+<%content_for :head do%>
+  <%=javascript_include_tag 'tabs/livepipe' %>
+  <%=javascript_include_tag 'tabs/tabs' %>
+  <script type="text/javascript">
+    document.observe('dom:loaded',function(){
+      try{
+        new Control.Tabs('group_resource_tabs');
+      }catch(e){
+        alert(e)
+      }
+    })
+  </script>
+<%end%>
+<%content_for :title do%>群组资源汇总<%end%>
+
+<ul id="group_resource_tabs">
+  <li class="tab"><a href="#common_group_<%=@common_group.id%>"><%=@common_group.name%></a></li>
+  <% @members.each do |member| -%>
+  <li class="tab"><a href="#user_<%=member.id%>"><%=member.name%></a></li>
+  <% end -%>
+</ul>
+
+<%content_tag_for :div,@common_group,:class=>'r_container' do%>
+  <h3><%= @common_group.name %></h3>
+    <%=render :partial=>'/resource_packs/resource_packs',:locals=>{:resource_packs=>@common_group.members_notebooks_resource_packs_by(current_user)}%>
+<%end%>
+
+<% @members.each do |member| %>
+  <%content_tag_for :div,member,:class=>'r_container' do%>
+    <h3><%= member.name %></h3>
+    <%=render :partial=>'/resource_packs/resource_packs',:locals=>{:resource_packs=>member.notebooks_resource_packs_by(current_user)}%>
+  <%end%>
+<%end%>

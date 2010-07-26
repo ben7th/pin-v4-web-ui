@@ -1,0 +1,5 @@
+<% content_cell :title=>"与 #{@tag.value} 相关的资源" do %>
+  <%mplist @targets do |target| %>
+    <%=qlink target%>
+  <% end %>
+<% end %>

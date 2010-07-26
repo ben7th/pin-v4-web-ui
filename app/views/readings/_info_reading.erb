@@ -1,0 +1,10 @@
+<div class="meta">
+  <% if reading.readable.is_a?(RssItem) %>
+    <%= render :partial=>"rss_items/meta_rss_item_brief",:locals=>{:rss_item=>reading.readable} %>
+  <% else %>
+    <%=meta reading.readable %>
+  <% end %>
+</div>
+<div class="action">
+  <%= link_to "查看",reading.readable %>
+</div>

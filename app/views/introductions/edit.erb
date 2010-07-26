@@ -1,0 +1,7 @@
+<% content_cell do %>
+  <% form_tag [@introductable,@introduction],:method=>:put do%>
+    <%= text_area_tag :content,@content %>
+    <%= hidden_field_tag :section,params[:section] %>
+    <%= submit_tag t("page.form.submit") %>
+  <% end %>
+<% end %>

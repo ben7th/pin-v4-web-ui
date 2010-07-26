@@ -1,0 +1,10 @@
+<% file_entry = entry.resource %>
+<div style="padding:5px;margin:5px;background-color: rgb(240, 247, 249);">
+  <span><%=file_entry.title%></span>
+  <span><%=file_entry.file_size_with_a_unit%></span>
+  <span>
+    <%if file_entry.is_image?%>
+      <%= image_tag file_entry.content.url(:mini),:class=>'logo' %>
+    <% end %>
+  </span>
+</div>

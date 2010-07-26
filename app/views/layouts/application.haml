@@ -1,0 +1,11 @@
+- @mindpin_layout.yield_partial = 'lr'
+- @mindpin_layout.grid = 24
+
+- @yield_panel_html_str = yield :panel
+- content_for :css do
+  =hide_panel if @yield_panel_html_str.blank?
+
+!!! Strict
+%html{:xmlns=>"http://www.w3.org/1999/xhtml"}
+  =render :partial=>'layouts/parts/htmlhead'
+  =render :partial=>'layouts/parts/htmlbody'

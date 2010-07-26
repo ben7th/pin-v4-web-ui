@@ -1,0 +1,68 @@
+<% content_cell do %>
+  <%# 检查是否已经订阅，并根据订阅的情况决定显示的操作 或 内容 %>
+  <% cell_head do %>
+    <%if logged_in?%>
+      <% if @rss_feed.subscripted_by?(current_user) %>
+        <span id="has_subscription">已经订阅</span>
+      <% else %>
+        <span class="ui-button-span" id="subscription_button">
+          <%= link_to_remote "订阅",:url=>subscription_entries_path(:rss_feed_id=>@rss_feed.id),
+            :method=>:post,:success=>"subscripted_success()",:class=>"ui-button" %>
+        </span>
+      <% end %>
+    <%end%>
+  <% end %>
+
+  <div class="meta">
+    <h4><%= @rss_feed.title %></h4>
+    <span>Rss地址 </span>
+    <span><%=link_to @rss_feed.source,@rss_feed.source,:target=>"_blank" %></span>
+    <div><%=@rss_feed.description%></div>
+    <div>
+      <%user_id = @rss_feed.user_id%>
+      <%if user_id.blank?%>
+        <% if logged_in? %>
+          <%=link_to "认领",[:claim_tip,@rss_feed]%>
+        <%end%>
+      <%else%>
+        <span>拥有者</span>
+        <span><%=User.find(user_id).name%></span>
+      <%end%>
+    </div>
+    <div><%=@rss_feed.share_items_count%>篇文章被分享</div>
+  </div>
+  <%if logged_in?%>
+    <%=render :partial=>"/feelings/parts/user_feeling",:locals=>{:feelable=>@rss_feed} %>
+  <%end%>
+
+  <% tab_panel do %>
+
+    <% rss_items = @rss_feed.rss_items %>
+    <% tabi "文章(#{rss_items.size})" do %>
+      <% mplist rss_items,:for=>RssItem %>
+    <% end %>
+
+    <% subscribers = @rss_feed.subscribers %>
+    <% tabi "订阅用户(<span class='subscribers_count'>#{subscribers.size}</span>)",:href=>rss_feed_path(@rss_feed,:tabi=>"subscriber"),:tip=>"订阅用户",:id=>"rss_feed_#{@rss_feed.id}_subscribers" %>
+
+    <% comments = @rss_feed.comments %>
+    <% tabi "评论(#{comments.size})",:href=>rss_feed_path(@rss_feed,:tabi=>"comments"),:tip=>"评论" %>
+
+    <% tabi "简介",:href=>rss_feed_path(@rss_feed,:tabi=>"introductions") %>
+  <% end %>
+
+<% end %>
+
+<% content_for :javascripts do %>
+  <%= javascript_include_tag 'views/rss_feed' %>
+  <%= javascript_include_tag 'views/remark' %>
+  <script type="text/javascript">
+    new RssItemDescriptionController($('mplist_rss_items'));
+
+    function subscripted_success(){
+      $('subscription_button').replace("<span id='has_subscription'>已经订阅</span>");
+      var subscribers_count = $$('#rss_feed_<%=@rss_feed.id%>_subscribers a span.subscribers_count')[0];
+      subscribers_count.update(parseInt(subscribers_count.innerHTML)+1);
+    }
+  </script>
+<% end %>

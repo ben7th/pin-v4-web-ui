@@ -1,0 +1,14 @@
+<div class="font13">
+  <%if @failure%>
+    <div>没有找到对应用户，激活失败，</div>
+    <div>请返回。</div>
+  <%else%>
+    <div>您的账号：</div>
+    <div class="font18 bold" style="color:#E8641B; margin:5px 0;"><%=@user.email%></div>
+    <div>已经激活成功 :)</div>
+  <%end%>
+  <%=hr%>
+  <div>
+    <%=link_to "&gt; 返回首页","/"%>
+  </div>
+</div>

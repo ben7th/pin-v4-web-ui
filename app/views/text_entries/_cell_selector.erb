@@ -1,0 +1,19 @@
+<% content_cell :title=>t("page.text_entries.text_mamage") do%>
+  <div class='page-selector'>
+    <%= page_link :paper,t("page.text_entries.all"),:url=>text_entries_path,:method=>:get %>
+  </div>
+  <div class='page-selector'>
+    <%= page_link :paper,t("page.resource_entries.used"),:url=>text_entries_path(:used_info=>"used"),:method=>:get %>
+  </div>
+  <div class='page-selector'>
+    <%= page_link :paper,t("page.resource_entries.unused"),:url=>text_entries_path(:used_info=>"unused"),:method=>:get %>
+  </div>
+
+  <%# 列出所有文本档案中的标签 %>
+  <%tags = ResourceEntry.tags_of(current_user,:conditions=>["resource_entries.resource_type = ?","TextEntry"]) %>
+  <% tags.each do |tag| %>
+    <div class='page-selector'>
+      <%=page_link :paper, tag.value,:url=>text_entries_path(:tag_id=>tag.id) ,:method=>:get %>
+    </div>
+  <% end %>
+<% end %>

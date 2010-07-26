@@ -1,0 +1,14 @@
+#mindmap_editor_intro #mindmap_editor_actions li{display:inline;margin:0 4px 0 0;}
+
+#mindmap_editor_intro #mindmap_editor_actions li #btn1,
+#mindmap_editor_intro #mindmap_editor_actions li #btn2,
+#mindmap_editor_intro #mindmap_editor_actions li #btn3{display:inline-block;text-indent:-999px;}
+
+#mindmap_editor_intro #mindmap_editor_actions li #btn1,
+#mindmap_editor_intro #mindmap_editor_actions li #btn2,
+#mindmap_editor_intro #mindmap_editor_actions li #btn3{*display:block;*float:left;zoom:1;margin:0 8px 0 0;}
+
+#mindmap_editor_intro #mindmap_editor_actions li #btn1{width:98px;height:22px;background:url(/images/index/mindmap-editor-btns.gif) -1px -1px no-repeat;}
+#mindmap_editor_intro #mindmap_editor_actions li #btn2{width:72px;height:22px;background:url(/images/index/mindmap-editor-btns.gif) -105px -1px no-repeat;}
+#mindmap_editor_intro #mindmap_editor_actions li #btn3{width:72px;height:22px;background:url(/images/index/mindmap-editor-btns.gif) -182px -1px no-repeat;}
+

@@ -1,0 +1,6 @@
+<% content_cell do %>
+  <% form_for [@introductable,@introduction] do |f| %>
+    <%= f.text_area :content %>
+    <%= f.submit t("page.form.submit") %>
+  <% end %>
+<% end %>

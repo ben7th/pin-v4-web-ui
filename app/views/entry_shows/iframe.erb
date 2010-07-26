@@ -1,0 +1,6 @@
+<div>
+  <%@entries.each do |entry|%>
+    <% type = entry.resource_type.underscore %>
+    <%=render :partial=>"entry_shows/parts/info_#{type}",:locals=>{:entry=>entry}%>
+  <% end %>
+</div>

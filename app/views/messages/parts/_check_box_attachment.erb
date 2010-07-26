@@ -1,0 +1,5 @@
+<div>
+  <%= check_box_tag 'entry_ids][]',entry.id,true %>
+  <%= link_to entry.resource.file_name,download_entry_path(entry)%>
+  <%= FileEntry.file_size_with_a_unit(entry.resource.content_file_size) %>
+</div>

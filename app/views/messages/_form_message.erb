@@ -1,0 +1,66 @@
+<%
+reply_message = message.reply_message
+form_id = "form_#{randstr}"
+%>
+
+<%mindpin_remote_form_for message,:html=>{:method=>:post,:id=>"#{form_id}",:class=>"message_form","data-draft-url"=>messages_path,"data-time_update_str"=>t("page.messages.save_at")} do |f| %>
+  <%= hidden_field_tag 'form_id',form_id %>
+  <%= f.hidden_field :uuid,:value=>message.uuid %>
+
+  <% if !reply_message.blank? %>
+    <%= f.hidden_field :reply_to,:value=>message.reply_to,:readonly=>true %>
+  <% end %>
+
+  <%
+  form_participants_hide = hidden_participants_input?(message)
+  form_title_hide = hidden_title_input?(message)
+%>
+
+  <a class="edit_participants_button <%=form_participants_hide ? '':'hide'%>"><%= "修改参与者" %></a>
+  <a class="edit_title_button <%=form_title_hide ? '':'hide'%>"><%= t('page.messages.edit_title') %></a>
+
+  <div class="participants_text_field <%=form_participants_hide ? 'hide':''%>">
+    <div><%=t('page.messages.participants')%></div>
+    <div class="message_participants_inputer" style="width:354px !important;">
+      <input type="text" class="add_input" data-input_name="message[participant_ids][]" data-autocomplete_url="/messages/autocomplete_participants" data-param_name="autocomplete_str" />
+      <div class="autocomplete" style="display:none;"></div>
+      <% form_show_participants(message).each do |user|%>
+        <div class="hide default_participant" id="<%=user.id%>" name="<%= user.name %>"></div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="title_text_field <%=form_title_hide ? 'hide':''%>">
+    <%= f.text_field :title,:value=>form_show_title(message),:style=>"width:350px !important;" %>
+  </div>
+
+  <%=render :partial=>"messages/parts/attachment_list",:locals=>{:message=>message}%>
+
+  <%= f.text_area :content,:show_label=>false,:style=>'width:500px !important;height:200px !important;'%>
+  <%= f.hidden_field :draft,:value=>false %>
+  <span class="ui-button-span">
+    <%= submit_to_remote '',t('page.messages.send'),:url=>messages_path,:method=>:post,:html=>{:id=>"button_submit",:class=>'ui-button'}%>
+  </span>
+  <span class="ui-button-span">
+    <input type="submit" id="button_save_draft" onclick="return false;" class="ui-button" value="<%=t('page.messages.save_draft')%>" />
+  </span>
+  <span class="ui-button-span">
+    <%= submit_to_remote '',t('page.messages.cancel'),:url=>"/messages/#{message.uuid}", :method=>:delete,:html=>{:id=>"button_cancel",:class=>'ui-button'}%>
+  </span>
+  <% if !message.new_record? && message.draft? %>
+    <span id="draft_updated_time"><%="#{I18n.t("page.messages.save_at")}#{time_str_by_distance_of_now(message.updated_at) }" %></span>
+  <% else %>
+    <span id="draft_updated_time"></span>
+  <% end %>
+<%end%>
+
+<script type="text/javascript">
+  try{MessageManager.message_form_load()}catch(e){}
+  try{SwfUploadManager.load()}catch(e){}
+</script>
+<%content_for :javascripts do%>
+  <script type="text/javascript">
+  <%= javascript_include_tag 'views/message_form' %>
+  <%= javascript_include_tag 'views/attachment_swfupload' %>
+  </script>
+<%end%>

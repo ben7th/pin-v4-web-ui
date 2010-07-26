@@ -1,0 +1,18 @@
+<% resource = entry.resource %>
+<div>
+  <%=resource.content.sanitize_clean %>
+</div>
+
+<div>
+  <span>长度</span>
+  <span><%=resource.length %></span>
+</div>
+
+<div>
+  <span>上传时间</span>
+  <span><%= created_at entry %></span>
+</div>
+
+<div class='tags'>
+  <span><%= entry.tags.map{|tag|tag.value}*" "%></span>
+</div>

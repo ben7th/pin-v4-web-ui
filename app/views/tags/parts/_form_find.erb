@@ -1,0 +1,33 @@
+<% tag_values.each do |value| %>
+  <span>
+    <%= value %>
+    <%= link_to "x","/tags/#{(tag_values-[value])*'+'}" %>
+  </span>
+<% end %>
+<%= text_field_tag "tags_str","",:size=>25,:maxlength=>255 %>
+
+<span class="ui-button-span">
+  <button id="search_button" class='ui-button'><%=t("page.form.submit")%></button>
+</span>
+<span class="ui-button-span">
+  <button id="save_button" class='ui-button'><%=t("page.form.save")%></button>
+</span>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript">
+    $("search_button").observe("click",function(){
+      var url = "/tags/<%=tag_values*"+"%>";
+      var array = <%=tag_values.to_json%>
+      if(!$("tags_str").value.blank() && array.indexOf($("tags_str").value) == -1){
+        url = url + "+" + $("tags_str").value;
+      }
+      window.location.href = url;
+    });
+    $("save_button").observe("click",function(){
+      new Ajax.Request("/tag_combos/new", {
+        method:'get',
+        parameters: {'tag_values[]':<%= tag_values.to_json %>}
+      });
+    })
+  </script>
+<% end %>

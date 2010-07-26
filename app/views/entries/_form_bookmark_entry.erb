@@ -1,0 +1,16 @@
+<% remote_form_for entry do |f| %>
+  <%= f.hidden_field "resource_meta[type]", :value=>"BookmarkEntry" %>
+  <span>标题 </span>
+  <div>
+    <%= text_field_tag "entry[resource_meta][data][title]",entry.resource.title,:size=>25,:max_length=>250 %>
+  </div>
+  <span>url </span>
+  <div>
+    <%= text_field_tag "entry[resource_meta][data][url]",entry.resource.url,:size=>25,:max_length=>250 %>
+  </div>
+  <span>site </span>
+  <div>
+    <%= text_field_tag "entry[resource_meta][data][site]",entry.resource.site,:size=>25,:max_length=>250 %>
+  </div>
+  <%= f.submit t("page.form.submit") %>
+<% end %>

@@ -1,0 +1,41 @@
+body{background-color: #000;}
+.nav{color:white;}
+
+.quiet{color:#B5B5B5;}
+
+a{color:#105CB6;}
+a:hover {color:#105CB6;}
+.date{color:#B5B5B5;}
+
+.nav{background-color:#333;}
+.nav a{color:white;}
+.nav .line{background-color:#999;}
+
+.bug-rep{color:#FF7F2F;}
+.bug-rep:hover{color:#FF7F2F;}
+.page-footer{color:white !important;background-color:#333333;}
+
+/*特殊样式*/
+.white-box{background-color:#FFE27F;padding:12px;
+  -moz-border-radius:40px;-webkit-border-radius:40px;}
+
+.white-box .inner{
+  background-color: white;border:solid 1px #F3D15E;padding:18px;
+  -moz-border-radius:28px;-webkit-border-radius:28px;
+}
+
+.white-box h2{line-height:2em;
+  -moz-border-radius:4px;-webkit-border-radius:4px;}
+  .index-box h2 .other{font-size:12px;font-weight:normal;}
+
+
+.ui-button-span{
+  border-color:#B8B8B8 #B8B8B8 #BEBEBE;
+  background-color:#EFEFEF;color:white;
+  background-image:url(/images/piece/button-bg.png);
+  background-position: 0 -144px;
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);}
+  .ui-button-span .ui-button{color:#1E1F1E;padding-left:15px;padding-right:15px;}
+  .ui-button-span .ui-button.disabled{color:#ccc}
+
+.quote_content {background:#F6F6F6;border:solid 1px #E5E5E5}

@@ -1,0 +1,12 @@
+<% content_cell :title=>t('page.users.cell_users_title') do %>
+  <% users = User.all.select {|user| user.email != 'admin@mindpin.com'} %>
+  <div class="mplist-head">
+    <span class="s80"><%=t('page.users.cell_user_name')%></span>
+    <span class="s60"><%=t('page.users.cell_user_student_role')%></span>
+    <span class="s60"><%=t('page.users.cell_user_teacher_role')%></span>
+    <span class="s60"><%=t('page.users.cell_user_admin_role')%></span>
+  </div>
+  <% mplist users do |user| %>
+    <%= render :partial=>"users/info_user",:locals=>{:user=>user} %>
+  <% end %>
+<% end %>

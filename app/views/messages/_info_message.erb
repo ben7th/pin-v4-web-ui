@@ -1,0 +1,52 @@
+<%
+user ||= current_user
+checked ||=false
+show_message = eval "message.#{display_mode}_messages_of(user).last"
+
+reading = message.reading_of(user)
+read_state = "unread" if reading.blank? || reading.is_unread?
+read_state = "read" if !reading.blank? && !reading.is_unread?
+%>
+
+<% if show_message %>
+  <div class="<%= read_state %> info_div">
+
+    <div class="checkbox absolute">
+      <%= check_box_tag 'message_ids[]',message.id,checked %>
+    </div>
+
+    <div class="decorate">
+      <%= time_str_by_distance_of_now(show_message.updated_at) %>
+      <div class="has_attachment boxfix">
+        <%attachment_state = message.full_set_attachment_state_of(user) %>
+        <% if attachment_state[:has_file] %>
+          <div class='attachment_btn_16 fleft'></div>
+        <% end %>
+        <% if attachment_state[:has_picture] %>
+          <div class='image_btn_16 fleft'></div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="members">
+      <%
+      vmp = visible_participants(message,user)
+      vmc = visible_messages_count(message,user)
+    %>
+      <span><%=vmp %></span><%=vmc %>
+
+      <% if message.has_draft_message?(user)%>
+        <%=', ' if !vmp.blank?%>
+        <span class="has_draft"><%=t("page.messages.draft")%></span><%= visible_draft_count(message,user) -%>
+      <% end %>
+    </div>
+
+    <div class="title">
+      <% message.tags.of_user(user).each do|tag| %>
+        <div class="tag"><%= tag.value %></div>
+      <% end %>
+      <%= link_to message_title(message,show_message),polymorphic_url([message],:display_mode=>display_mode) %>
+    </div>
+
+  </div>
+<% end %>

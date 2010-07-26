@@ -1,0 +1,7 @@
+<% if urls.blank? %>
+  <div>没有相关书签</div>
+<% else %>
+  <%urls.each do |url|%>
+    <a href='<%=url%>' target='_blank' style="display:block;"><%=url%></a>
+  <%end%>
+<% end %>

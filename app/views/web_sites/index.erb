@@ -1,0 +1,9 @@
+<% content_cell do %>
+  <% cell_head do %>
+    <span class="ui-button-span">
+      <%= link_to_remote "添加新网站",:url=>new_web_site_path,:method=>:get,:html=>{:class=>"ui-button"}  %>
+    </span>
+  <% end %>
+  <% mplist @web_sites,:for=>WebSite %>
+  <%= will_paginate @web_sites,{:position=>:paper} %>
+<% end %>

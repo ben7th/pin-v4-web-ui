@@ -1,0 +1,18 @@
+<h3><%= container_name %></h3>
+<% if resource_entries.blank? -%>
+<div>nothing...</div>
+<% else -%>
+<ul>
+  <% resource_entries.each do |entry| %>
+    <% if attentions.include? entry %>
+      <%content_tag_for :li,entry,:class=>"highlight" do%>
+        <%= entry.resource_title %>
+      <%end%>
+    <%else%>
+      <%content_tag_for :li,entry do%>
+        <%= entry.resource_title %>
+      <%end%>
+    <%end%>
+  <%end%>
+</ul>
+<% end -%>

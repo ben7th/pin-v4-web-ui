@@ -1,0 +1,6 @@
+-content_cell do
+  -form_tag '/repositories',:method=>:post do
+    .p
+      =text_field_tag 'repo_name'
+    .p
+      =submit_tag '创建'

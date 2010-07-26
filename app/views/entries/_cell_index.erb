@@ -1,0 +1,42 @@
+<% type = params[:type] %>
+
+<% content_cell  do -%>
+  <% cell_head do %>
+    <%= render :partial=>"entries/form_find",:locals=>{:type=>type} %>
+    <%= t("page.entries.all_count") %>
+    <% if params[:used_info]=="used" %>
+      <%= current_user.entries.type_of(type).used(true).count %>
+    <% elsif params[:used_info]=="unused" %>
+      <%= current_user.entries.type_of(type).used(false).count %>
+    <% elsif !params[:tag_id].blank? %>
+      <%= current_user.entries.type_of(type).tagged_of(current_user,Tag.find(params[:tag_id])).count %>
+    <% else %>
+      <%= current_user.entries.type_of(type).count %>
+    <% end %>
+    <%= render :partial=>"entries/parts/operation_bar",:locals=>{:type=>type}%>
+  <%end%>
+  <% mplist entries,:for=>Entry %>
+  <%= will_paginate entries,{:position=>:paper} %>
+<% end -%>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript">
+    new MplistLiCheckBoxSelect('mplist_entries');
+    $("select_all").observe('click',function(){
+      MplistLiCheckBoxSelect.select('mplist_entries',true);
+    });
+    $("cancel_all_select").observe('click',function(){
+      MplistLiCheckBoxSelect.select('mplist_entries',false);
+    });
+    $("select_used").observe('click',function(){
+      MplistLiCheckBoxSelect.select('mplist_entries',true,function(li){
+        return li.down('div').hasClassName('used')
+      });
+    });
+    $("select_unused").observe('click',function(){
+      MplistLiCheckBoxSelect.select('mplist_entries',true,function(li){
+        return li.down('div').hasClassName('unused')
+      });
+    });
+  </script>
+<% end %>

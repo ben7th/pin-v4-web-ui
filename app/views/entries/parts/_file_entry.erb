@@ -1,0 +1,42 @@
+<% resource = entry.resource %>
+<div style="float:left;">
+  <% if resource.is_image? %>
+    <%=render :partial=>"file_entries/parts/show_image",:locals=>{:entry=>entry} %>
+  <% else %>
+    <%=render :partial=>"file_entries/parts/show_file",:locals=>{:entry=>entry} %>
+  <% end %>
+</div>
+
+<div style="float:left;padding:50px 0 0 20px;">
+  <div>
+    <span>文件大小</span>
+    <span><%=resource.file_size_with_a_unit %></span>
+  </div>
+
+  <div>
+    <span>类型</span>
+    <span><%=file_entry_type(resource)%></span>
+  </div>
+
+  <div>
+    <span>MD5</span>
+    <span><%=resource.file_md5%></span>
+  </div>
+
+  <div>
+    <span>上传时间</span>
+    <span><%= created_at entry %></span>
+  </div>
+
+  <div class='tags'>
+    <span><%= entry.tags.map{|tag|tag.value}*" "%></span>
+  </div>
+  <div>
+    <%= link_to "下载",download_entry_path(entry) %>
+    <%= link_to "下载ZIP",zip_download_entry_path(entry) %>
+  </div>
+  <div>
+    <%= link_to "发送到邮箱",send_email_entry_path(entry) %>
+    <%= link_to "发送ZIP到邮箱",send_zip_email_entry_path(entry) %>
+  </div>
+</div>

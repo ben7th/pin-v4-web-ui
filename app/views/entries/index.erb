@@ -1,0 +1,5 @@
+<%content_for :panel do%>
+  <%= render :partial=>"entries/cell_selector" %>
+<%end%>
+
+<%= render :partial=>"/entries/cell_index",:locals=>{:entries=>@entries} %>

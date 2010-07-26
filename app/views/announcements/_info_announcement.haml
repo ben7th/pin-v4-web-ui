@@ -1,0 +1,11 @@
+.info_div
+  .meta
+    = announcement.content
+  %div
+    = qdatetimefull(announcement.updated_at)
+  .action
+    = link_to "查看详情",announcement_path(announcement)
+    = action_to "评论(#{announcement.comments.count})","javascript:void(null)",:class=>"comments_link"
+    -if current_user && current_user.is_admin?
+      = link_to_remote "编辑",:url=>edit_admin_announcement_path(announcement),:method=>:get 
+      = link_to_remote "删除",:url=>admin_announcement_path(announcement),:method=>:delete,:confirm=>"删除？" 

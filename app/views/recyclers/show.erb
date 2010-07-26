@@ -1,0 +1,15 @@
+<% content_cell :title=>"话题回收站"do -%>
+  <%mplist @recycler.topics do |topic| -%>
+    <span><%=qlink topic %></span>
+    <span><%=action_to "恢复",recover_recycler_path(:type=>topic.class.to_s,:id=>topic.id),:method=>:put,:confirm=>"确认恢复？" %></span>
+    <span><%=action_to "删除",recycler_path(:type=>topic.class.to_s,:id=>topic.id),:method=>:delete,:confirm=>"确认删除？" %></span>
+  <% end -%>
+<% end -%>
+
+<% content_cell :title=>"回复回收站"do -%>
+  <%mplist @recycler.posts do |post| -%>
+    <span><%= post.content %></span>
+    <span><%=action_to "恢复",recover_recycler_path(:type=>post.class.to_s,:id=>post.id),:method=>:put,:confirm=>"确认恢复？"%></span>
+    <span><%=action_to "删除",recycler_path(:type=>post.class.to_s,:id=>post.id),:method=>:delete,:confirm=>"确认删除？" %></span>
+  <% end -%>
+<% end -%>

@@ -1,0 +1,17 @@
+development:
+  adapter: mysql
+  encoding: utf8
+  database: pin_v4_web_ui_dev
+  username: root
+  password: root
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: mysql
+  encoding: utf8
+  database: pin_v4_web_ui_test
+  username: root
+  password: root
+  pool: 5
+  timeout: 5000

@@ -1,0 +1,57 @@
+<%= t('page.form.select') %>
+<%= link_to t('page.entries.all'),"javascript:void(null)",:id=>'select_all' %>
+<%= link_to t('page.entries.none'),"javascript:void(null)",:id=>'cancel_all_select' %>
+<%= link_to t('page.entries.used'),"javascript:void(null)",:id=>'select_used' %>
+<%= link_to t('page.entries.unused'),"javascript:void(null)",:id=>'select_unused' %>
+<span class="ui-button-span">
+  <%= mp_submit_to_remote 'delete',t('page.form.delete'),:ul=>"mplist_entries",:url =>destroys_entries_path,:method=>:delete,:html=>{:class=>'ui-button'} %>
+</span>
+<span class="ui-button-span">
+  <%= mp_submit_to_remote 'edit_tags',t('page.messages.edit_tags'),:ul=>"mplist_entries", :url =>edit_tags_entries_path,:method=>:get,:html=>{:class=>'ui-button'} %>
+</span>
+<% if type=='file' %>
+  <span>
+    <% order_by_size = 'size_asc'
+    arrow_size = ""
+    arrow_size = '↓' if params[:order_by] == 'size_desc'
+    if params[:order_by] == 'size_asc'
+      arrow_size = "↑"
+      order_by_size = 'size_desc'
+    end
+  %>
+    <%= link_to "#{t("page.file_entries.file_size")}#{arrow_size}",finder_url('order_by',order_by_size)%>
+  </span>
+<% elsif type=='text' %>
+  <span>
+    <% order_by_length = 'length_asc'
+    arrow_length = ""
+    arrow_length = '↓' if params[:order_by] == 'length_desc'
+    if params[:order_by] == 'length_asc'
+      arrow_length = "↑"
+      order_by_length = 'length_desc'
+    end
+  %>
+    <%= link_to "#{t("page.file_entries.file_size")}#{arrow_length}",finder_url('order_by',order_by_length)%>
+  </span>
+<% end %>
+
+<span>
+  <% order_by_time = 'created_at_asc'
+  arrow_time = ''
+  arrow_time = '↓' if !params[:order_by]
+  arrow_time = '↓' if params[:order_by] == 'created_at_desc'
+  if params[:order_by] == 'created_at_asc'
+    arrow_time = '↑'
+    order_by_time = 'created_at_desc'
+  end
+%>
+  <%= link_to "#{t("page.file_entries.file_created_at")}#{arrow_time}",finder_url('order_by',order_by_time) %>
+</span>
+
+<% if type == 'subscription' %>
+  <div>
+    <span class="ui-button-span">
+      <%= link_to_remote "创建订阅",:url=>new_entry_path(:type=>type.to_s),:method=>:get,:html=>{:class=>'ui-button'} %>
+    </span>
+  </div>
+<% end %>

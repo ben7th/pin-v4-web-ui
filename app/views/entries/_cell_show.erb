@@ -1,0 +1,15 @@
+<% resource = entry.resource %>
+<div style="margin:10px">
+  <%=flash_info%>
+</div>
+<% if resource.is_a?(TextEntry) %>
+  <%=render :partial=>"entries/parts/text_entry",:locals=>{:entry=>entry}%>
+<% end %>
+
+<% if resource.is_a?(FileEntry) %>
+  <%=render :partial=>"entries/parts/file_entry",:locals=>{:entry=>entry}%>
+<% end %>
+
+<% if resource.is_a?(SubscriptionEntry) %>
+  <%=render :partial=>"entries/parts/subscription_entry",:locals=>{:entry=>entry} %>
+<% end %>

@@ -1,0 +1,23 @@
+<% checked ||=false %>
+
+<div class="<%=text_entry.used_for.blank? ? 'unused':'used'%> relative mdiv">
+  <span class="s40" class="checkbox absolute">
+    <%= check_box_tag 'entry_ids[]',text_entry.entry.id,checked%>
+  </span>
+  <span class="s300">
+    <%= text_entry.content %>
+  </span>
+  <span class="s100">
+    <%= time_str_by_distance_of_now(text_entry.created_at) %>
+  </span>
+  <span class="s100">
+    <%= used_for_link_for_entry(text_entry) %>
+  </span>
+  <span class="s100">
+    <span class="s100">
+      <% text_entry.entry.tags_of(current_user).each do |tag| %>
+        <%= render :partial=>'tags/info_only_tag',:locals=>{:tag=>tag,:taggable=>text_entry.entry} %>
+      <% end %>
+    </span>
+  </span>
+</div>

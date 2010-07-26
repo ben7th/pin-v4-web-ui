@@ -1,0 +1,11 @@
+<!-- 这个子模板用在个人页的分享中，shares/meta_share模版中 -->
+<div class="info_div paddingb30 nb">
+  <div class="decorate">
+    <%= render :partial=>"/shares/parts/share_operate_with_two_squares",:locals=>{:shareable=>rss_item} %>
+  </div>
+  <div class="meta">
+    <%= render :partial=>"/rss_items/meta_rss_item_brief",:locals=>{:rss_item=>rss_item} %>
+  </div>
+
+</div>
+

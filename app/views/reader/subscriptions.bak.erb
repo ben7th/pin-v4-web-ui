@@ -1,0 +1,42 @@
+<% content_for :panel do %>
+  <% mplist current_user.entries.type_of('subscription').by_updated_at(:desc),:for=>Entry,:class=>"entries no_line" do |entry| %>
+    <%=render :partial=>"/reader/parts/info_subscription_entry",:locals=>{:entry=>entry}%>
+  <% end %>
+<% end %>
+
+<% field_value = '输入rss源 博客地址 或者QQ号' %>
+<% content_cell do %>
+  <div class="cin">
+    <% form_remote_tag :url=>entries_path,:html=>{:id=>'form_add_subscription_entry'} do %>
+      <h3>快速增加订阅</h3>
+      <%= text_field_tag :url,field_value,:size=>50,:maxlength=>255,:class=>"text url_text_field_of_feed quiet" %>
+      <%= hidden_field_tag :type,'subscription',:size=>50,:maxlength=>255 %>
+      <%= hidden_field_tag :sign,'reader',:size=>50,:maxlength=>255 %>
+      <span class="ui-button-span">
+        <%= submit_tag "订阅",:class=>'ui-button submit_button_need_control',:onclick=>"loading_tip()" %>
+      </span>
+    <% end %>
+    <div class="loadingbox">
+      <div class="loading-tip" style="display:none;">正在处理...</div>
+      <div class="loading-img" style="display:none;"></div>
+      <div class="messages_of_add_subscription"></div>
+    </div>
+    <div>
+      <h3>更新摘要</h3>
+      <% mplist SubscriptionEntry.has_unread_subscriptions(current_user),:for=>SubscriptionEntry,:class=>"subscription_entries no_line" do |subscription| %>
+        <%=render :partial=>"/reader/parts/has_unread_subscription",:locals=>{:subscription=>subscription}%>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<%content_for :javascripts do%>
+  <%= javascript_include_tag 'views/rss_feed' %>
+  <script type="text/javascript">
+    function loading_tip(){
+      $$('.loadingbox .messages_of_add_subscription')[0].update('');
+      $$('.loadingbox .loading-tip')[0].setStyle({'display':''});
+      $$('.loadingbox .loading-img')[0].setStyle({'display':''});
+    }
+    new TextFieldTip($('form_add_subscription_entry'),'<%=field_value%>');
+  </script>
+<%end%>

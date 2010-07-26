@@ -1,0 +1,18 @@
+- grid_classname = get_grid_classname
+- yield_partial = @mindpin_layout.yield_partial
+
+%body.echo
+
+  %div{:class=>['page-warp',grid_classname]*' '}
+    .page-container
+      =render :partial=>'layouts/parts/nav' if !@mindpin_layout.hide_nav
+      .page-content
+        = yield_partial.nil? ? yield : render(:partial=>"/layouts/yield/#{yield_partial}")
+
+  = render :partial=>'layouts/parts/footer',:locals=>{:classname=>grid_classname} if !@mindpin_layout.hide_footer
+
+  #page-hide.hide
+    =yield :hide
+    %iframe{:name=>"upload_frame",:style=>"width:1px;height:1px;border:0px;",:src=>"about:blank"}
+
+  = render :partial=>'layouts/parts/javascripts' if !@mindpin_layout.put_js_in_head

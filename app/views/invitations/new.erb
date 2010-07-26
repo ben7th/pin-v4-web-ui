@@ -1,0 +1,5 @@
+<%content_for :panel do%>
+  <%=render :partial=>"contacts/cell_selector"%>
+<%end%>
+
+<%= render :partial=>"invitations/form_invitation",:locals=>{:invitation=>current_user.invitations.new} %>

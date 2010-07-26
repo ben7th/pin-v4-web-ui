@@ -1,0 +1,11 @@
+<div id="<%="attachment_swf_upload_#{randstr}"%>" class="attachment_swf_upload" data-session_key="<%=ActionController::Base.session_options[:key]%>" data-session_value="<%=cookies[ActionController::Base.session_options[:key]]%>" data-authenticity_token="<%= form_authenticity_token %>" data-input_name="entry[resource_meta][data][content]" data-upload_url="<%=message_attachments_path%>">
+  <div id="<%="swf_upload_attachment_list_#{randstr}"%>" class="swf_upload_attachment_list">
+    <% unless message.entry_ids.count == 0 %>
+      <% message.entries.each do |resource| %>
+        <%= render :partial=>"messages/parts/check_box_attachment",:locals=>{:entry=>resource} %>
+      <% end %>
+    <% end %>
+  </div>
+  <div id="<%="swf_upload_file_list_#{randstr}"%>" class="swf_upload_file_list"></div>
+  <span id="<%="swf_upload_add_file_btn_#{randstr}"%>" class="swf_upload_add_file_btn"></span>
+</div>

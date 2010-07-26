@@ -1,0 +1,13 @@
+<% shareable = share.shareable %>
+
+<% if shareable.is_a?(RssItem) %>
+  <%= render :partial=>"/rss_items/shared_rss_item",:locals=>{:rss_item=>shareable} %>
+<% elsif shareable.is_a?(Share) && shareable.kind == Share::TALK %>
+  <%=link_to "@#{shareable.creator.name}",shareable.creator%>：<%= share_content(shareable) %>
+  <%= source_share_count(shareable) %>
+  <%= render :partial=>"/shares/parts/show_share_attachment_and_entries",:locals=>{:share=>shareable} %>
+  <%= mindmap_thumb(shareable) %>
+  <%= bugs_content(shareable) %>
+<% elsif shareable.is_a?(Share)%>
+  <%= meta shareable %>
+<% end %>

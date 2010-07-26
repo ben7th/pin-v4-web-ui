@@ -1,0 +1,25 @@
+<div class="info_div">
+  <div class="decorate">
+    <div>
+      <%=logo message.creator,:tiny%>
+    </div>
+    <span><%=updated_from message%></span>
+  </div>
+  <div class='meta'>
+    <div>
+      <span><%= message.creator.name%></span>
+    </div>
+    <div><%= ct(message.content) %></div>
+    <% unless message.entries.type_of(FileEntry).count == 0 %>
+      <div>
+        <span style="font-weight:bold;"><%= message.entries.type_of(FileEntry).count %><%= t("page.messages.count_attachments") %></span> —
+        <span>
+          <%= link_to t("page.messages.down_load_all_attachments"),zip_down_load_message_path(message) %>
+        </span>
+      </div>
+      <% mplist message.entries.type_of(FileEntry),:for=>[message,Entry],:class=>'attachments' do |entry| %>
+        <%= render :partial=>"entries/meta_entry",:locals=>{:entry=>entry} %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

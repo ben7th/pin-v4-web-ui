@@ -1,0 +1,7 @@
+<% mindpin_form_for entry,:url=>collector_create_path do |f| %>
+  <%= hidden_field_tag "title",params[:title]||"" %>
+  <%= hidden_field_tag "web_site_url",params[:web_site_url] %>
+  <%= f.hidden_field "resource_meta[type]", :value=>"TextEntry" %>
+  <%= text_area_tag "entry[resource_meta][data][content]","",:style=>'width:280px !important;' %>
+  <%= f.submit t("page.form.submit") %>
+<% end %>

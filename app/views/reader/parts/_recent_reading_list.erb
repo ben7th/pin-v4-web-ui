@@ -1,0 +1,14 @@
+<%readables = user.recent_readings.map{|re|re.readable}%>
+<%readable ||= nil%>
+<%readables = readables-[readable]%>
+<h3>最近读过</h3>
+<div class="marginb3em">
+  <% mplist readables,:for=>Reading,:class=>"readings no-line" do |ra|%>
+    <% if ra.is_a?(RssItem) %>
+      <%= render :partial=>"/rss_items/recently_read_rss_item_for_random_read",:locals=>{:rss_item=>ra} %>
+    <% end %>
+  <% end %>
+  <%if !readables.blank?%>
+    <div class="textright marginr3em margint5"><%=link_to "<em>&gt;&gt;</em> 更多 ",user_readings_path(user)%></div>
+  <%end%>
+</div>

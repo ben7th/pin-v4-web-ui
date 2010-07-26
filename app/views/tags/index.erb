@@ -1,0 +1,5 @@
+<% content_for :panel do %>
+  <%= render :partial=>"tags/cell_selector" %>
+<% end %>
+
+<%= render :partial=>"tags/cell_index",:locals=>{:tags => @tags} %>

@@ -1,0 +1,25 @@
+<%self_marks = image_marks.select{|mark|mark.creator == current_user}%>
+<%others_marks = image_marks.select{|mark|mark.creator != current_user}%>
+
+<div style="float:right;" class="mark_tag_list">
+  <%mplist image_marks,:for=>Remark::ImageMark,:hide_empty_text=>true do |mark|%>
+    <%=render :partial=>"image_marks/info_image_mark",:locals=>{:image_mark=>mark}%>
+  <% end %>
+</div>
+
+<div class="self_mark">
+  <% self_marks.each do |mark|%>
+      <div id="mark_<%=mark.id%>" class="mark hl" style="<%=image_mark_style(mark)%>">
+        <div></div>
+      </div>
+    <div id="mark_<%=mark.id%>_content" class="mark_content hide"><%=mark.content%></div>
+  <% end %>
+</div>
+<div class="others_mark">
+  <% others_marks.each do |mark|%>
+    <div id="mark_<%=mark.id%>" class="mark hl" style="<%=image_mark_style(mark)%>">
+       <div></div>
+    </div>
+    <div id="mark_<%=mark.id%>_content" class="mark_content hide"><%=mark.content%></div>
+  <% end %>
+</div>

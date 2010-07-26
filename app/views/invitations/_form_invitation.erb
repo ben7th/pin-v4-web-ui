@@ -1,0 +1,8 @@
+<% content_cell do %>
+  <%= flash[:notice] %>
+  <% mindpin_remote_form_for invitation do |f| %>
+    <%= f.text_field :contact_email, :size=>25, :maxlength=>250, :class=>"text" %>
+    <%= f.text_area :content %>
+    <%= f.submit t("page.form.submit") %>
+  <% end %>
+<% end %>

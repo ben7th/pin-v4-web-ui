@@ -1,0 +1,3 @@
+<% remarks = web_site.comments.find(:all,:limit=>5,:order=>"created_at desc") %>
+<% mplist remarks,:for=>[web_site,Comment] %>
+<a href='<%=web_site_path(web_site)%>' target='_blank'>查看更多</a>

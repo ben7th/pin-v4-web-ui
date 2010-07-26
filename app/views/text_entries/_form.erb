@@ -1,0 +1,8 @@
+<%= error_messages_for :text_entry %>
+<% form_for [@execution,@container,@text_entry] do |f| %>
+  <%= f.label "资源名称：" %>
+  <%= f.text_field :title %><br/><br/>
+  <%= f.label "文本内容：" %>
+  <%= f.text_area :content %><br/><br/>
+  <%= f.submit "确定" %>
+<%end%>

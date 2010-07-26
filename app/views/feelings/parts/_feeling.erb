@@ -1,0 +1,24 @@
+<% good_url = polymorphic_url([feelable,:feeling],:evaluation=>Feeling::GOOD) %>
+<%good_count = feelable.count_of_feel_good%>
+<% bad_url = polymorphic_url([feelable,:feeling],:evaluation=>Feeling::BAD) %>
+<%bad_count = feelable.count_of_feel_bad%>
+<%feel = feelable.feel_of(current_user)%>
+
+<div class="feeling" data-feel="<%=feel%>">
+  <div class="option">
+    <a class="btn <%= feel == Feeling::GOOD ? 'select':'' %>" data-feel="GOOD" data-url="<%=good_url%>" data-method="put" data-count="<%=good_count%>" data-title="好">好(<%=good_count%>)</a>
+  </div>
+  <div class="option">
+    <a class="btn <%= feel == Feeling::BAD ? 'select':'' %>" data-feel="BAD" data-url="<%=bad_url%>" data-method="put" data-count="<%=bad_count%>" data-title="差">差(<%=bad_count%>)</a>
+  </div>
+</div>
+<style type="text/css">
+  .feeling a.btn.select{
+    cursor:default;
+    text-decoration:none;
+    color:white;
+  }
+  .feeling{
+    
+  }
+</style>

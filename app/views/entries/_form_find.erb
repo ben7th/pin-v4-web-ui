@@ -1,0 +1,16 @@
+<div>
+  <span>keyword</span>
+  <%= text_field_tag :keyword,"",:size=>25,:maxlength=>255,:class=>"text" %>
+  <span class="ui-button-span">
+    <button id="search_button" class="ui-button"><%=t("page.form.find")%></button>
+  </span>
+
+  <% content_for :javascripts do %>
+    <script type="text/javascript">
+      $("search_button").observe("click",function(){
+        var url = "/entries/search?keyword="+$("keyword").value+"&type="+"<%= type %>";
+        window.location = url;
+      });
+    </script>
+  <% end %>
+</div>
