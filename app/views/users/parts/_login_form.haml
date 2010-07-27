@@ -13,9 +13,9 @@
   .field
     %label=t('activerecord.attributes.user.password')
     =password_field_tag :password,params[:password]
-  .login-submit.clearfix
+  .form_actions.clearfix
     .fleft.remember-me
-      %span=check_box_tag :remember_me,params[:remember_me],false,:class=>'checkbox'
+      %span=check_box_tag :remember_me,params[:remember_me],false
       %span 记住我
     .fright
-      =submit_tag t('page.index.login'),:class=>"ui-button"
+      =submit_tag '登 录',:class=>"button"

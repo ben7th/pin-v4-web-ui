@@ -3,8 +3,8 @@ body{background-color: #000;}
 
 .quiet{color:#B5B5B5;}
 
-a{color:#105CB6;}
-a:hover {color:#105CB6;}
+a{color:#1681FF;}
+a:hover {color:#1681FF;}
 .date{color:#B5B5B5;}
 
 .nav{background-color:#333;}
@@ -39,3 +39,5 @@ a:hover {color:#105CB6;}
   .ui-button-span .ui-button.disabled{color:#ccc}
 
 .quote_content {background:#F6F6F6;border:solid 1px #E5E5E5}
+
+.loud{color:#FF7F2F;}

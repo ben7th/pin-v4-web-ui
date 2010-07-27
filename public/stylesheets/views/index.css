@@ -1,7 +1,8 @@
 body{background-color:#21223C;background-image:url(/images/index/index-bg.png);background-repeat:repeat-x;}
 .page-content{color:#ddd;}
-.login-form input.text{width:325px;}
+.login-form input.text{width:304px;}
 .login-form .text{border:0px;}
+.login-form .form_actions{width:318px;line-height:30px;}
 
 h3{margin-bottom:15px;}
 

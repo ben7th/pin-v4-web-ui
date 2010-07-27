@@ -2,6 +2,7 @@ $(document).ready(function() {
   // 添加classname到对应的form field
   $('html body input[type="text"], html body input[type="password"]').addClass("text");
   $('input[type="submit"]').addClass("submit");
+  $('input[type="checkbox"]').addClass("checkbox");
   
   // 给校验中出现error的字段添加样式
   $("form .fieldWithErrors").closest("div.field").addClass("error")

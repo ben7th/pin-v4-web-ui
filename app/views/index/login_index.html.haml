@@ -2,19 +2,39 @@
 
 .grid_24.margint60.paddingb3em
 
-  .grid_10.alpha
+  .grid_9.alpha
     .login.padding15.marginb10
-      %h3 欢迎访问 MindPin v4 预览版
-      =render :partial=>'users/parts/login_form'
-      =link_to "忘记密码了？",forgot_password_form_path
+      %h3 欢迎访问，请在此登录
+      .marginb10=render :partial=>'users/parts/login_form'
+      =link_to "<em>&gt;</em> 忘记密码了？",forgot_password_form_path
     .login.dialog.padding15
       =render :partial=>'index/parts/index_bugs'
 
-  .grid_14.omega
-    .login.dialog.padding15.font13
-      %div 还没有账号？
-      .blackloud 注册新的 MindPin 账号，只需30秒。
-      %div=link_to "注册",signup_path,:class=>'reg-button hidetext'
+  .grid_15.omega
+    .login.dialog.padding15.marginb10.clearfix.font13
+      .fleft=link_to "注册",signup_path,:class=>'reg-button hidetext'
+      .fleft.margint10.marginl10
+        %div
+          还没有账号..？
+          %span.loud 注册新的 MindPin 账号，只需30秒~
+    .clearfix.marginb10
+      .grid_3.alpha
+        .login.dialog.padding15.aligncenter
+          思维导图2.0
+      .grid_3
+        .login.dialog.padding15.aligncenter
+          ……
+      .grid_3
+        .login.dialog.padding15.aligncenter
+          ……
+      .grid_3
+        .login.dialog.padding15.aligncenter
+          ……
+      .grid_3.omega
+        .login.dialog.padding15.aligncenter
+          ……
+    .login.dialog.padding15
+      %h3 最新公告
       =last_announcement
 
 

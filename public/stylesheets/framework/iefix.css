@@ -7,11 +7,9 @@ img { -ms-interpolation-mode:bicubic; }
 fieldset { padding-top:0; }
 
 /*form*/
-textarea { overflow:auto; }
-input{position:relative;top:-1px;zoom:1;}
-input.text, input.title{padding:0.4em 0.25em 0em;}
-.ui-button-span {display:inline;;position:relative;top:-1px;zoom:1}
-.ui-button-span .ui-button{margin:0px;position:relative;top:1px;display:inline;padding-top:2px;zoom:1}
+textarea {overflow:auto;}
+input.text {font-family:宋体;vertical-align:baseline;padding:10px 7px 4px;zoom:1;}
+form .submit{font-family:宋体;zoom:1;}
 
 /************/
 
