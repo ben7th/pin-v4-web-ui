@@ -1,22 +1,21 @@
 -login_fbox ||= false
 -if login_fbox
   -action = {:controller=>'sessions',:action=>'login_fbox_create'}
-  -html_param = {:class=>'common_form login-form',:multipart=>true,:target => 'upload_frame'}
+  -html_param = {:class=>'login-form',:multipart=>true,:target => 'upload_frame'}
 -action ||= {:controller=>'sessions',:action=>'create'}
--html_param ||= {:class=>'common_form login-form'}
+-html_param ||= {:class=>'login-form'}
 
 -form_tag(action,html_param) do
   .form_error.hide
-  .p
+  .field
     %label 电子邮箱
-    =text_field_tag :email,params[:email],:class=>'text'
-  .p
+    =text_field_tag :email,params[:email]
+  .field
     %label=t('activerecord.attributes.user.password')
-    =password_field_tag :password,params[:password],:class=>'text'
-  .login-submit
+    =password_field_tag :password,params[:password]
+  .login-submit.clearfix
     .fleft.remember-me
       %span=check_box_tag :remember_me,params[:remember_me],false,:class=>'checkbox'
-      %span=t('page.index.remember_me')
+      %span 记住我
     .fright
-      %span.ui-button-span
-        =submit_tag t('page.index.login'),:class=>"ui-button"
+      =submit_tag t('page.index.login'),:class=>"ui-button"

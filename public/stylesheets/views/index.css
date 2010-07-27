@@ -1,10 +1,15 @@
-.login-form{margin:1em 0 10px 0;padding:1em 0 0 0;color:#333;border-top:solid 1px #EAEAEA;}
-  .login-form label{height:2em;line-height:2em;display:block;}
-  .login-form div.p.submit{margin:10px 0 0 50px;}
+body{background-color:#21223C;background-image:url(/images/index/index-bg.png);background-repeat:repeat-x;}
+.page-content{color:#ddd;}
+.login-form input.text{width:325px;}
+.login-form .text{border:0px;}
 
-  .login-form input.checkbox{vertical-align:middle;margin-top:1px;}
-  .login-form .remember-me{line-height:25px;}
-  .login-form .login-submit{margin-top:2em;overflow:hidden;width:208px;}
+h3{margin-bottom:15px;}
+
+.login{border:1px solid #28283F;}
+.login{-moz-border-radius:10px;-webkit-border-radius:10px;}
+.login{background:url(/images/index/dialog-login-background.png);}
+.login{-moz-box-shadow:0 0 10px #040307;-webkit-box-shadow:0 0 10px #040307;}
+.login.dialog{background:url(/images/index/dialog-message-background.png);}
 
 .index-footer{padding:9px;clear:both;overflow:hidden;color:white;}
 .index-footer{position:relative;margin-top:-36px;clear:both;}
@@ -15,8 +20,6 @@
 
 .reg-form{float:left;}
   .reg-form .reg-submit{margin-top:2em;}
-
-
 
   .reg-step-1 p{color:#7D706A;}
 
