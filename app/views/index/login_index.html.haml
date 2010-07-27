@@ -17,4 +17,4 @@
       %div 还没有账号？
       .blackloud 注册新的 MindPin 账号，只需30秒。
       %div=link_to "注册",signup_path,:class=>'reg-button hidetext'
-      =render :text=>Announcement.last.content
+      =last_announcement

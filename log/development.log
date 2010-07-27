@@ -1067,3 +1067,168 @@ Migrating to CreateComments (20100714070426)
   [4;35;1mSQL (1.7ms)[0m   [0mSHOW FIELDS FROM `work_boards`[0m
   [4;36;1mSQL (1.2ms)[0m   [0;1mdescribe `work_boards`[0m
   [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `work_boards`[0m
+DEPRECATION WARNING: require "activesupport" is deprecated and will be removed in Rails 3. Use require "active_support" instead. (called from /usr/local/bin/rubyee/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/activesupport.rb:2)
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead. (called from /usr/local/bin/rubyee/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/activerecord.rb:2)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing IndexController#index (for 192.168.1.3 at 2010-07-27 13:26:25) [GET]
+  [4;36;1mEntry Columns (39.0ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (19.3ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (17.7ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (13.2ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (0.6ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (19.6ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mOnlineRecord Load (8.4ms)[0m   [0;1mSELECT * FROM `online_records` [0m
+  [4;35;1mOnlineRecord Columns (4.5ms)[0m   [0mSHOW FIELDS FROM `online_records`[0m
+  [4;36;1mOnlineRecord Load (0.8ms)[0m   [0;1mSELECT * FROM `online_records` WHERE (`online_records`.`key` = '3aa05a3d-ed11-4f4c-bfd6-be8fb4926827') LIMIT 1[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mOnlineRecord Create (0.4ms)[0m   [0;1mINSERT INTO `online_records` (`created_at`, `updated_at`, `user_id`, `key`) VALUES('2010-07-27 05:26:25', '2010-07-27 05:26:25', NULL, '3aa05a3d-ed11-4f4c-bfd6-be8fb4926827')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mAnnouncement Load (4.7ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering index/login_index
+Rendered layouts/parts/_require_css (11.7ms)
+Rendered users/parts/_login_form (11.2ms)
+  [4;35;1mBug Load (13.8ms)[0m   [0mSELECT * FROM `bugs` ORDER BY created_at desc LIMIT 3[0m
+  [4;36;1mBug Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `bugs`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM `bugs` [0m
+Rendered index/parts/_index_bugs (38.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+
+ActionView::TemplateError (undefined method `content' for nil:NilClass) on line #20 of app/views/index/login_index.html.haml:
+17:       %div 还没有账号？
+18:       .blackloud 注册新的 MindPin 账号，只需30秒。
+19:       %div=link_to "注册",signup_path,:class=>'reg-button hidetext'
+20:       =render :text=>Announcement.last.content
+
+    app/views/index/login_index.html.haml:20:in `_run_haml_app47views47index47login_index46html46haml'
+    haml (3.0.13) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.13) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/index_controller.rb:4:in `index'
+    app/controllers/application_controller.rb:109:in `transaction_filter'
+    app/controllers/application_controller.rb:94:in `catch_access_exception'
+    haml (3.0.13) rails/./lib/sass/plugin/rack.rb:41:in `call'
+    app/middlewares/flash_session_cookie_middleware.rb:14:in `call'
+
+Rendered rescues/_trace (84.2ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing IndexController#index (for 192.168.1.3 at 2010-07-27 13:27:39) [GET]
+  [4;35;1mEntry Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.7ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (2.5ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering index/login_index
+Rendered layouts/parts/_require_css (0.7ms)
+Rendered users/parts/_login_form (15.0ms)
+  [4;36;1mBug Load (0.9ms)[0m   [0;1mSELECT * FROM `bugs` ORDER BY created_at desc LIMIT 3[0m
+  [4;35;1mBug Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `bugs`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `bugs` [0m
+Rendered index/parts/_index_bugs (133.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+
+ActionView::TemplateError (undefined method `content' for nil:NilClass) on line #20 of app/views/index/login_index.html.haml:
+17:       %div 还没有账号？
+18:       .blackloud 注册新的 MindPin 账号，只需30秒。
+19:       %div=link_to "注册",signup_path,:class=>'reg-button hidetext'
+20:       =Announcement.last.content
+
+    app/views/index/login_index.html.haml:20:in `_run_haml_app47views47index47login_index46html46haml'
+    haml (3.0.13) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.13) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/index_controller.rb:4:in `index'
+    app/controllers/application_controller.rb:109:in `transaction_filter'
+    app/controllers/application_controller.rb:94:in `catch_access_exception'
+    haml (3.0.13) rails/./lib/sass/plugin/rack.rb:41:in `call'
+    app/middlewares/flash_session_cookie_middleware.rb:14:in `call'
+
+Rendered rescues/_trace (51.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing IndexController#index (for 192.168.1.3 at 2010-07-27 13:32:28) [GET]
+  [4;36;1mEntry Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (0.7ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mOnlineRecord Load (1.1ms)[0m   [0;1mSELECT * FROM `online_records` [0m
+  [4;35;1mOnlineRecord Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `online_records`[0m
+  [4;36;1mOnlineRecord Load (0.5ms)[0m   [0;1mSELECT * FROM `online_records` WHERE (`online_records`.`key` = '3aa05a3d-ed11-4f4c-bfd6-be8fb4926827') LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mOnlineRecord Update (0.7ms)[0m   [0;1mUPDATE `online_records` SET `updated_at` = '2010-07-27 05:32:29' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mAnnouncement Load (2.8ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering index/login_index
+Rendered layouts/parts/_require_css (1.2ms)
+Rendered users/parts/_login_form (15.3ms)
+  [4;35;1mBug Load (0.4ms)[0m   [0mSELECT * FROM `bugs` ORDER BY created_at desc LIMIT 3[0m
+  [4;36;1mBug Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `bugs`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `bugs` [0m
+Rendered index/parts/_index_bugs (19.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+
+ActionView::TemplateError (undefined method `content' for nil:NilClass) on line #20 of app/views/index/login_index.html.haml:
+17:       %div 还没有账号？
+18:       .blackloud 注册新的 MindPin 账号，只需30秒。
+19:       %div=link_to "注册",signup_path,:class=>'reg-button hidetext'
+20:       =Announcement.last.content
+
+    app/views/index/login_index.html.haml:20:in `_run_haml_app47views47index47login_index46html46haml'
+    haml (3.0.13) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.13) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/index_controller.rb:4:in `index'
+    app/controllers/application_controller.rb:109:in `transaction_filter'
+    app/controllers/application_controller.rb:94:in `catch_access_exception'
+    haml (3.0.13) rails/./lib/sass/plugin/rack.rb:41:in `call'
+    app/middlewares/flash_session_cookie_middleware.rb:14:in `call'
+
+Rendered rescues/_trace (51.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing IndexController#index (for 192.168.1.3 at 2010-07-27 13:32:51) [GET]
+  [4;35;1mEntry Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.8ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (1.1ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering index/login_index
+Rendered layouts/parts/_require_css (0.9ms)
+Rendered users/parts/_login_form (13.7ms)
+  [4;36;1mBug Load (0.6ms)[0m   [0;1mSELECT * FROM `bugs` ORDER BY created_at desc LIMIT 3[0m
+  [4;35;1mBug Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `bugs`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `bugs` [0m
+Rendered index/parts/_index_bugs (19.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendered layouts/parts/_css (214.5ms)
+Rendered layouts/parts/_htmlhead (219.3ms)
+Rendered layouts/parts/_nav (5.9ms)
+Rendered layouts/parts/_footer (2.1ms)
+Rendered layouts/parts/_javascripts (67.5ms)
+Rendered layouts/parts/_htmlbody (92.1ms)
+Response body was encoded with gzip
+Completed in 917ms (View: 368, DB: 13) | 200 OK [http://192.168.1.8/]
