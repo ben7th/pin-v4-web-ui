@@ -161,7 +161,7 @@ class UsersController < ApplicationController
   end
   
   def _deal_forgot_password(email)
-    return flash[:error] = "请填写邮箱，才能帮你重设密码。。" if email.blank?
+    return flash[:error] = "请正确填写邮箱，我们才能帮你重设密码。。" if email.blank?
     
     user = User.find_by_email(email)
     return flash[:error] = "对不起，不存在邮箱为 #{params[:email]} 的用户。" if user.blank?

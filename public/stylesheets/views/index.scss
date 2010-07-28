@@ -11,7 +11,7 @@
   .form_actions{width:318px;}
 }
 
-.login,.pad{
+.dialog,.pad{
   border:1px solid #242438;
   @include border-radius(10px);
   @include box-shadow(0 0 10px #040307);
@@ -44,8 +44,11 @@
     }
   }
 }
-.login{background:url(/images/index/dialog-login-background.png);}
+.dialog{background:url(/images/index/dialog-login-background.png);}
 .pad{background:url(/images/index/dialog-message-background.png);}
+
+.dialog span.to_reg{font-size:12px;font-weight:normal;}
+.dialog.index span.to_reg{display:none;}
 
 .reg-button{
   background-image:url(/images/reg.png);

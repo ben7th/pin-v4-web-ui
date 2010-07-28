@@ -3,10 +3,8 @@
 .grid_24.margint60.paddingb3em
 
   .grid_9.alpha
-    .login
-      %h3 欢迎访问，请在此登录
-      .marginb10=render :partial=>'auth/parts/login_form'
-      =link_to "<em>&gt;</em> 忘记密码了？",forgot_password_form_path
+    .dialog.index
+      =render :partial=>'auth/parts/login_dialog'
     .pad
       =render :partial=>'auth/parts/bugs'
 

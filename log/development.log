@@ -17528,3 +17528,1498 @@ Rendered layouts/parts/_javascripts (1.6ms)
 Rendered layouts/parts/_htmlbody (5.5ms)
 Response body was encoded with gzip
 Completed in 491ms (View: 15, DB: 11) | 200 OK [http://192.168.1.8/forgot_password_form]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password (for 192.168.1.3 at 2010-07-28 18:03:15) [POST]
+  Parameters: {"commit"=>"发\351\200\201", "authenticity_token"=>"qAmNKPPpHDRlvIsIuBBtBNVNnWnAnk493hz+SQIH76Y=", "email"=>""}
+  [4;35;1mEntry Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.8ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mOnlineRecord Load (0.4ms)[0m   [0mSELECT * FROM `online_records` [0m
+  [4;36;1mOnlineRecord Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `online_records`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mOnlineRecord Destroy (1.0ms)[0m   [0;1mDELETE FROM `online_records` WHERE `id` = 27[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mOnlineRecord Load (1.9ms)[0m   [0;1mSELECT * FROM `online_records` WHERE (`online_records`.`key` = '65ae0b79-ce92-4631-9b29-62cfd7718e03') LIMIT 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mOnlineRecord Create (0.8ms)[0m   [0;1mINSERT INTO `online_records` (`created_at`, `updated_at`, `user_id`, `key`) VALUES('2010-07-28 10:03:15', '2010-07-28 10:03:15', NULL, '65ae0b79-ce92-4631-9b29-62cfd7718e03')[0m
+  [4;35;1mSQL (7.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mAnnouncement Load (0.7ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+Redirected to http://192.168.1.8:3000/forgot_password_form
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCOMMIT[0m
+Response body was encoded with gzip
+Completed in 667ms (DB: 31) | 302 Found [http://192.168.1.8/forgot_password]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password_form (for 192.168.1.3 at 2010-07-28 18:03:16) [GET]
+  [4;35;1mEntry Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.8ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (1.2ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/forgot_password_form
+Rendered layouts/parts/_require_css (0.8ms)
+Rendered layouts/parts/_css (29.1ms)
+Rendered layouts/parts/_htmlhead (31.1ms)
+Rendered layouts/parts/_nav (2.1ms)
+Rendered layouts/parts/_footer (0.3ms)
+Rendered layouts/parts/_javascripts (11.3ms)
+Rendered layouts/parts/_htmlbody (15.0ms)
+Response body was encoded with gzip
+Completed in 667ms (View: 49, DB: 10) | 200 OK [http://192.168.1.8/forgot_password_form]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password (for 192.168.1.3 at 2010-07-28 18:03:53) [POST]
+  Parameters: {"commit"=>"发\351\200\201", "authenticity_token"=>"qAmNKPPpHDRlvIsIuBBtBNVNnWnAnk493hz+SQIH76Y=", "email"=>""}
+  [4;36;1mEntry Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (12.0ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (0.8ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (0.5ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+Redirected to http://192.168.1.8:3000/forgot_password_form
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCOMMIT[0m
+Response body was encoded with gzip
+Completed in 621ms (DB: 29) | 302 Found [http://192.168.1.8/forgot_password]
+  [4;35;1mSQL (1.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password_form (for 192.168.1.3 at 2010-07-28 18:03:54) [GET]
+  [4;35;1mEntry Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.5ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (0.4ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/forgot_password_form
+Rendered layouts/parts/_require_css (0.8ms)
+Rendered layouts/parts/_css (3.9ms)
+Rendered layouts/parts/_htmlhead (4.3ms)
+Rendered layouts/parts/_nav (2.2ms)
+Rendered layouts/parts/_footer (0.2ms)
+Rendered layouts/parts/_javascripts (1.9ms)
+Rendered layouts/parts/_htmlbody (5.3ms)
+Response body was encoded with gzip
+Completed in 620ms (View: 19, DB: 11) | 200 OK [http://192.168.1.8/forgot_password_form]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password (for 192.168.1.3 at 2010-07-28 18:04:31) [POST]
+  Parameters: {"commit"=>"发\351\200\201", "authenticity_token"=>"qAmNKPPpHDRlvIsIuBBtBNVNnWnAnk493hz+SQIH76Y=", "email"=>""}
+  [4;36;1mEntry Columns (20.0ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (1.3ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (0.4ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+Redirected to http://192.168.1.8:3000/forgot_password_form
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCOMMIT[0m
+Response body was encoded with gzip
+Completed in 628ms (DB: 29) | 302 Found [http://192.168.1.8/forgot_password]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password_form (for 192.168.1.3 at 2010-07-28 18:04:32) [GET]
+  [4;35;1mEntry Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.8ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (0.7ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/forgot_password_form
+Rendered layouts/parts/_require_css (0.8ms)
+Rendered layouts/parts/_css (3.9ms)
+Rendered layouts/parts/_htmlhead (4.5ms)
+Rendered layouts/parts/_nav (1.9ms)
+Rendered layouts/parts/_footer (0.2ms)
+Rendered layouts/parts/_javascripts (1.3ms)
+Rendered layouts/parts/_htmlbody (4.9ms)
+Response body was encoded with gzip
+Completed in 618ms (View: 20, DB: 10) | 200 OK [http://192.168.1.8/forgot_password_form]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password (for 192.168.1.3 at 2010-07-28 18:28:24) [POST]
+  Parameters: {"commit"=>"发\351\200\201", "authenticity_token"=>"qAmNKPPpHDRlvIsIuBBtBNVNnWnAnk493hz+SQIH76Y=", "email"=>""}
+  [4;36;1mEntry Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (2.4ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mOnlineRecord Load (0.8ms)[0m   [0;1mSELECT * FROM `online_records` [0m
+  [4;35;1mOnlineRecord Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `online_records`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOnlineRecord Destroy (1.1ms)[0m   [0mDELETE FROM `online_records` WHERE `id` = 28[0m
+  [4;36;1mSQL (16.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mOnlineRecord Load (0.8ms)[0m   [0mSELECT * FROM `online_records` WHERE (`online_records`.`key` = '65ae0b79-ce92-4631-9b29-62cfd7718e03') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOnlineRecord Create (0.5ms)[0m   [0mINSERT INTO `online_records` (`created_at`, `updated_at`, `user_id`, `key`) VALUES('2010-07-28 10:28:25', '2010-07-28 10:28:25', NULL, '65ae0b79-ce92-4631-9b29-62cfd7718e03')[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mAnnouncement Load (0.4ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+Redirected to http://192.168.1.8:3000/forgot_password_form
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+Response body was encoded with gzip
+Completed in 663ms (DB: 38) | 302 Found [http://192.168.1.8/forgot_password]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password_form (for 192.168.1.3 at 2010-07-28 18:28:25) [GET]
+  [4;36;1mEntry Columns (5.6ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (1.7ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (0.6ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/forgot_password_form
+Rendered layouts/parts/_require_css (0.1ms)
+Rendered layouts/parts/_css (0.5ms)
+Rendered layouts/parts/_htmlhead (3.0ms)
+Rendered layouts/parts/_nav (3.5ms)
+Rendered layouts/parts/_footer (0.4ms)
+Rendered layouts/parts/_javascripts (1.5ms)
+Rendered layouts/parts/_htmlbody (7.3ms)
+Response body was encoded with gzip
+Completed in 617ms (View: 14, DB: 17) | 200 OK [http://192.168.1.8/forgot_password_form]
+DEPRECATION WARNING: require "activesupport" is deprecated and will be removed in Rails 3. Use require "active_support" instead. (called from /usr/local/bin/rubyee/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/activesupport.rb:2)
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead. (called from /usr/local/bin/rubyee/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/activerecord.rb:2)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing IndexController#index (for 192.168.1.3 at 2010-07-28 23:03:07) [GET]
+  [4;36;1mEntry Columns (51.0ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (29.7ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (18.0ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (26.6ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (1.2ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (22.2ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mOnlineRecord Load (6.1ms)[0m   [0;1mSELECT * FROM `online_records` [0m
+  [4;35;1mOnlineRecord Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `online_records`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOnlineRecord Destroy (1.1ms)[0m   [0mDELETE FROM `online_records` WHERE `id` = 29[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCOMMIT[0m
+
+MemCache::MemCacheError (No connection to server (localhost:11211 DEAD (Errno::ECONNREFUSED: Connection refused - connect(2)), will retry at Wed Jul 28 23:03:39 +0800 2010)):
+  /usr/local/bin/rubyee/lib/ruby/gems/1.8/gems/memcache-client-1.8.3/lib/memcache.rb:864:in `with_socket_management'
+  /usr/local/bin/rubyee/lib/ruby/gems/1.8/gems/memcache-client-1.8.3/lib/memcache.rb:524:in `delete'
+  /usr/local/bin/rubyee/lib/ruby/gems/1.8/gems/memcache-client-1.8.3/lib/memcache.rb:887:in `with_server'
+  /usr/local/bin/rubyee/lib/ruby/gems/1.8/gems/memcache-client-1.8.3/lib/memcache.rb:523:in `delete'
+  /usr/local/bin/rubyee/lib/ruby/gems/1.8/gems/nkallen-cache-money-0.2.5/lib/cash/lock.rb:38:in `release_lock'
+  /usr/local/bin/rubyee/lib/ruby/gems/1.8/gems/nkallen-cache-money-0.2.5/lib/cash/buffered.rb:79:in `flush'
+  /usr/local/bin/rubyee/lib/ruby/gems/1.8/gems/nkallen-cache-money-0.2.5/lib/cash/buffered.rb:78:in `each'
+  /usr/local/bin/rubyee/lib/ruby/gems/1.8/gems/nkallen-cache-money-0.2.5/lib/cash/buffered.rb:78:in `flush'
+  /usr/local/bin/rubyee/lib/ruby/gems/1.8/gems/nkallen-cache-money-0.2.5/lib/cash/transactional.rb:19:in `transaction'
+  /usr/local/bin/rubyee/lib/ruby/gems/1.8/gems/nkallen-cache-money-0.2.5/lib/cache_money.rb:50:in `transaction'
+  app/models/online_record.rb:58:in `tidy'
+  app/models/online_record.rb:57:in `each'
+  app/models/online_record.rb:57:in `tidy'
+  app/models/online_record.rb:41:in `refresh_anonymous'
+  app/controllers/application_controller.rb:38:in `refresh_online_record'
+  haml (3.0.13) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  app/middlewares/flash_session_cookie_middleware.rb:14:in `call'
+
+Rendered rescues/_trace (195.2ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+DEPRECATION WARNING: require "activesupport" is deprecated and will be removed in Rails 3. Use require "active_support" instead. (called from /usr/local/bin/rubyee/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/activesupport.rb:2)
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead. (called from /usr/local/bin/rubyee/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/activerecord.rb:2)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing IndexController#index (for 192.168.1.3 at 2010-07-28 23:03:42) [GET]
+  [4;36;1mEntry Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (0.6ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mOnlineRecord Load (0.4ms)[0m   [0;1mSELECT * FROM `online_records` [0m
+  [4;35;1mOnlineRecord Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `online_records`[0m
+  [4;36;1mOnlineRecord Load (1.6ms)[0m   [0;1mSELECT * FROM `online_records` WHERE (`online_records`.`key` = '65ae0b79-ce92-4631-9b29-62cfd7718e03') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mOnlineRecord Create (2.0ms)[0m   [0;1mINSERT INTO `online_records` (`created_at`, `updated_at`, `user_id`, `key`) VALUES('2010-07-28 15:03:42', '2010-07-28 15:03:42', NULL, '65ae0b79-ce92-4631-9b29-62cfd7718e03')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mAnnouncement Load (19.5ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/index
+Rendered layouts/parts/_require_css (141.4ms)
+Rendered auth/parts/_login_form (6.8ms)
+  [4;35;1mBug Load (20.9ms)[0m   [0mSELECT * FROM `bugs` ORDER BY created_at desc LIMIT 3[0m
+  [4;36;1mBug Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `bugs`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT count(*) AS count_all FROM `bugs` [0m
+Rendered auth/parts/_bugs (58.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendered layouts/parts/_css (91.5ms)
+Rendered layouts/parts/_htmlhead (99.5ms)
+Rendered layouts/parts/_nav (7.2ms)
+Rendered layouts/parts/_footer (2.7ms)
+Rendered layouts/parts/_javascripts (38.4ms)
+Rendered layouts/parts/_htmlbody (81.4ms)
+Response body was encoded with gzip
+Completed in 1222ms (View: 489, DB: 61) | 200 OK [http://192.168.1.8/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password_form (for 192.168.1.3 at 2010-07-28 23:03:48) [GET]
+  [4;35;1mEntry Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (36.1ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.7ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (4.5ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (1.2ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/forgot_password_form
+Rendered layouts/parts/_require_css (1.2ms)
+Rendered layouts/parts/_css (4.0ms)
+Rendered layouts/parts/_htmlhead (4.1ms)
+Rendered layouts/parts/_nav (3.0ms)
+Rendered layouts/parts/_footer (0.2ms)
+Rendered layouts/parts/_javascripts (1.4ms)
+Rendered layouts/parts/_htmlbody (6.4ms)
+Response body was encoded with gzip
+Completed in 661ms (View: 31, DB: 47) | 200 OK [http://192.168.1.8/forgot_password_form]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password (for 192.168.1.3 at 2010-07-28 23:03:50) [POST]
+  Parameters: {"commit"=>"发\351\200\201", "authenticity_token"=>"qAmNKPPpHDRlvIsIuBBtBNVNnWnAnk493hz+SQIH76Y=", "email"=>""}
+  [4;36;1mEntry Columns (4.5ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (1.8ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (0.5ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mBEGIN[0m
+Redirected to http://192.168.1.8:3000/forgot_password_form
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+Response body was encoded with gzip
+Completed in 578ms (DB: 15) | 302 Found [http://192.168.1.8/forgot_password]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password_form (for 192.168.1.3 at 2010-07-28 23:03:51) [GET]
+  [4;35;1mEntry Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (4.8ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (4.4ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.8ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (0.9ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/forgot_password_form
+Rendered layouts/parts/_require_css (1.0ms)
+Rendered layouts/parts/_css (4.5ms)
+Rendered layouts/parts/_htmlhead (4.7ms)
+Rendered layouts/parts/_nav (2.6ms)
+Rendered layouts/parts/_footer (0.2ms)
+Rendered layouts/parts/_javascripts (0.9ms)
+Rendered layouts/parts/_htmlbody (5.6ms)
+Response body was encoded with gzip
+Completed in 573ms (View: 16, DB: 17) | 200 OK [http://192.168.1.8/forgot_password_form]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password_form (for 192.168.1.3 at 2010-07-28 23:06:59) [GET]
+  [4;36;1mEntry Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (0.5ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (0.4ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/forgot_password_form
+Rendered layouts/parts/_require_css (0.7ms)
+Rendered layouts/parts/_css (4.1ms)
+Rendered layouts/parts/_htmlhead (4.4ms)
+Rendered layouts/parts/_nav (2.5ms)
+Rendered layouts/parts/_footer (0.2ms)
+Rendered layouts/parts/_javascripts (0.1ms)
+Rendered layouts/parts/_htmlbody (4.3ms)
+Response body was encoded with gzip
+Completed in 549ms (View: 11, DB: 12) | 200 OK [http://192.168.1.8/forgot_password_form]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password (for 192.168.1.3 at 2010-07-28 23:07:01) [POST]
+  Parameters: {"commit"=>"发\351\200\201", "authenticity_token"=>"qAmNKPPpHDRlvIsIuBBtBNVNnWnAnk493hz+SQIH76Y=", "email"=>""}
+  [4;35;1mEntry Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.4ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (1.8ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+Redirected to http://192.168.1.8:3000/forgot_password_form
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+Response body was encoded with gzip
+Completed in 535ms (DB: 10) | 302 Found [http://192.168.1.8/forgot_password]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password_form (for 192.168.1.3 at 2010-07-28 23:07:02) [GET]
+  [4;36;1mEntry Columns (11.2ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (39.3ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (4.2ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (0.4ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (0.4ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/forgot_password_form
+Rendered layouts/parts/_require_css (1.5ms)
+Rendered layouts/parts/_css (4.0ms)
+Rendered layouts/parts/_htmlhead (4.6ms)
+Rendered layouts/parts/_nav (1.6ms)
+Rendered layouts/parts/_footer (0.3ms)
+Rendered layouts/parts/_javascripts (1.3ms)
+Rendered layouts/parts/_htmlbody (5.1ms)
+Response body was encoded with gzip
+Completed in 648ms (View: 14, DB: 59) | 200 OK [http://192.168.1.8/forgot_password_form]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing IndexController#index (for 192.168.1.3 at 2010-07-29 00:58:06) [GET]
+  [4;35;1mEntry Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.7ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mOnlineRecord Load (4.0ms)[0m   [0mSELECT * FROM `online_records` [0m
+  [4;36;1mOnlineRecord Columns (6.4ms)[0m   [0;1mSHOW FIELDS FROM `online_records`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mBEGIN[0m
+  [4;36;1mOnlineRecord Destroy (0.9ms)[0m   [0;1mDELETE FROM `online_records` WHERE `id` = 1[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mOnlineRecord Load (0.4ms)[0m   [0;1mSELECT * FROM `online_records` WHERE (`online_records`.`key` = '65ae0b79-ce92-4631-9b29-62cfd7718e03') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mOnlineRecord Create (1.5ms)[0m   [0;1mINSERT INTO `online_records` (`created_at`, `updated_at`, `user_id`, `key`) VALUES('2010-07-28 16:58:07', '2010-07-28 16:58:07', NULL, '65ae0b79-ce92-4631-9b29-62cfd7718e03')[0m
+  [4;35;1mSQL (12.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mAnnouncement Load (0.6ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/index
+Rendered layouts/parts/_require_css (0.1ms)
+Rendered auth/parts/_login_form (13.2ms)
+  [4;35;1mBug Load (1.6ms)[0m   [0mSELECT * FROM `bugs` ORDER BY created_at desc LIMIT 3[0m
+  [4;36;1mBug Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `bugs`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM `bugs` [0m
+Rendered auth/parts/_bugs (122.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendered layouts/parts/_css (4.3ms)
+Rendered layouts/parts/_htmlhead (4.9ms)
+Rendered layouts/parts/_nav (1.7ms)
+Rendered layouts/parts/_footer (0.2ms)
+Rendered layouts/parts/_javascripts (0.9ms)
+Rendered layouts/parts/_htmlbody (4.7ms)
+Response body was encoded with gzip
+Completed in 609ms (View: 147, DB: 45) | 200 OK [http://192.168.1.8/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password_form (for 192.168.1.3 at 2010-07-29 01:09:44) [GET]
+  [4;35;1mEntry Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.6ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mOnlineRecord Load (0.4ms)[0m   [0mSELECT * FROM `online_records` [0m
+  [4;36;1mOnlineRecord Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `online_records`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mOnlineRecord Destroy (0.6ms)[0m   [0;1mDELETE FROM `online_records` WHERE `id` = 2[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mOnlineRecord Load (0.6ms)[0m   [0;1mSELECT * FROM `online_records` WHERE (`online_records`.`key` = '65ae0b79-ce92-4631-9b29-62cfd7718e03') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mOnlineRecord Create (1.0ms)[0m   [0;1mINSERT INTO `online_records` (`created_at`, `updated_at`, `user_id`, `key`) VALUES('2010-07-28 17:09:45', '2010-07-28 17:09:45', NULL, '65ae0b79-ce92-4631-9b29-62cfd7718e03')[0m
+  [4;35;1mSQL (17.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mAnnouncement Load (1.0ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/forgot_password_form
+Rendered layouts/parts/_require_css (0.7ms)
+Rendered layouts/parts/_css (2.9ms)
+Rendered layouts/parts/_htmlhead (3.3ms)
+Rendered layouts/parts/_nav (0.3ms)
+Rendered layouts/parts/_footer (0.2ms)
+Rendered layouts/parts/_javascripts (1.7ms)
+Rendered layouts/parts/_htmlbody (5.2ms)
+Response body was encoded with gzip
+Completed in 578ms (View: 21, DB: 34) | 200 OK [http://192.168.1.8/forgot_password_form]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password_form (for 192.168.1.3 at 2010-07-29 01:09:47) [GET]
+  [4;35;1mEntry Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (5.1ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.5ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (0.8ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/forgot_password_form
+Rendered layouts/parts/_require_css (1.9ms)
+Rendered layouts/parts/_css (4.4ms)
+Rendered layouts/parts/_htmlhead (4.7ms)
+Rendered layouts/parts/_nav (1.7ms)
+Rendered layouts/parts/_footer (0.4ms)
+Rendered layouts/parts/_javascripts (0.4ms)
+Rendered layouts/parts/_htmlbody (4.5ms)
+Response body was encoded with gzip
+Completed in 432ms (View: 12, DB: 14) | 200 OK [http://192.168.1.8/forgot_password_form]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password (for 192.168.1.3 at 2010-07-29 01:09:49) [POST]
+  Parameters: {"commit"=>"发\351\200\201", "authenticity_token"=>"qAmNKPPpHDRlvIsIuBBtBNVNnWnAnk493hz+SQIH76Y=", "email"=>""}
+  [4;36;1mEntry Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (0.5ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (0.5ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+Redirected to http://192.168.1.8:3000/forgot_password_form
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+Response body was encoded with gzip
+Completed in 418ms (DB: 13) | 302 Found [http://192.168.1.8/forgot_password]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password_form (for 192.168.1.3 at 2010-07-29 01:09:50) [GET]
+  [4;35;1mEntry Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (1.2ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (0.4ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/forgot_password_form
+Rendered layouts/parts/_require_css (1.2ms)
+Rendered layouts/parts/_css (2.7ms)
+Rendered layouts/parts/_htmlhead (3.9ms)
+Rendered layouts/parts/_nav (105.6ms)
+Rendered layouts/parts/_footer (0.2ms)
+Rendered layouts/parts/_javascripts (1.3ms)
+Rendered layouts/parts/_htmlbody (108.7ms)
+Response body was encoded with gzip
+Completed in 528ms (View: 117, DB: 13) | 200 OK [http://192.168.1.8/forgot_password_form]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password_form (for 192.168.1.3 at 2010-07-29 01:10:01) [GET]
+  [4;36;1mEntry Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (3.5ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (0.5ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (0.6ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/forgot_password_form
+Rendered layouts/parts/_require_css (0.7ms)
+Rendered layouts/parts/_css (3.6ms)
+Rendered layouts/parts/_htmlhead (3.9ms)
+Rendered layouts/parts/_nav (0.3ms)
+Rendered layouts/parts/_footer (1.6ms)
+Rendered layouts/parts/_javascripts (1.3ms)
+Rendered layouts/parts/_htmlbody (4.4ms)
+Response body was encoded with gzip
+Completed in 544ms (View: 19, DB: 11) | 200 OK [http://192.168.1.8/forgot_password_form]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password (for 192.168.1.3 at 2010-07-29 01:10:04) [POST]
+  Parameters: {"commit"=>"发\351\200\201", "authenticity_token"=>"qAmNKPPpHDRlvIsIuBBtBNVNnWnAnk493hz+SQIH76Y=", "email"=>""}
+  [4;35;1mEntry Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (1.8ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (1.0ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+Redirected to http://192.168.1.8:3000/forgot_password_form
+  [4;35;1mSQL (1.7ms)[0m   [0mCOMMIT[0m
+Response body was encoded with gzip
+Completed in 524ms (DB: 12) | 302 Found [http://192.168.1.8/forgot_password]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password_form (for 192.168.1.3 at 2010-07-29 01:10:04) [GET]
+  [4;36;1mEntry Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (0.5ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (0.4ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/forgot_password_form
+Rendered layouts/parts/_require_css (0.8ms)
+Rendered layouts/parts/_css (3.7ms)
+Rendered layouts/parts/_htmlhead (4.2ms)
+Rendered layouts/parts/_nav (1.5ms)
+Rendered layouts/parts/_footer (0.2ms)
+Rendered layouts/parts/_javascripts (1.3ms)
+Rendered layouts/parts/_htmlbody (4.9ms)
+Response body was encoded with gzip
+Completed in 526ms (View: 13, DB: 8) | 200 OK [http://192.168.1.8/forgot_password_form]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing IndexController#index (for 192.168.1.3 at 2010-07-29 01:12:44) [GET]
+  [4;35;1mEntry Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.5ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (1.1ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/index
+Rendered layouts/parts/_require_css (0.7ms)
+Rendered auth/parts/_login_form (14.6ms)
+  [4;36;1mBug Load (0.4ms)[0m   [0;1mSELECT * FROM `bugs` ORDER BY created_at desc LIMIT 3[0m
+  [4;35;1mBug Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `bugs`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `bugs` [0m
+Rendered auth/parts/_bugs (18.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendered layouts/parts/_css (2.7ms)
+Rendered layouts/parts/_htmlhead (3.2ms)
+Rendered layouts/parts/_nav (2.1ms)
+Rendered layouts/parts/_footer (0.2ms)
+Rendered layouts/parts/_javascripts (1.2ms)
+Rendered layouts/parts/_htmlbody (5.0ms)
+Response body was encoded with gzip
+Completed in 674ms (View: 44, DB: 11) | 200 OK [http://192.168.1.8/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing IndexController#index (for 192.168.1.3 at 2010-07-29 01:13:00) [GET]
+  [4;36;1mEntry Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (1.4ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (0.4ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/index
+Rendered layouts/parts/_require_css (0.4ms)
+Rendered auth/parts/_login_form (14.0ms)
+  [4;35;1mBug Load (0.5ms)[0m   [0mSELECT * FROM `bugs` ORDER BY created_at desc LIMIT 3[0m
+  [4;36;1mBug Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `bugs`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `bugs` [0m
+Rendered auth/parts/_bugs (19.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendered layouts/parts/_css (3.2ms)
+Rendered layouts/parts/_htmlhead (3.8ms)
+Rendered layouts/parts/_nav (1.8ms)
+Rendered layouts/parts/_footer (0.3ms)
+Rendered layouts/parts/_javascripts (1.4ms)
+Rendered layouts/parts/_htmlbody (4.9ms)
+Response body was encoded with gzip
+Completed in 559ms (View: 45, DB: 12) | 200 OK [http://192.168.1.8/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing IndexController#index (for 192.168.1.3 at 2010-07-29 01:13:05) [GET]
+  [4;35;1mEntry Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (1.3ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (2.5ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/index
+Rendered layouts/parts/_require_css (8.0ms)
+Rendered auth/parts/_login_form (27.7ms)
+  [4;36;1mBug Load (1.8ms)[0m   [0;1mSELECT * FROM `bugs` ORDER BY created_at desc LIMIT 3[0m
+  [4;35;1mBug Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `bugs`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `bugs` [0m
+Rendered auth/parts/_bugs (23.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendered layouts/parts/_css (2.8ms)
+Rendered layouts/parts/_htmlhead (3.1ms)
+Rendered layouts/parts/_nav (4.0ms)
+Rendered layouts/parts/_footer (0.8ms)
+Rendered layouts/parts/_javascripts (0.0ms)
+Rendered layouts/parts/_htmlbody (6.6ms)
+Response body was encoded with gzip
+Completed in 610ms (View: 68, DB: 20) | 200 OK [http://192.168.1.8/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing IndexController#index (for 192.168.1.3 at 2010-07-29 01:13:25) [GET]
+  [4;36;1mEntry Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (0.5ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (0.5ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/index
+Rendered layouts/parts/_require_css (0.7ms)
+Rendered auth/parts/_login_form (14.1ms)
+  [4;35;1mBug Load (2.8ms)[0m   [0mSELECT * FROM `bugs` ORDER BY created_at desc LIMIT 3[0m
+  [4;36;1mBug Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `bugs`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `bugs` [0m
+Rendered auth/parts/_bugs (18.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendered layouts/parts/_css (3.6ms)
+Rendered layouts/parts/_htmlhead (4.3ms)
+Rendered layouts/parts/_nav (0.3ms)
+Rendered layouts/parts/_footer (0.2ms)
+Rendered layouts/parts/_javascripts (1.3ms)
+Rendered layouts/parts/_htmlbody (4.8ms)
+Response body was encoded with gzip
+Completed in 566ms (View: 153, DB: 13) | 200 OK [http://192.168.1.8/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing IndexController#index (for 192.168.1.3 at 2010-07-29 01:15:57) [GET]
+  [4;35;1mEntry Columns (4.3ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.5ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mOnlineRecord Load (0.4ms)[0m   [0mSELECT * FROM `online_records` [0m
+  [4;36;1mOnlineRecord Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `online_records`[0m
+  [4;35;1mOnlineRecord Load (0.5ms)[0m   [0mSELECT * FROM `online_records` WHERE (`online_records`.`key` = '65ae0b79-ce92-4631-9b29-62cfd7718e03') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOnlineRecord Update (0.2ms)[0m   [0mUPDATE `online_records` SET `updated_at` = '2010-07-28 17:15:58' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mAnnouncement Load (0.4ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/index
+Rendered layouts/parts/_require_css (0.7ms)
+Rendered auth/parts/_login_form (13.5ms)
+  [4;36;1mBug Load (0.4ms)[0m   [0;1mSELECT * FROM `bugs` ORDER BY created_at desc LIMIT 3[0m
+  [4;35;1mBug Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `bugs`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `bugs` [0m
+Rendered auth/parts/_bugs (19.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendered layouts/parts/_css (3.2ms)
+Rendered layouts/parts/_htmlhead (3.6ms)
+Rendered layouts/parts/_nav (1.7ms)
+Rendered layouts/parts/_footer (0.2ms)
+Rendered layouts/parts/_javascripts (1.2ms)
+Rendered layouts/parts/_htmlbody (4.7ms)
+Response body was encoded with gzip
+Completed in 704ms (View: 44, DB: 19) | 200 OK [http://192.168.1.8/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 192.168.1.3 at 2010-07-29 01:16:02) [POST]
+  Parameters: {"commit"=>"登 \345\275\225", "authenticity_token"=>"qAmNKPPpHDRlvIsIuBBtBNVNnWnAnk493hz+SQIH76Y=", "password"=>"", "email"=>""}
+  [4;36;1mEntry Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (1.9ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (0.4ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Columns (22.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = '') LIMIT 1[0m
+Redirected to http://192.168.1.8:3000/login
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Response body was encoded with gzip
+Completed in 538ms (DB: 32) | 302 Found [http://192.168.1.8/session]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 192.168.1.3 at 2010-07-29 01:16:03) [GET]
+  [4;35;1mEntry Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (4.4ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.5ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (0.4ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/login
+Rendered layouts/parts/_require_css (1.3ms)
+Rendered auth/parts/_login_form (13.7ms)
+Rendered layouts/parts/_css (3.1ms)
+Rendered layouts/parts/_htmlhead (3.6ms)
+Rendered layouts/parts/_nav (2.0ms)
+Rendered layouts/parts/_footer (0.3ms)
+Rendered layouts/parts/_javascripts (1.6ms)
+Rendered layouts/parts/_htmlbody (5.5ms)
+Response body was encoded with gzip
+Completed in 538ms (View: 32, DB: 11) | 200 OK [http://192.168.1.8/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 192.168.1.3 at 2010-07-29 01:16:07) [POST]
+  Parameters: {"commit"=>"登 \345\275\225", "authenticity_token"=>"qAmNKPPpHDRlvIsIuBBtBNVNnWnAnk493hz+SQIH76Y=", "password"=>"", "email"=>""}
+  [4;36;1mEntry Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (1.7ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (0.5ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = '') LIMIT 1[0m
+Redirected to http://192.168.1.8:3000/login
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCOMMIT[0m
+Response body was encoded with gzip
+Completed in 519ms (DB: 13) | 302 Found [http://192.168.1.8/session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 192.168.1.3 at 2010-07-29 01:16:08) [GET]
+  [4;35;1mEntry Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.5ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (0.7ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/login
+Rendered layouts/parts/_require_css (0.7ms)
+Rendered auth/parts/_login_form (12.9ms)
+Rendered layouts/parts/_css (2.5ms)
+Rendered layouts/parts/_htmlhead (2.6ms)
+Rendered layouts/parts/_nav (1.8ms)
+Rendered layouts/parts/_footer (0.3ms)
+Rendered layouts/parts/_javascripts (1.2ms)
+Rendered layouts/parts/_htmlbody (4.8ms)
+Response body was encoded with gzip
+Completed in 535ms (View: 25, DB: 8) | 200 OK [http://192.168.1.8/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 192.168.1.3 at 2010-07-29 01:16:19) [GET]
+  [4;36;1mEntry Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (0.5ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (0.4ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/black_index
+Rendering auth/signup
+Rendered layouts/parts/_require_css (0.8ms)
+Rendered auth/parts/_signup_form (66.3ms)
+Rendered layouts/parts/_css (108.6ms)
+Rendered layouts/parts/_htmlhead (109.1ms)
+Rendered layouts/parts/_nav (1.8ms)
+Rendered layouts/parts/_footer (0.2ms)
+Rendered layouts/parts/_javascripts (1.4ms)
+Rendered layouts/parts/_htmlbody (5.2ms)
+Response body was encoded with gzip
+Completed in 619ms (View: 195, DB: 9) | 200 OK [http://192.168.1.8/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 192.168.1.3 at 2010-07-29 01:16:33) [GET]
+  [4;36;1mEntry Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (0.6ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mOnlineRecord Load (2.3ms)[0m   [0;1mSELECT * FROM `online_records` [0m
+  [4;35;1mOnlineRecord Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `online_records`[0m
+  [4;36;1mOnlineRecord Load (1.7ms)[0m   [0;1mSELECT * FROM `online_records` WHERE (`online_records`.`key` = '65ae0b79-ce92-4631-9b29-62cfd7718e03') LIMIT 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mAnnouncement Load (0.4ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/black_index
+Rendering auth/signup
+Rendered layouts/parts/_require_css (2.0ms)
+Rendered auth/parts/_signup_form (24.1ms)
+Rendered layouts/parts/_css (3.9ms)
+Rendered layouts/parts/_htmlhead (4.2ms)
+Rendered layouts/parts/_nav (2.4ms)
+Rendered layouts/parts/_footer (0.6ms)
+Rendered layouts/parts/_javascripts (0.1ms)
+Rendered layouts/parts/_htmlbody (5.1ms)
+Response body was encoded with gzip
+Completed in 568ms (View: 43, DB: 15) | 200 OK [http://192.168.1.8/signup]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password_form (for 192.168.1.3 at 2010-07-29 01:16:41) [GET]
+  [4;35;1mEntry Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.5ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mOnlineRecord Load (0.4ms)[0m   [0mSELECT * FROM `online_records` [0m
+  [4;36;1mOnlineRecord Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `online_records`[0m
+  [4;35;1mOnlineRecord Load (0.5ms)[0m   [0mSELECT * FROM `online_records` WHERE (`online_records`.`key` = '65ae0b79-ce92-4631-9b29-62cfd7718e03') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mAnnouncement Load (0.4ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/forgot_password_form
+Rendered layouts/parts/_require_css (0.1ms)
+Rendered layouts/parts/_css (2.4ms)
+Rendered layouts/parts/_htmlhead (2.8ms)
+Rendered layouts/parts/_nav (1.6ms)
+Rendered layouts/parts/_footer (0.0ms)
+Rendered layouts/parts/_javascripts (2.0ms)
+Rendered layouts/parts/_htmlbody (4.6ms)
+Response body was encoded with gzip
+Completed in 535ms (View: 12, DB: 10) | 200 OK [http://192.168.1.8/forgot_password_form]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password_form (for 192.168.1.3 at 2010-07-29 01:16:51) [GET]
+  [4;35;1mEntry Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.5ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (0.6ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/forgot_password_form
+Rendered layouts/parts/_require_css (0.1ms)
+Rendered layouts/parts/_css (3.0ms)
+Rendered layouts/parts/_htmlhead (3.4ms)
+Rendered layouts/parts/_nav (106.8ms)
+Rendered layouts/parts/_footer (0.1ms)
+Rendered layouts/parts/_javascripts (1.0ms)
+Rendered layouts/parts/_htmlbody (110.7ms)
+Response body was encoded with gzip
+Completed in 528ms (View: 125, DB: 9) | 200 OK [http://192.168.1.8/forgot_password_form]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password (for 192.168.1.3 at 2010-07-29 01:16:57) [POST]
+  Parameters: {"commit"=>"发\351\200\201", "authenticity_token"=>"ogi1FLPtXA4kqgbD2TVhJOX78yj9Ftw987dHoByuMvQ=", "email"=>""}
+  [4;36;1mEntry Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (1.1ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (0.5ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+Redirected to http://192.168.1.8:3000/forgot_password_form
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+Response body was encoded with gzip
+Completed in 526ms (DB: 10) | 302 Found [http://192.168.1.8/forgot_password]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#forgot_password_form (for 192.168.1.3 at 2010-07-29 01:16:57) [GET]
+  [4;35;1mEntry Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.5ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (0.4ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/forgot_password_form
+Rendered layouts/parts/_require_css (1.6ms)
+Rendered layouts/parts/_css (3.1ms)
+Rendered layouts/parts/_htmlhead (4.0ms)
+Rendered layouts/parts/_nav (1.8ms)
+Rendered layouts/parts/_footer (0.2ms)
+Rendered layouts/parts/_javascripts (1.5ms)
+Rendered layouts/parts/_htmlbody (5.1ms)
+Response body was encoded with gzip
+Completed in 547ms (View: 13, DB: 13) | 200 OK [http://192.168.1.8/forgot_password_form]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 192.168.1.3 at 2010-07-29 01:17:00) [GET]
+  [4;36;1mEntry Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (0.4ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (1.0ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/login
+Rendered layouts/parts/_require_css (0.7ms)
+Rendered auth/parts/_login_form (14.7ms)
+Rendered layouts/parts/_css (3.5ms)
+Rendered layouts/parts/_htmlhead (4.0ms)
+Rendered layouts/parts/_nav (1.6ms)
+Rendered layouts/parts/_footer (0.0ms)
+Rendered layouts/parts/_javascripts (0.7ms)
+Rendered layouts/parts/_htmlbody (4.8ms)
+Response body was encoded with gzip
+Completed in 543ms (View: 27, DB: 10) | 200 OK [http://192.168.1.8/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 192.168.1.3 at 2010-07-29 01:17:02) [POST]
+  Parameters: {"commit"=>"登 \345\275\225", "authenticity_token"=>"ogi1FLPtXA4kqgbD2TVhJOX78yj9Ftw987dHoByuMvQ=", "password"=>"", "email"=>""}
+  [4;35;1mEntry Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.4ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (0.4ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = '') LIMIT 1[0m
+Redirected to http://192.168.1.8:3000/login
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Response body was encoded with gzip
+Completed in 518ms (DB: 10) | 302 Found [http://192.168.1.8/session]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 192.168.1.3 at 2010-07-29 01:17:03) [GET]
+  [4;36;1mEntry Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (0.4ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (0.4ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/login
+Rendered layouts/parts/_require_css (0.7ms)
+Rendered auth/parts/_login_form (13.5ms)
+Rendered layouts/parts/_css (0.6ms)
+Rendered layouts/parts/_htmlhead (3.7ms)
+Rendered layouts/parts/_nav (1.5ms)
+Rendered layouts/parts/_footer (0.2ms)
+Rendered layouts/parts/_javascripts (1.5ms)
+Rendered layouts/parts/_htmlbody (4.4ms)
+Response body was encoded with gzip
+Completed in 532ms (View: 25, DB: 10) | 200 OK [http://192.168.1.8/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 192.168.1.3 at 2010-07-29 01:19:36) [POST]
+  Parameters: {"commit"=>"登 \345\275\225", "authenticity_token"=>"ogi1FLPtXA4kqgbD2TVhJOX78yj9Ftw987dHoByuMvQ=", "password"=>"", "email"=>""}
+  [4;35;1mEntry Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.5ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (0.4ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = '') LIMIT 1[0m
+Redirected to http://192.168.1.8:3000/login
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+Response body was encoded with gzip
+Completed in 423ms (DB: 12) | 302 Found [http://192.168.1.8/session]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 192.168.1.3 at 2010-07-29 01:19:36) [GET]
+  [4;36;1mEntry Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (0.5ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (0.4ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/login
+Rendered layouts/parts/_require_css (0.7ms)
+Rendered auth/parts/_login_form (118.2ms)
+Rendered layouts/parts/_css (2.9ms)
+Rendered layouts/parts/_htmlhead (3.5ms)
+Rendered layouts/parts/_nav (1.4ms)
+Rendered layouts/parts/_footer (0.2ms)
+Rendered layouts/parts/_javascripts (1.7ms)
+Rendered layouts/parts/_htmlbody (4.3ms)
+Response body was encoded with gzip
+Completed in 545ms (View: 134, DB: 9) | 200 OK [http://192.168.1.8/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 192.168.1.3 at 2010-07-29 01:19:51) [POST]
+  Parameters: {"commit"=>"登 \345\275\225", "authenticity_token"=>"ogi1FLPtXA4kqgbD2TVhJOX78yj9Ftw987dHoByuMvQ=", "password"=>"", "email"=>""}
+  [4;35;1mEntry Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.5ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (0.7ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = '') LIMIT 1[0m
+Redirected to http://192.168.1.8:3000/login
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+Response body was encoded with gzip
+Completed in 519ms (DB: 14) | 302 Found [http://192.168.1.8/session]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 192.168.1.3 at 2010-07-29 01:19:52) [GET]
+  [4;36;1mEntry Columns (4.5ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (1.7ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (3.4ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/login
+Rendered layouts/parts/_require_css (0.7ms)
+Rendered auth/parts/_login_form (13.6ms)
+Rendered layouts/parts/_css (3.1ms)
+Rendered layouts/parts/_htmlhead (3.6ms)
+Rendered layouts/parts/_nav (1.7ms)
+Rendered layouts/parts/_footer (0.3ms)
+Rendered layouts/parts/_javascripts (1.3ms)
+Rendered layouts/parts/_htmlbody (5.1ms)
+Response body was encoded with gzip
+Completed in 542ms (View: 32, DB: 15) | 200 OK [http://192.168.1.8/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing IndexController#index (for 192.168.1.3 at 2010-07-29 01:25:42) [GET]
+  [4;35;1mEntry Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.3ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mOnlineRecord Load (0.4ms)[0m   [0mSELECT * FROM `online_records` [0m
+  [4;36;1mOnlineRecord Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `online_records`[0m
+  [4;35;1mOnlineRecord Load (0.7ms)[0m   [0mSELECT * FROM `online_records` WHERE (`online_records`.`key` = '65ae0b79-ce92-4631-9b29-62cfd7718e03') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOnlineRecord Update (1.2ms)[0m   [0mUPDATE `online_records` SET `updated_at` = '2010-07-28 17:25:42' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mAnnouncement Load (0.5ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/index
+Rendered layouts/parts/_require_css (0.1ms)
+Rendered auth/parts/_login_form (13.7ms)
+Rendered auth/parts/_login_dialog (16.7ms)
+  [4;36;1mBug Load (0.4ms)[0m   [0;1mSELECT * FROM `bugs` ORDER BY created_at desc LIMIT 3[0m
+  [4;35;1mBug Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `bugs`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `bugs` [0m
+Rendered auth/parts/_bugs (126.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendered layouts/parts/_css (3.2ms)
+Rendered layouts/parts/_htmlhead (3.6ms)
+Rendered layouts/parts/_nav (1.6ms)
+Rendered layouts/parts/_footer (0.3ms)
+Rendered layouts/parts/_javascripts (1.3ms)
+Rendered layouts/parts/_htmlbody (4.5ms)
+Response body was encoded with gzip
+Completed in 691ms (View: 163, DB: 16) | 200 OK [http://192.168.1.8/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 192.168.1.3 at 2010-07-29 01:25:47) [GET]
+  [4;36;1mEntry Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (0.5ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (0.5ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/login
+Rendered layouts/parts/_require_css (0.2ms)
+Rendered auth/parts/_login_form (14.1ms)
+Rendered auth/parts/_login_dialog (15.9ms)
+Rendered layouts/parts/_css (3.3ms)
+Rendered layouts/parts/_htmlhead (3.4ms)
+Rendered layouts/parts/_nav (2.1ms)
+Rendered layouts/parts/_footer (0.2ms)
+Rendered layouts/parts/_javascripts (0.2ms)
+Rendered layouts/parts/_htmlbody (4.5ms)
+Response body was encoded with gzip
+Completed in 540ms (View: 31, DB: 11) | 200 OK [http://192.168.1.8/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing IndexController#index (for 192.168.1.3 at 2010-07-29 01:25:50) [GET]
+  [4;35;1mEntry Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.7ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (3.5ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (0.5ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/index
+Rendered layouts/parts/_require_css (0.7ms)
+Rendered auth/parts/_login_form (14.5ms)
+Rendered auth/parts/_login_dialog (14.7ms)
+  [4;36;1mBug Load (0.8ms)[0m   [0;1mSELECT * FROM `bugs` ORDER BY created_at desc LIMIT 3[0m
+  [4;35;1mBug Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `bugs`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `bugs` [0m
+Rendered auth/parts/_bugs (19.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendered layouts/parts/_css (3.4ms)
+Rendered layouts/parts/_htmlhead (3.8ms)
+Rendered layouts/parts/_nav (1.0ms)
+Rendered layouts/parts/_footer (0.2ms)
+Rendered layouts/parts/_javascripts (0.3ms)
+Rendered layouts/parts/_htmlbody (3.9ms)
+Response body was encoded with gzip
+Completed in 568ms (View: 44, DB: 14) | 200 OK [http://192.168.1.8/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 192.168.1.3 at 2010-07-29 01:25:52) [GET]
+  [4;36;1mEntry Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (0.5ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (0.4ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/login
+Rendered layouts/parts/_require_css (0.7ms)
+Rendered auth/parts/_login_form (56.9ms)
+Rendered auth/parts/_login_dialog (57.1ms)
+Rendered layouts/parts/_css (0.0ms)
+Rendered layouts/parts/_htmlhead (0.1ms)
+Rendered layouts/parts/_nav (0.0ms)
+Rendered layouts/parts/_footer (0.0ms)
+Rendered layouts/parts/_javascripts (0.0ms)
+Rendered layouts/parts/_htmlbody (0.0ms)
+Response body was encoded with gzip
+Completed in 470ms (View: 61, DB: 8) | 200 OK [http://192.168.1.8/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing IndexController#index (for 192.168.1.3 at 2010-07-29 01:25:54) [GET]
+  [4;35;1mEntry Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.5ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (0.7ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/index
+Rendered layouts/parts/_require_css (1.1ms)
+Rendered auth/parts/_login_form (13.7ms)
+Rendered auth/parts/_login_dialog (14.4ms)
+  [4;36;1mBug Load (0.5ms)[0m   [0;1mSELECT * FROM `bugs` ORDER BY created_at desc LIMIT 3[0m
+  [4;35;1mBug Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `bugs`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `bugs` [0m
+Rendered auth/parts/_bugs (18.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendered layouts/parts/_css (2.0ms)
+Rendered layouts/parts/_htmlhead (3.2ms)
+Rendered layouts/parts/_nav (2.5ms)
+Rendered layouts/parts/_footer (0.3ms)
+Rendered layouts/parts/_javascripts (1.1ms)
+Rendered layouts/parts/_htmlbody (5.6ms)
+Response body was encoded with gzip
+Completed in 558ms (View: 45, DB: 9) | 200 OK [http://192.168.1.8/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 192.168.1.3 at 2010-07-29 01:25:58) [POST]
+  Parameters: {"commit"=>"登 \345\275\225", "authenticity_token"=>"ogi1FLPtXA4kqgbD2TVhJOX78yj9Ftw987dHoByuMvQ=", "password"=>"", "email"=>""}
+  [4;36;1mEntry Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (0.5ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (2.1ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = '') LIMIT 1[0m
+Redirected to http://192.168.1.8:3000/login
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+Response body was encoded with gzip
+Completed in 516ms (DB: 14) | 302 Found [http://192.168.1.8/session]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 192.168.1.3 at 2010-07-29 01:25:59) [GET]
+  [4;35;1mEntry Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.4ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (0.4ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/login
+Rendered layouts/parts/_require_css (0.6ms)
+Rendered auth/parts/_login_form (14.3ms)
+Rendered auth/parts/_login_dialog (15.1ms)
+Rendered layouts/parts/_css (3.3ms)
+Rendered layouts/parts/_htmlhead (3.6ms)
+Rendered layouts/parts/_nav (0.4ms)
+Rendered layouts/parts/_footer (0.2ms)
+Rendered layouts/parts/_javascripts (1.4ms)
+Rendered layouts/parts/_htmlbody (4.8ms)
+Response body was encoded with gzip
+Completed in 431ms (View: 27, DB: 6) | 200 OK [http://192.168.1.8/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing IndexController#index (for 192.168.1.3 at 2010-07-29 01:26:02) [GET]
+  [4;36;1mEntry Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (0.5ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (0.4ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/index
+Rendered layouts/parts/_require_css (1.0ms)
+Rendered auth/parts/_login_form (119.1ms)
+Rendered auth/parts/_login_dialog (119.8ms)
+  [4;35;1mBug Load (1.5ms)[0m   [0mSELECT * FROM `bugs` ORDER BY created_at desc LIMIT 3[0m
+  [4;36;1mBug Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `bugs`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `bugs` [0m
+Rendered auth/parts/_bugs (19.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendered layouts/parts/_css (3.1ms)
+Rendered layouts/parts/_htmlhead (3.6ms)
+Rendered layouts/parts/_nav (1.0ms)
+Rendered layouts/parts/_footer (0.3ms)
+Rendered layouts/parts/_javascripts (1.4ms)
+Rendered layouts/parts/_htmlbody (4.8ms)
+Response body was encoded with gzip
+Completed in 563ms (View: 149, DB: 13) | 200 OK [http://192.168.1.8/]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing IndexController#index (for 192.168.1.3 at 2010-07-29 01:31:40) [GET]
+  [4;35;1mEntry Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.5ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mOnlineRecord Load (0.4ms)[0m   [0mSELECT * FROM `online_records` [0m
+  [4;36;1mOnlineRecord Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `online_records`[0m
+  [4;35;1mOnlineRecord Load (0.5ms)[0m   [0mSELECT * FROM `online_records` WHERE (`online_records`.`key` = '65ae0b79-ce92-4631-9b29-62cfd7718e03') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOnlineRecord Update (0.3ms)[0m   [0mUPDATE `online_records` SET `updated_at` = '2010-07-28 17:31:40' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mAnnouncement Load (0.7ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/index
+Rendered layouts/parts/_require_css (0.8ms)
+Rendered auth/parts/_login_form (13.8ms)
+Rendered auth/parts/_login_dialog (16.6ms)
+  [4;36;1mBug Load (0.4ms)[0m   [0;1mSELECT * FROM `bugs` ORDER BY created_at desc LIMIT 3[0m
+  [4;35;1mBug Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `bugs`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `bugs` [0m
+Rendered auth/parts/_bugs (17.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendered layouts/parts/_css (4.0ms)
+Rendered layouts/parts/_htmlhead (4.5ms)
+Rendered layouts/parts/_nav (2.5ms)
+Rendered layouts/parts/_footer (0.1ms)
+Rendered layouts/parts/_javascripts (1.7ms)
+Rendered layouts/parts/_htmlbody (5.7ms)
+Response body was encoded with gzip
+Completed in 694ms (View: 56, DB: 14) | 200 OK [http://192.168.1.8/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing IndexController#index (for 192.168.1.3 at 2010-07-29 01:31:43) [GET]
+  [4;36;1mEntry Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (1.2ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (0.4ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/index
+Rendered layouts/parts/_require_css (0.7ms)
+Rendered auth/parts/_login_form (14.6ms)
+Rendered auth/parts/_login_dialog (15.3ms)
+  [4;35;1mBug Load (0.5ms)[0m   [0mSELECT * FROM `bugs` ORDER BY created_at desc LIMIT 3[0m
+  [4;36;1mBug Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `bugs`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM `bugs` [0m
+Rendered auth/parts/_bugs (19.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendered layouts/parts/_css (3.3ms)
+Rendered layouts/parts/_htmlhead (3.7ms)
+Rendered layouts/parts/_nav (1.7ms)
+Rendered layouts/parts/_footer (0.2ms)
+Rendered layouts/parts/_javascripts (1.3ms)
+Rendered layouts/parts/_htmlbody (4.6ms)
+Response body was encoded with gzip
+Completed in 574ms (View: 45, DB: 11) | 200 OK [http://192.168.1.8/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 192.168.1.3 at 2010-07-29 01:31:49) [GET]
+  [4;35;1mEntry Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (0.8ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (3.5ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (0.4ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/login
+Rendered layouts/parts/_require_css (0.8ms)
+Rendered auth/parts/_login_form (14.5ms)
+Rendered auth/parts/_login_dialog (15.0ms)
+Rendered layouts/parts/_css (2.9ms)
+Rendered layouts/parts/_htmlhead (3.4ms)
+Rendered layouts/parts/_nav (1.4ms)
+Rendered layouts/parts/_footer (0.1ms)
+Rendered layouts/parts/_javascripts (1.3ms)
+Rendered layouts/parts/_htmlbody (4.6ms)
+Response body was encoded with gzip
+Completed in 541ms (View: 31, DB: 10) | 200 OK [http://192.168.1.8/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 192.168.1.3 at 2010-07-29 01:31:51) [POST]
+  Parameters: {"commit"=>"登 \345\275\225", "authenticity_token"=>"ogi1FLPtXA4kqgbD2TVhJOX78yj9Ftw987dHoByuMvQ=", "password"=>"", "email"=>""}
+  [4;36;1mEntry Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mComment Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mFeeling Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `feelings`[0m
+  [4;35;1mApp Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `apps`[0m
+  [4;36;1mApp Load (0.8ms)[0m   [0;1mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;35;1mContacting Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `contactings`[0m
+  [4;36;1mAnnouncement Load (1.4ms)[0m   [0;1mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = '') LIMIT 1[0m
+Redirected to http://192.168.1.8:3000/login
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Response body was encoded with gzip
+Completed in 568ms (DB: 13) | 302 Found [http://192.168.1.8/session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 192.168.1.3 at 2010-07-29 01:31:52) [GET]
+  [4;35;1mEntry Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mComment Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mFeeling Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `feelings`[0m
+  [4;36;1mApp Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `apps`[0m
+  [4;35;1mApp Load (1.5ms)[0m   [0mSELECT * FROM `apps` WHERE (`apps`.`name` = 'mindmap_editor') LIMIT 1[0m
+  [4;36;1mContacting Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `contactings`[0m
+  [4;35;1mAnnouncement Load (0.3ms)[0m   [0mSELECT * FROM `announcements` ORDER BY announcements.id DESC LIMIT 1[0m
+Rendering template within layouts/black_index
+Rendering auth/login
+Rendered layouts/parts/_require_css (0.7ms)
+Rendered auth/parts/_login_form (121.0ms)
+Rendered auth/parts/_login_dialog (121.9ms)
+Rendered layouts/parts/_css (3.3ms)
+Rendered layouts/parts/_htmlhead (3.5ms)
+Rendered layouts/parts/_nav (0.4ms)
+Rendered layouts/parts/_footer (0.2ms)
+Rendered layouts/parts/_javascripts (1.3ms)
+Rendered layouts/parts/_htmlbody (4.7ms)
+Response body was encoded with gzip
+Completed in 544ms (View: 133, DB: 10) | 200 OK [http://192.168.1.8/login]
