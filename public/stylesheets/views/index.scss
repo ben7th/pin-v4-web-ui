@@ -1,0 +1,75 @@
+@import "../ui/misc";
+
+.page-content{color:#ddd;}
+.index-footer{
+  padding:9px;clear:both;overflow:hidden;color:white;
+  position:relative;margin-top:-36px;clear:both;
+}
+
+.login-form{
+  input.text{width:304px;}
+  .form_actions{width:318px;}
+}
+
+.login,.pad{
+  border:1px solid #242438;
+  @include border-radius(10px);
+  @include box-shadow(0 0 10px #040307);
+  padding:15px;
+  margin-bottom:10px;
+  h3{margin-bottom:15px;}
+  input.text{
+    border:0px;background-color:#C3CDF0;
+  }
+  .active{
+    input.text{background-color:#CCEEFF !important;}
+  }
+  form{
+    .fielderror{display:none;}
+    .fieldWithErrors{
+      .text, textarea{
+        background-color:#F39D77;
+      }
+    }
+  }
+  .flash-error{
+    @include gradient(#DF0024,#960014);
+    text-shadow:1px 1px 0 #333;
+    margin-bottom:15px;
+    span{
+      background-image:url(/images/piece/notice-error-icon.png);
+      background-position:0 4px;
+      background-repeat:no-repeat;font-size:14px;
+      line-height:32px;height:32px;padding-left:27px;display:block;
+    }
+  }
+}
+.login{background:url(/images/index/dialog-login-background.png);}
+.pad{background:url(/images/index/dialog-message-background.png);}
+
+.reg-button{
+  background-image:url(/images/reg.png);
+  width:130px;height:44px;display:inline-block;text-indent:-200em;
+  margin-top:0.6em;
+}
+
+.v10_login{text-indent:-9999px;background:url(/images/index/v10_login.png) no-repeat 0px 0px;width:118px;height:111px;display:block;}
+.v10_login{position:absolute;top:50px;left:-150px}
+.v09_login{text-indent:-9999px;background:url(/images/index/v09_login.png) no-repeat 0px 0px;width:118px;height:111px;display:block;}
+.v09_login{position:absolute;top:50px;left:-150px;}
+
+ul.mplist li.mli{background-image:url(/images/themes/starry/linedotl.gif);background-repeat:repeat-x;background-position:top;}
+ul.mplist li div.info_div{border-left:solid 20px #1C3D52;}
+
+.index-login{border:solid 5px #FFE799;background-color: #FFF;}
+.index-login .v09_login{left:-120px;top:30px;}
+.index-login .v10_login{left:-120px;top:30px;}
+.index-login .index_login_panel_content{padding:8px 18px 10px 18px;border:1px solid #F3D15E;}
+.index_login_panel_content .login-form{margin:0;padding:0;}
+.index_login_panel_content .login-form .p label{float:left;width:50px;text-align:right;margin-right:10px;}
+.index_login_panel_content .login-form .p .text{float:left;width:140px;}
+.index_login_panel_content .login-form .login-submit{margin-top:1em;}
+
+ul.index-bugs a{color:#666;}
+ul.index-bugs a:hover{color:#666;}
+ul.index-bugs li div.bug-div{border-bottom:dashed 1px #ccc;padding:4px 0;}

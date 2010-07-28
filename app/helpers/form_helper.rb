@@ -31,31 +31,16 @@ module FormHelper
     remote_form_for(*(args + [options]), &block)
   end
 
-  def flash_notice(style='flash-notice')
-    re=''
-    if !flash[:notice].blank?
-      re="<div class='#{style}'>#{flash[:notice]}</div>"
-    end
-    return re
-  end
-
-  def flash_error(style='flash-error')
-    re=''
-    if !flash[:error].blank?
-      re="<div class='#{style}'>#{flash[:error]}</div>"
-    end
-    return re
-  end
-
-  def flash_success(style='flash-success')
-    re=''
-    if !flash[:success].blank?
-      re="<div class='#{style}'>#{flash[:success]}</div>"
-    end
-    return re
-  end
-
   def flash_info
-    flash_notice + flash_error + flash_success
+    re = []
+    [:notice,:error,:success].each do |kind|
+      msg = flash[kind]
+      re << "<div class='flash-#{kind}'>#{_pack_flash_msg(msg)}</div>" if msg
+    end
+    re*''
+  end
+  
+  def _pack_flash_msg(msg)
+    "<span>#{msg}</span>"
   end
 end

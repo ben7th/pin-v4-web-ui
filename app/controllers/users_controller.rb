@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     reset_session
     session[:online_key]=online_key
     @user=User.new
-    render :layout=>'black_page'
+    render :layout=>'black_index',:template=>'auth/signup'
   end
 
   def create
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
       login_after_create(@user)
     else
       flash.now[:error]=@user.errors.first[1]
-      render :layout=>'black_page',:action => 'new'
+      render :layout=>'black_index',:template=>'auth/signup'
     end
   end
 
@@ -151,20 +151,23 @@ class UsersController < ApplicationController
   
   # 忘记密码时，填写邮件的表单
   def forgot_password_form
-    render :layout=>'black_page'
+    render :layout=>'black_index',:template=>'auth/forgot_password_form'
   end
 
   # 根据邮件地址发送邮件
   def forgot_password
-    @user = User.find_by_email(params[:email])
-    if !@user.blank?
-      @user.forgot_password
-      flash[:success] = "包含重设密码链接的邮件已经发送到邮箱 #{params[:email]}，请留意。"
-      redirect_to("/forgot_password_form")
-      return
-    end
-    flash[:error] = "对不起，不存在邮箱为 #{params[:email]} 的用户。"
+    _deal_forgot_password(params[:email])
     redirect_to("/forgot_password_form")
+  end
+  
+  def _deal_forgot_password(email)
+    return flash[:error] = "请填写邮箱，才能帮你重设密码。。" if email.blank?
+    
+    user = User.find_by_email(email)
+    return flash[:error] = "对不起，不存在邮箱为 #{params[:email]} 的用户。" if user.blank?
+    
+    user.forgot_password
+    flash[:success] = "包含重设密码链接的邮件已经发送到邮箱 #{params[:email]}，请留意。"
   end
 
   # 重置密码的表单

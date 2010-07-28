@@ -1,42 +1,23 @@
 - bundle :css_path=>'/bundle_cache',:compress=>false do
-  = stylesheet_link_tag 'framework/reset',:media=>'screen, projection'
-  = stylesheet_link_tag 'framework/typography',:media=>'screen, projection'
-  = stylesheet_link_tag 'framework/sticky_footer',:media=>'screen, projection'
+  = stylesheet_link_tag 'framework/reset'
+  = stylesheet_link_tag 'framework/typography'
+  = stylesheet_link_tag 'framework/sticky_footer'
 
-  = stylesheet_link_tag 'screen',:media=>'screen, projection'
-  = stylesheet_link_tag 'layout',:media=>'screen, projection'
-  = stylesheet_link_tag 'form',:media=>'screen, projection'
-  = stylesheet_link_tag 'buttons',:media=>'screen, projection'
-  = stylesheet_link_tag 'mplist',:media=>'screen, projection'
-  = stylesheet_link_tag 'cell',:media=>'screen, projection'
-  = stylesheet_link_tag 'tab',:media=>'screen, projection'
-  = stylesheet_link_tag 'menu',:media=>'screen, projection'
-  = stylesheet_link_tag 'pagination',:media=>'screen, projection'
-  = stylesheet_link_tag 'stars',:media=>'screen, projection'
-  = stylesheet_link_tag 'comment',:media=>'screen, projection'
-
-  = stylesheet_link_tag 'accordion',:media=>'screen, projection'
-
-  = stylesheet_link_tag '/javascripts/pie/css/autocompleter',:media=>'screen, projection'
-  = stylesheet_link_tag '/javascripts/swfupload/default.css',:media=>'screen, projection'
-  = stylesheet_link_tag '/javascripts/kissy_editor/themes/default/editor.css',:media=>'screen, projection'
-
-  = stylesheet_link_tag "/facebox/facebox.css" ,:media=>'screen, projection'
-  = stylesheet_link_tag "/javascripts/lightview/css/lightview.css" ,:media=>'screen, projection'
-
-  = stylesheet_link_tag "/stylesheets/views/notice_tip_css.css"
-
-  = stylesheet_link_tag "work_board.css" ,:media=>'screen, projection'
+  = stylesheet_link_tag 'screen'
+  = stylesheet_link_tag 'layout'
+  = stylesheet_link_tag 'ui/form'
 
 = grid_css
 
 - theme = get_user_theme_str
 
-= stylesheet_link_tag "themes/#{theme}",:media=>'screen, projection',:t=>'theme'
+= stylesheet_link_tag "themes/#{theme}",:t=>'theme'
 
 /[if lt IE 9]
-  = stylesheet_link_tag "themes/#{theme}.ie",:media=>'screen, projection',:t=>'themeie'
-  = stylesheet_link_tag "framework/iefix",:media=>'screen, projection'
+  = stylesheet_link_tag "themes/#{theme}.ie",:t=>'themeie'
+  - bundle :css_path=>'/bundle_cache_ie',:compress=>false do
+    = stylesheet_link_tag 'framework/iefix'
+    = stylesheet_link_tag 'ui/form.ie'
 
 /[if !IE 7]
   :css

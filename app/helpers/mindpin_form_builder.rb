@@ -5,21 +5,33 @@ class MindpinFormBuilder < ActionView::Helpers::FormBuilder
       options||={}
       args = [options] if args.blank?
       options[:class] = push_classname(options[:class],htmlclass)
-      show_label = options.delete :show_label
-      show_label = true if show_label.nil?
+      
       # rails 2.3.8 中 content_tag 返回 ActiveSupport::SafeBuffer 类型
       # 它重载了 字符串的 + 方法，会将 + 后的字符串 进行 escapeHTML
       # 所以用 + 方法 要注意
-      label_html = (show_label ?
-        @template.content_tag("label",
-          I18n.t("activerecord.attributes.#{@object_name}.#{label}"),
-          :for=>"#{@object_name}_#{label}"
-        ) : '')
+      label_html = _label_html(label,options)
+      desc_html = _desc_html(options)
       @template.content_tag("div",
-        "#{label_html}" + super(label,*args) + fielderror(@object,label),
-        :class=>'p'
+        [label_html , super(label,*args) , fielderror(@object,label) , desc_html],
+        :class=>'field'
       )
+      #
     end
+  end
+
+  def _label_html(label,options)
+    show_label = options.delete :show_label
+    show_label = true if show_label.nil?
+    show_label ?
+      @template.content_tag("label",
+        I18n.t("activerecord.attributes.#{@object_name}.#{label}"),
+        :for=>"#{@object_name}_#{label}"
+      ) : ''
+  end
+  
+  def _desc_html(options)
+    desc = options.delete :desc
+    desc.blank? ? '' : @template.content_tag('div',desc,:class=>'quiet')
   end
 
   create_builder(:text_field)
@@ -45,19 +57,6 @@ class MindpinFormBuilder < ActionView::Helpers::FormBuilder
         fielderror(@object,label)
       ],
       :class=>'p indent'
-    )
-  end
-
-  def submit(value,*args)
-    if args.blank?
-      args = [{:class=>'ui-button'}]
-    end
-    @template.content_tag("div",
-      @template.content_tag("span",
-        super(value,*args),
-        :class=>'ui-button-span'
-      ),
-      :class=>'p'
     )
   end
 

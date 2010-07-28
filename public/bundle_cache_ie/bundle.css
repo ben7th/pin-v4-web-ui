@@ -1,3 +1,4 @@
+/* --------- /stylesheets/framework/iefix.css --------- */ 
 * html legend { margin:0px -8px 16px 0; padding:0; }
 sup { vertical-align:text-top; }
 sub { vertical-align:text-bottom; }
@@ -8,7 +9,7 @@ fieldset { padding-top:0; }
 
 /************/
 
-a{behavior:url("/stylesheets/framework/link_ie.htc");}
+a{behavior:url(/stylesheets/framework/link_ie.htc);}
 
 body{font-family:arial,宋体,sans-serif;}
 
@@ -53,4 +54,20 @@ form{zoom:1}
 
 .flash-error,.flash-notice,.flash-success{zoom:1;}
 
-.p{zoom:1;}
+.p{zoom:1;}/* --------- /stylesheets/ui/form.ie.css --------- */ 
+textarea {
+  overflow: auto; }
+
+input.text {
+  font-family: 宋体;
+  vertical-align: baseline;
+  padding: 10px 7px 4px;
+  zoom: 1; }
+
+input.checkbox {
+  position: relative;
+  top: 1px; }
+
+form .submit {
+  font-family: 宋体;
+  zoom: 1; }

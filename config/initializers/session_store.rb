@@ -8,12 +8,12 @@
 case RAILS_ENV
 when 'production'
   ActionController::Base.session = {
-    :key=>'_mindpin_ei_session',
+    :key=>'_mindpin_v4_session',
     :secret=>'883abe7844502ee307e376fa4d0509253d7f9e55fc8be69a934735cd470cc8671af39e27482885960f3364fa8af420b5519571193e22987c3e9e4f9da29f15fb'
   }
 else
   ActionController::Base.session = {
-    :key=>'_mindpin_ei_session_dev',
+    :key=>'_mindpin_v4_session_dev',
     :secret=>'883abe7844502ee307e376fa4d0509253d7f9e55fc8be69a934735cd470cc8671af39e27482885960f3364fa8af420b5519571193e22987c3e9e4f9da29f15fb'
   }
 end

@@ -9,14 +9,6 @@ hr.space {background:#fff;color:#fff;}
 div.hr {height:16px;background:url(/images/piece/hl1.gif) repeat-x center;margin:0 !important;padding:0 !important;clear:both;}
 div.hr hr {display: none;}
 
-form .error, form .notice, form .success {padding:.2em .6em;margin-bottom:1em;border:2px solid #ddd;}
-form .error {background:#FBE3E4;color:#8a1f11;border-color:#FBC2C4;}
-form .notice {background:#FFF8CC;color:#935A00;border-color:#FBF3AF;}
-form .success {background:#f3f6e2;color:#264409;border-color:#C8c8a0;}
-form .error a {color:#8a1f11;}
-form .notice a {color:#514721;}
-form .success a {color:#264409;}
-
 /*search*/
 input.search-inner {background-image:url('/images/piece/search-inner.png');background-repeat:no-repeat;background-position:1px 1px;padding-left:21px !important;width:150px !important;}
 input.search-btn {border:solid 1px #878D59;border-left:solid 1px #A9AD88;border-top:solid 1px #A9AD88;background-color:#E5ECAB;padding:1px 4px 2px;}

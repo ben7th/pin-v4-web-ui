@@ -1,7 +1,7 @@
 class IndexController < ApplicationController
   def index
     if !logged_in?
-      return render :layout=>'black_index',:template=>'index/login_index'
+      return render :layout=>'black_index',:template=>'auth/index'
     end
     respond_to do |format|
       format.html do

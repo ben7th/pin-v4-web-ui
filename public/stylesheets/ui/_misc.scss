@@ -1,0 +1,17 @@
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin box-shadow($params){
+  box-shadow:$params;
+  -moz-box-shadow:$params;
+  -webkit-box-shadow:$params;
+}
+
+@mixin gradient($from,$to){
+  background:-moz-linear-gradient(-90deg,$from,$to);
+  background:-webkit-gradient(linear,0% 0,0% 100%,from($from),to($to));
+  filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#{$from}',endColorstr='#{$to}');
+}

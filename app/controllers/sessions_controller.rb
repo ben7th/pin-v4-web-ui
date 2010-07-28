@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   include SessionsMethods
 
   def new
-    render :layout=>'black_index'
+    render :layout=>'black_index',:template=>'auth/login'
   end
 
   def v09_new
