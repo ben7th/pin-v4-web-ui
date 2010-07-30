@@ -1,0 +1,51 @@
+/*页面基础容器*/
+body {margin:0;}
+
+.page-container {margin:0;}
+.page-content {
+  overflow:visible;clear:both;
+  
+  /*这里开始是版面大布局相关，实现不合理且无意义，尽早废掉*/
+  .PL{
+    position:relative;
+    .cell{padding-left:8px;} 
+  }
+  
+  /*page layout*/
+  #PL-panel {width:200px;float:left;}
+  #PL-paper {margin-left:200px;}
+  #PL-paper {
+    -moz-border-radius:3px;-webkit-border-radius:3px;
+    .cell{padding:4px 8px 8px 8px;}
+  }
+}
+
+/*顶部*/
+.page-head{
+  height:115px;
+  .nav {
+    clear:both;overflow:hidden;
+    .site-logo{
+      width:240px;height:40px;margin:25px 0 0 5px;float:left;
+      a{width:240px;height:40px;float:left;background-image:url(/images/mindpin.png)}
+    }
+    .start{
+      float:right;margin:25px 10px 0 0;overflow:hidden;line-height:40px;
+      span{float:left;margin-left:20px;}
+      .home{padding-left:18px;background:url(/images/piece/home.png) no-repeat 0 center;}
+    }
+  }
+}
+
+/*底部*/
+.page-footer{
+  line-height:80px;overflow:hidden;
+  .sitename{padding-left:10px;}
+  .links{float:right;padding-right:10px;}
+}
+
+/*page-selector 也没什么意义*/
+div.page-selector{margin:5px 0 0 0;padding:0 0 0 10px;font-size:14px;line-height:21px;
+  -moz-border-radius-bottomleft:3px;-moz-border-radius-topleft:3px;
+  -webkit-border-bottom-left-radius:3px;-webkit-border-top-left-radius:3px;
+}

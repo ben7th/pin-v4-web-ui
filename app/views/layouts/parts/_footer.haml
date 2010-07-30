@@ -1,4 +1,7 @@
-%div{:class=>['page-footer',classname||'']*' '}
-  %span.sitename &copy; 2006-2010 mindpin.com. all rights reserved.
-  %span.beian [京ICP备06063955号]
-  %span.links <a href="/bugs" class="bug-rep" target="_blank"><em>&gt;</em> 给MindPin提意见</a>
+.page-footer
+  %div{:class=>container_classname}
+    .page-footer-content{:class=>grid_classname}
+      %div{:class=>grid_classname}
+        %span.sitename &copy; 2006-2010 mindpin.com. all rights reserved.
+        %span.beian [京ICP备06063955号]
+        %span.links <a href="/bugs" class="loud" target="_blank"><em>&gt;</em> 给MindPin提意见</a>

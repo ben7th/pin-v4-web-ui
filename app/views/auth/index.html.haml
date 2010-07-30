@@ -1,33 +1,30 @@
 - require_css 'index',true
 
-.grid_24.margint60.paddingb3em
-
-  .grid_9.alpha
-    .dialog.index
+.grid_9.alpha
+  .dialog.index
+    -cache do
       =render :partial=>'auth/parts/login_dialog'
-    .pad
-      =render :partial=>'auth/parts/bugs'
+  .pad
+    =render :partial=>'auth/parts/bugs'
 
-  .grid_15.omega
-    .pad.clearfix.font13
-      .fleft=link_to "注册",signup_path,:class=>'reg-button hidetext'
-      .fleft.margint10.marginl10
-        %div
-          还没有账号..？
-          %span.loud 注册新的 MindPin 账号，只需30秒~
-    .clearfix
-      .grid_3.alpha
-        .pad.aligncenter
-          思维导图2.0
-      - 3.times do
-        .grid_3
-          .pad.aligncenter
-            ……
-      .grid_3.omega
+.grid_15.omega
+  .pad.clearfix.font13
+    .fleft=link_to "注册",signup_path,:class=>'reg-button hidetext'
+    .fleft.margint10.marginl10
+      %div
+        还没有账号..？
+        %span.loud 注册新的 MindPin 账号，只需30秒~
+  .clearfix
+    .grid_3.alpha
+      .pad.aligncenter
+        思维导图2.0
+    - 3.times do
+      .grid_3
         .pad.aligncenter
           ……
-    .pad
-      %h3 最新公告
-      =last_announcement
-
-
+    .grid_3.omega
+      .pad.aligncenter
+        ……
+  .pad
+    %h3 最新公告
+    =last_announcement

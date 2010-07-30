@@ -1,15 +1,14 @@
-- grid_classname = get_grid_classname
 - yield_partial = @mindpin_layout.yield_partial
 
 %body.echo
 
-  %div{:class=>['page-warp',grid_classname]*' '}
+  .page-warp
     .page-container
       =render :partial=>'layouts/parts/nav' if !@mindpin_layout.hide_nav
-      .page-content
+      .page-content{:class=>container_classname}
         = yield_partial.nil? ? yield : render(:partial=>"/layouts/yield/#{yield_partial}")
 
-  = render :partial=>'layouts/parts/footer',:locals=>{:classname=>grid_classname} if !@mindpin_layout.hide_footer
+  = render :partial=>'layouts/parts/footer' if !@mindpin_layout.hide_footer
 
   #page-hide.hide
     =yield :hide

@@ -1,34 +1,8 @@
 module PageHelper
-  def round_edge(edge=:top,options=Hash.new(''))
-    width = options[:width]
-    color = options[:color] || ''
-    bcolor = options[:bcolor] || color
-    htmlclass = options[:class].blank? ? '':" #{options[:class]}"
-    arr=[
-      "<div class='round_corner_level_1#{htmlclass}' style='background-color:#{color};border-left:solid 1px #{bcolor};border-right:solid 1px #{bcolor};'></div>",
-      "<div class='round_corner_level_2#{htmlclass}' style='background-color:#{color};border-left:solid 2px #{bcolor};border-right:solid 2px #{bcolor};'></div>",
-      "<div class='round_corner_level_3#{htmlclass}' style='background-color:#{color};border-left:solid 1px #{bcolor};border-right:solid 1px #{bcolor};'></div>",
-      "<div class='round_corner_level_4#{htmlclass}' style='background-color:#{color};border-left:solid 1px #{bcolor};border-right:solid 1px #{bcolor};'></div>"
-    ]
-    re = arr*'' if edge==:top
-    re = arr.reverse*'' if edge==:bottom
-    "<div class='round_corner_container' style='width:#{prepare_width(width)}'>"+
-      re+
-      "</div>"
-  end
-
+  
   def prepare_width(width)
     return width if width.to_s.last == '%'
     return "#{width}px"
-  end
-
-  def round_container(options=Hash.new(''),&block)
-    content = capture(&block)
-    top_color = options[:topcolor] || options[:color]
-    bottom_color = options[:bottomcolor] || options[:color]
-    concat(round_edge(:top,options.merge(:color=>top_color))) if options[:topcolor] != '' && options[:color] != ''
-    concat(content)
-    concat(round_edge(:bottom,options.merge(:color=>bottom_color))) if options[:bottomcolor] != '' && options[:color] != ''
   end
 
   # 生成render :partial=>'xxx/_meta_xxx',:locals=>{:xxx=>xxx}
@@ -64,12 +38,19 @@ module PageHelper
     end
   end
 
+  # 获取页面布局的container样式名
+  def container_classname
+    @get_container_classname ||= _layout_classname('container')
+  end
+
   # 获取页面布局的grid样式名
-  def get_grid_classname
-    if @mindpin_layout.grid
-      return "container_#{@mindpin_layout.grid}"
-    end
-    return nil
+  def grid_classname
+    @get_grid_classname ||= _layout_classname('grid')
+  end
+
+  def _layout_classname(prefix)
+    return "#{prefix}_#{@mindpin_layout.grid}" if @mindpin_layout.grid
+    return ''
   end
 
   # 加载页面布局的gridcss文件

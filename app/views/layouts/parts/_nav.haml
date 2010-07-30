@@ -6,21 +6,21 @@
     %p 尽量不要养成一种固定的使用模式习惯，很多时候，用户抱怨不方便，就是因为我们做出来的模式不符合他们的习惯。
     %p 我们开发人员应该争取去多发现一些问题，不然就只能等着用户去发现。
 
-.nav
-  .site-logo
-    - if RAILS_ENV=='production'
-      <a href="/" title="回 MindPin 首页"></a>
-    - else
-      <a href='javascript:facebox.reveal(#{dev_tip_str.to_json})' title="回 MindPin 首页"></a>
-
-  .start
-    - if logged_in?
-      %span.bold= link_to "#{current_user.name}的个人页",current_user
-      =render :partial=>'index/parts/nav'
-      =link_to '退出',logout_url
-    - else
-      %span= link_to '首页',root_url
-      %span.line |
-      %span= link_to '登录',login_url
-      %span.line |
-      %span= link_to '注册',signup_url
+.page-head
+  .nav{:class=>container_classname}
+    .site-logo
+      - if RAILS_ENV=='production'
+        <a href="/" title="回 MindPin 首页"></a>
+      - else
+        <a href='javascript:jQuery.facebox(#{dev_tip_str.to_json})' title="回 MindPin 首页"></a>
+  
+    .start
+      - if logged_in?
+        %span.bold= link_to "#{current_user.name}的个人页",current_user
+        =render :partial=>'index/parts/nav'
+        =link_to '退出',logout_url
+      - else
+        %span.home>= link_to '首页',root_url
+        %span>= link_to '<b class="font14">用户注册</b>',signup_url
+        %span>= link_to '登录',login_url
+        
