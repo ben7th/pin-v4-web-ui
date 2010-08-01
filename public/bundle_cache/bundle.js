@@ -373,7 +373,7 @@ jQuery.noConflict();
 
   $.extend($.facebox, {
     settings: {
-      opacity      : 0,
+      opacity      : 0.6,
       overlay      : true,
       loadingImage : '/javascripts/facebox/loading.gif',
       closeImage   : '/javascripts/facebox/closelabel.gif',
@@ -613,7 +613,242 @@ jQuery.noConflict();
   })
 
 })(jQuery);
-/* --------- /javascripts/views/form.js --------- */ 
+/* --------- /javascripts/pie/core.js --------- */ 
+/** pielib Core version 0.2
+ *  (c) 2006-2008 MindPin.com - songliang
+ *  
+ *  created at 2007.03.27
+ *  updated on 2008.6.13 
+ *  
+ *  require:
+ *  prototype.js ver 1.6.0.1
+ *  
+ *  working on //W3C//DTD XHTML 1.0 Strict//EN"
+ *
+ *  For details, to the web site: http://www.mindpin.com/
+ *--------------------------------------------------------------------------*/
+
+pie={
+	html:{},
+	dom:{},
+	data:{},
+	js:{},
+	util:{}
+};
+
+//bug fix..
+
+//ie 6 image cache
+//修正ie6的小图片反复加载问题
+try{
+	document.execCommand('BackgroundImageCache', false, true);
+}catch(e){}
+
+pie.isIE=function(){
+	return window.navigator.userAgent.indexOf("MSIE")>=1;
+}
+
+pie.isFF=function(){
+	return window.navigator.userAgent.indexOf("Firefox")>=1;
+}
+
+pie.isChrome=function(){
+	return window.navigator.userAgent.indexOf("Chrome")>=1;
+}
+
+Element.addMethods({
+  makeUnselectable: function(element, cursor){
+    cursor = cursor || 'default';
+    element.onselectstart = function(){
+      return false;
+    };
+    element.unselectable = "on";
+    element.style.MozUserSelect = "none";
+    return element;
+  },
+  makeSelectable: function(element){
+    element.onselectstart = function(){
+      return true;
+    };
+    element.unselectable = "off";
+    element.style.MozUserSelect = "";
+    return element;
+  },
+  do_click:function(element){
+    pie.do_click(element)
+  }
+});
+
+// 对Date的扩展，将 Date 转化为指定格式的String
+// 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符，
+// 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字)
+// 例子：
+// (new Date()).getFormatValue("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423
+// (new Date()).getFormatValue("yyyy-M-d h:m:s.S")      ==> 2006-7-2 8:9:4.18
+Date.prototype.getFormatValue = function(fmt){
+  //author: meizz
+  var o = {
+    "M+" : this.getMonth()+1,                 //月份
+    "d+" : this.getDate(),                    //日
+    "h+" : this.getHours(),                   //小时
+    "m+" : this.getMinutes(),                 //分
+    "s+" : this.getSeconds(),                 //秒
+    "q+" : Math.floor((this.getMonth()+3)/3), //季度
+    "S"  : this.getMilliseconds()             //毫秒
+  };
+  if(/(y+)/.test(fmt))
+    fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+  for(var k in o)
+    if(new RegExp("("+ k +")").test(fmt))
+  fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+  return fmt;
+}
+
+
+pie.do_click = function(id,evt){
+  var fire_on_this = $(id)
+  if (document.createEvent){
+    var evObj = document.createEvent('MouseEvents')
+    evObj.initEvent( 'click', true, false )
+    fire_on_this.dispatchEvent(evObj)
+  }
+  else if (document.createEventObject){
+    fire_on_this.fireEvent('onclick')
+  }
+  if(evt) evt.stop();
+}
+
+//---XML code begin
+pie.dom.xml={
+  //获取空的XML解析对象
+  getXMLDoc:function(){
+    var xmlDoc=null;
+    if(document.implementation && document.implementation.createDocument){
+      xmlDoc=document.implementation.createDocument("","",null);
+    }else if(typeof ActiveXObject != "undefined"){
+      xmlDoc=new ActiveXObject('MSXML2.DOMDocument');
+    }
+    xmlDoc.async = false;
+    return xmlDoc;
+  },
+  //从字符串获取XML解析对象
+  getXMLDocFromString:function(str){
+    var xmlDoc=null;
+    if(document.implementation && document.implementation.createDocument){
+      var parser=new DOMParser();
+      xmlDoc = parser.parseFromString(str, "text/xml");
+      delete parser;
+    }else if(typeof ActiveXObject != "undefined"){
+      xmlDoc=new ActiveXObject('MSXML2.DOMDocument');
+      xmlDoc.loadXML(str);
+    }
+    return xmlDoc;
+  },
+  //进行XSLT->XML转换,返回字符串
+  transformXML:function(xmlDoc,xslDoc){
+    if(window.ActiveXObject){
+      return xmlDoc.documentElement.transformNode(xslDoc);
+    }else{
+      var xsltProcessor = new XSLTProcessor();
+      xsltProcessor.importStylesheet(xslDoc);
+      var fragment = xsltProcessor.transformToFragment(xmlDoc,document);
+      var e=document.createElement("div");
+      e.appendChild(fragment);
+      return e.innerHTML;
+    }
+  },
+  //将xml对象转化为字符串的方法
+  serialize:function(dom) {
+    var xml = dom.xml;
+    if (xml == undefined) {
+      try{
+        var serializer = new XMLSerializer();
+        xml = serializer.serializeToString(dom);
+        delete serializer;
+      } catch (error) {
+        if (debug)
+          alert("DOM serialization is not supported.");
+      }
+    }
+    return xml;
+  }
+}
+//---XML code end
+
+//firefox控制台方法代理
+pie.log = function(){
+  var arr = [];
+  for(i=0;i<arguments.length;i++){
+    arr.push('arguments['+i+']')
+  }
+  eval('try{console.log('+arr.join(',')+')}catch(e){}')
+}
+
+pie.dir = function(){
+  var arr = [];
+  for(i=0;i<arguments.length;i++){
+    arr.push('arguments['+i+']')
+  }
+  eval('try{console.dir('+arr.join(',')+')}catch(e){}')
+}
+
+//onload
+pie.load = function(func){
+  document.observe('dom:loaded',function(){
+    try{func();}catch(e){alert(e);}
+  });
+}
+
+//---以下是方法重载--------
+if (pie.isFF()){
+  HTMLElement.prototype.contains=function(node){// 是否包含某节点
+    do if(node==this)return true;
+    while(node=node.parentNode);
+    return false;
+  }
+	
+  HTMLElement.prototype.__defineGetter__("outerHTML",function(){
+    var attr;
+    var attrs=this.attributes;
+    var str="<"+this.tagName;
+    for(var i=0;i<attrs.length;i++){
+      attr=attrs[i];
+      if(attr.specified)
+        str+=" "+attr.name+'="'+attr.value+'"';
+    }
+    if(!this.canHaveChildren)
+      return str+">";
+    return str+">"+this.innerHTML+"</"+this.tagName+">";
+  });
+
+  HTMLElement.prototype.__defineGetter__("canHaveChildren",function(){
+    return !/^(area|base|basefont|col|frame|hr|img|br|input|isindex|link|meta|param)$/.test(this.tagName.toLowerCase());
+  });
+	
+  Event.prototype.__defineGetter__("fromElement",function(){// 返回鼠标移出的源节点
+    var node;
+    if(this.type=="mouseover")
+      node=this.relatedTarget;
+    else if(this.type=="mouseout")
+      node=this.target;
+    if(!node) return null;
+    while(node.nodeType!=1)node=node.parentNode;
+    return node;
+  });
+	
+  Event.prototype.__defineGetter__("toElement",function(){// 返回鼠标移入的源节点
+    try{
+      var node;
+      if(this.type=="mouseout")
+        node=this.relatedTarget;
+      else if(this.type=="mouseover")
+        node=this.target;
+      if(!node || (node.tagName=='INPUT' && node.type=='file')) return null;
+      while(node.nodeType!=1) node=node.parentNode;
+      return node;
+    }catch(e){}
+  });
+}/* --------- /javascripts/ui/form.js --------- */ 
 (function($) {
   jQuery(document).ready(function() {
     // 添加classname到对应的form field
@@ -640,5 +875,332 @@ jQuery.noConflict();
       width = $(field).width();
       $(field).closest('div.field').find('.formError').width(width);
     });
+    
+    $("input[type='submit']")
+      .mousedown(function(){$(this).addClass("mousedown")})
+      .bind("mouseup mouseleave",function(){$(this).removeClass("mousedown")});
   });
-})(jQuery);
+})(jQuery);/* --------- /javascripts/ui/mplist.js --------- */ 
+pie.mplist = {
+  init:function(){
+    this.selected = null;
+    this.over = null;
+    this.editing = null;
+
+    this._enabled_el_ids = [];
+
+    document.observe('mplist:loaded',function(){
+      //所有mplist的鼠标滑过高亮效果和选择效果
+      this.init_mplist_mouse_over_and_out_effects_and_click_select();
+    }.bind(this));
+
+    //处理 mplist:select 事件
+    document.observe('mplist:select',function(evt){
+      mplist_select_handler(evt);
+    })
+
+    this.loaded();
+  },
+
+  loaded:function(){
+    document.fire('mplist:loaded');
+  },
+
+  //替换paper内容之前，清除已绑定事件的列表记录
+  clear_paper_events_cache:function(){
+    $$('#mppaper .mplist').each(function(list){
+      this._enabled_el_ids = this._enabled_el_ids.without(list.id)
+    }.bind(this))
+  },
+
+  init_mplist_mouse_over_and_out_effects_and_click_select:function(){
+    //只有有selectable样式的列表才能被选择
+    $$('.mplist.mouseoverable').each(function(list){
+      //已经绑定了事件的，不重复绑定
+      //1月10日 由于id冲突，这里检测重复绑定时直接通过对象检测，但这样可能会导致内存泄漏
+      //以后应该修改
+      if(!this._enabled_el_ids.include(list)){
+        this._init_mouseover(list);
+        this._init_mouseout(list);
+        this._init_click_select(list);
+        this._enabled_el_ids.push(list);
+      }
+    }.bind(this));
+  },
+  _init_mouseover:function(list){
+    $(list).observe('mouseover',function(evt){
+      var to_el = $(evt.toElement);
+      //只有从外部移入li时，才触发事件
+      if(to_el){
+        var li = this._is_in_li(to_el,list)
+        if(li){
+          //记录当前被鼠标滑过的li，同时防止有两个li同时有mouseover的class
+          if(this.over) this.over.removeClassName('mouseover');
+          this.over = li
+          li.addClassName('mouseover');
+        }
+      }
+    }.bind(this))
+  },
+  _init_mouseout:function(list){
+    $(list).observe('mouseout',function(evt){
+      var from_el = $(evt.fromElement);
+      var to_el = $(evt.toElement);
+      //只有移出li外部时，才触发事件
+      // ancestors 表示祖先节点
+      if(!to_el || $(from_el).ancestors().include(to_el)){
+        var li = this._is_in_li(from_el,list)
+        if(li) li.removeClassName('mouseover');
+      }
+    }.bind(this))
+  },
+  _init_click_select:function(list){
+    $(list).observe('click',function(evt){
+      var el = evt.element();
+      var li = this._is_in_li(el,list);
+      if(li) this._do_select_mplist_li(li);
+    }.bind(this))
+  },
+
+  _is_in_li:function(el,list){
+    //如果el自身是li，则看el的父节点是否是当前list，如果是，返回el
+    if(el.tagName == 'LI' && el.parentNode == list) return el;
+    //如果el在li之中，则看el之上最近的ul是否是当前list，如果是，返回el之上最近的li
+    var li = $(el).up('li');
+    if(li && $(el).up('ul') == list) return li
+    //以上都不是的话，返回false
+    return false;
+  },
+
+  //根据传入的el获取所在的mplist li
+  _get_mpli:function(el){
+    if(el.tagName == 'LI' && el.parentNode.tagName=='UL') return el;
+    var li = $(el).up('li');
+    if(li && $(el).up('ul')) return li
+    return false;
+  },
+
+  _do_select_mplist_li:function(li){
+    if(!$(li).hasClassName('mouseselected')){
+      this._do_mp_select_mplist_li_change_class_name(li);
+      //触发事件
+      li.fire('mplist:select');
+    }
+  },
+  _do_mp_select_mplist_li_change_class_name:function(li){
+    //取消原来的选择
+    if(this.selected) $(this.selected).removeClassName('mouseselected');
+    //选择新的
+    this.selected = li;
+    $(li).addClassName('mouseselected');
+  },
+
+
+  //插入一个行新建的表单
+  open_new_form:function(new_form_html_str,list,prev_li_or_id){
+    var editing_dom = $(Builder.node('li',{'id':'li_new','class':'editing_form'}));
+
+    editing_dom.update(new_form_html_str);
+
+    if(prev_li_or_id){
+      var prev = $(prev_li_or_id)
+      prev.insert({'after':editing_dom});
+    }else{
+      $(list).insert(editing_dom);
+    }
+
+    init_rich_text_editor();
+    pie.inline_menu.init();
+  },
+
+  //切换到行编辑模式
+  open_edit_form:function(li_or_id,editing_html_str){
+    //选中行元素，附加样式
+    var li = $(li_or_id);
+    li.addClassName('editing');
+    //生成编辑模式的li元素
+    var editing_dom = $(Builder.node('li',{'id':'li_edit_'+li.id,'class':'editing_form'}));
+    editing_dom.update(editing_html_str);
+    //插入dom
+    li.insert({'after':editing_dom});
+    
+    this.editing_li = li;
+
+    init_rich_text_editor();
+    pie.inline_menu.init();
+  },
+
+  //关闭行编辑模式
+  close_edit_form:function(){
+    $$('#li_new').each(function(li_new){
+      $(li_new).remove();
+    }) // TODO 暂时这么写 稍后重构掉
+
+    if(this.editing_li){
+      $('li_edit_'+this.editing_li.id).remove();
+      $(this.editing_li).removeClassName('editing');
+      this.editing_li = null
+    }
+  },
+  
+  close_all_new_form: function(list){
+    if(list){
+      $(list).select('#li_new').each(function(li_new){
+        $(li_new).remove();
+      })
+    }else{
+      $$('#li_new').each(function(li_new){
+        $(li_new).remove();
+      }) //暂时先这样写，稍后重构到ui render方法里，去掉这个ifelse
+    }
+  },
+
+  //插入li_html_str到list中
+  //被rjs调用的方法，参数比较诡异
+  insert_li: function(list,li_html_str,prev_li_pattern){
+    var li = Builder.node('div').update(li_html_str).firstChild; //转换字符串为dom
+    
+    if(prev_li_pattern){
+      if(prev_li_pattern == 'TOP'){
+        $(list).insert({'top':li});
+      }else{
+        $$(prev_li_pattern).each(function(prev_li){
+          prev_li.insert({'after':li});
+        });
+      }
+    }else{
+      $(list).insert(li);
+    }
+    
+    $(li).highlight({duration:0.3,afterFinish:function(){pie.mplist.clear_background(li)}});
+    
+    try{
+      init_rich_text_editor();
+      pie.inline_menu.init();
+  
+      pie.tab.show_content_in_tab(list);
+      init_mini_buttons();
+    }catch(e){alert()}
+
+    
+  },
+  
+  remove_li: function(_li){
+    var li = $(_li)
+    $(li).fade({duration:0.3});
+    $(li).highlight({startcolor: '#FFECCB',duration:0.3,afterFinish:function(){pie.mplist.clear_background(li)}});
+    setTimeout(function() {
+      var list = $(li).parentNode;
+      $(li).remove();
+    }.bind(this), 300);
+  },
+
+  update_li: function(li,new_li_html_str){
+    this.close_edit_form();
+    $(li).update(new_li_html_str);
+    init_rich_text_editor();
+    pie.inline_menu.init();
+    $(li).highlight({duration:0.3,afterFinish:function(){pie.mplist.clear_background(li)}});
+  },
+
+  clear_background: function(dom){
+    dom.setStyle({'backgroundImage':'','backgroundColor':''})
+  },
+
+  deal_app_json: function(json_str,prefix,list_id){
+    try{
+      var json = json_str.evalJSON();
+      var html = json.html;
+      var li_id = prefix + '_' + json.id;
+      $$('#'+list_id).each(function(list){
+        if(list.down('#'+li_id)){
+          this.update_li($(li_id),html);
+        }else{
+          var li_html_str = '<li id="'+li_id+'">' + html + '</li>'
+          this.insert_li(list,li_html_str,'TOP');
+        }
+      }.bind(this));
+    }catch(e){
+      alert(e)
+    }
+  }
+};
+
+
+/* --------- /javascripts/ui/textarea_adapt_height.js --------- */ 
+(function(){
+  pie.TextareaAdaptHeight = function(a){
+    var line_height = 18
+    // 获得行数
+    var lines_count = 1
+
+    var match = a.readAttribute("rel").match(/adapt\[(.*)\]/)
+    if(match){
+      lines_count = match[1]
+    }
+
+    // 根据行数获得高度
+    var height = lines_count * line_height
+    a.defaultHeight = height
+
+    // 初始化 textarea 样式
+    a.setStyle({
+      lineHeight: line_height + "px",
+      height: height + "px"
+    })
+
+    // 增加一个 value_change 事件
+    a.observe("dom:value_change",function(){
+      var virtual_textarea = get_virtual_textarea();
+      virtual_textarea.value = a.value;
+      var snapHeight = Math.max(virtual_textarea.scrollHeight, a.defaultHeight);
+      a.setStyle({height: snapHeight + "px"});
+    })
+
+    // 获取焦点 注册 时间监听器
+    $(a).observe("focus",function(){
+      destroy_timer();
+      new_timer(a);
+    });
+
+    // 失去焦点，销毁监听器
+    $(a).observe("blur",function(){
+      destroy_timer();
+    });
+    // 清除 firefox 的 历史记录
+    a.value = ""
+  }
+  
+  function new_timer(textarea){
+    pie.TextareaAdaptHeight.Executer = new PeriodicalExecuter(function(){
+      textarea.fire("dom:value_change")
+    },0.01);
+  }
+  
+  function destroy_timer(){
+    if(pie.TextareaAdaptHeight.Executer){
+      pie.TextareaAdaptHeight.Executer.stop();
+    }
+  }
+
+  function get_virtual_textarea(){
+    var textarea = $("virtual_textarea")
+    if(!textarea){
+      textarea = Builder.node("textarea",{id:"virtual_textarea"})
+      $(document.body).insert(textarea);
+    }
+    return textarea;
+  }
+})();
+
+pie.TextareaAdaptHeight.init = function(){
+  $$('textarea[rel*=adapt]').each(function(a){
+    if(a.hasClassName("adapt-packed")) return
+    a.addClassName("adapt-packed")
+    pie.TextareaAdaptHeight(a)
+  })
+};
+
+pie.load(function() {
+  pie.TextareaAdaptHeight.init()
+});

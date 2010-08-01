@@ -67,7 +67,9 @@ module PageHelper
 
   # 加载css文件
   def require_css(cssname, iefix = false)
-    render :partial=>'layouts/parts/require_css',:locals=>{:cssname=>cssname,:iefix=>iefix}
+    csspath = cssname
+    csspath = "views/#{csspath}" if !csspath.include?('/')
+    render :partial=>'layouts/parts/require_css',:locals=>{:csspath=>csspath,:iefix=>iefix}
   end
 
   include MindpinUiConvention

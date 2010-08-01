@@ -10,21 +10,29 @@ class BugsController < ApplicationController
   def create
     @bug = Bug.new(params[:bug])
     @bug.user_agent = request.user_agent
+    return _create_success if _create_bug
+    _create_failure
+  end
+  
+  def _create_bug
     if logged_in?
       @bug.user = current_user
-      return create_success if @bug.save
-    else
-      @bug.user_ip = request.remote_ip
-      return create_success if @bug.save_with_captcha
+      return @bug.save
     end
+    @bug.user_ip = request.remote_ip
+    return @bug.save_with_captcha
+  end
+  
+  def _create_failure
+    flash.now[:error]=@bug.errors.first[1]
     responds_to_parent do
       render_ui do |ui|
-        ui.page << "$('new_bug').update(#{(render :partial=>"bugs/form_bug",:locals=>{:bug=>@bug}).to_json})"
+        ui.page << "jQuery('#new_bug').html(#{(render :partial=>"bugs/form_bug",:locals=>{:bug=>@bug}).to_json})"
       end
     end
   end
 
-  def create_success
+  def _create_success
     @bug.to_share if params[:share]
     responds_to_parent do
       render_ui do |ui|
@@ -39,7 +47,7 @@ class BugsController < ApplicationController
 
   def index
     @bugs = Bug.find(:all,:order=>"created_at desc").paginate(:page => params[:page] ,:per_page=>10 )
-    render :layout=>'black_page'
+    render :layout=>'black_index'
   end
 
   def show

@@ -3,11 +3,18 @@
 * html .clearfix,*:first-child+html .clearfix{zoom:1}
 
 /* grid.css */
-hr {clear:both;float:none;width:100%;height:1px;margin:16px 0 16px;border:none;background:url(/images/piece/hl1.gif) repeat-x;}
-hr.space {background:#fff;color:#fff;}
+hr {
+  clear:both;float:none;width:100%;
+  height:1px;margin:16px 0 16px;border:none;
+  background:url(/images/piece/hl1.gif) repeat-x;
+  &.space{background:#fff;color:#fff;}
+}
 
-div.hr {height:16px;background:url(/images/piece/hl1.gif) repeat-x center;margin:0 !important;padding:0 !important;clear:both;}
-div.hr hr {display: none;}
+div.hr {
+  height:16px;background:url(/images/piece/hl1.gif) repeat-x center;
+  margin:0 !important;padding:0 !important;clear:both;
+  hr {display: none;}
+}
 
 /*search*/
 input.search-inner {background-image:url('/images/piece/search-inner.png');background-repeat:no-repeat;background-position:1px 1px;padding-left:21px !important;width:150px !important;}

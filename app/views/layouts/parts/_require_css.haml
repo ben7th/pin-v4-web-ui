@@ -1,5 +1,5 @@
 -content_for :head do
-  = stylesheet_link_tag "views/#{cssname}",:media=>'screen, projection'
+  = stylesheet_link_tag "#{csspath}",:media=>'screen, projection'
   - if iefix
     /[if IE]
-      = stylesheet_link_tag "views/#{cssname}.ie",:media=>'screen, projection'
+      = stylesheet_link_tag "#{csspath}.ie",:media=>'screen, projection'

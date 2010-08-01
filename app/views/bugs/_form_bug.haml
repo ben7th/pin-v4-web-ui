@@ -1,0 +1,8 @@
+- mindpin_form_for bug,:html=>{:class=>'common_form',:multipart=>true,:target=>"upload_frame"} do |f|
+  =flash_info
+  %span.font14 请将您的意见写在这里
+  = f.text_area :content,:show_label=>false,:rel=>'adapt[3]'
+  - if !logged_in?
+    .loud 由于您当前是未登录访问，请您输入验证码
+    = show_simple_captcha(:label=>"请输入图上的字母",:object=>"bug")
+  = f.submit "写好了，发送",:class=>'submit'

@@ -5,7 +5,7 @@ class Bug < ActiveRecord::Base
   ERROR = "error"
   PROPOSITION = "proposition"
 
-  validates_presence_of :content
+  validates_presence_of :content,:message=>'请填写内容'
   #  validates_presence_of :kind
   #  validates_inclusion_of :kind, :in => [ERROR,PROPOSITION]
 

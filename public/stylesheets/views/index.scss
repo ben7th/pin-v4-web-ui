@@ -12,11 +12,11 @@ form.login-form{
   padding:15px;
   margin-bottom:10px;
   h3{margin-bottom:15px;}
-  input.text{
+  input.text,textarea{
     border:0px;background-color:#C3CDF0;
   }
   .active{
-    input.text{background-color:#CCEEFF !important;}
+    input.text,textarea{background-color:#CCEEFF !important;}
   }
   form{
     .fielderror{display:none;}

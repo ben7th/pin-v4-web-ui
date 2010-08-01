@@ -1,0 +1,32 @@
+@import "../ui/misc";
+
+#simple_captcha{
+  @include pie-pad(#C83914,#830300,5px);
+  padding:4px;
+  width:200px;
+  margin-bottom:15px;
+  .simple_captcha_image{
+    height:40px;
+    @include border-radius(3px);
+    border:solid 1px white;
+    background-color:#FFF;
+    margin-bottom:4px;
+  }
+  .simple_captcha_field{
+    padding:4px 10px;
+    .simple_captcha_label{
+      color:#574B27;
+      margin-bottom:5px;
+    }
+    @include border-radius(3px);
+    background-color:#FFDC73;
+    input{
+      border:1px solid #CCA940;
+      width: 150px !important;
+      font-size: 12px;
+      padding:0;
+      background-color: white;
+    } 
+  }
+}
+

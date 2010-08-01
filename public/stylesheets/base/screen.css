@@ -28,10 +28,9 @@ hr {
   margin: 16px 0 16px;
   border: none;
   background: url(/images/piece/hl1.gif) repeat-x; }
-
-hr.space {
-  background: #fff;
-  color: #fff; }
+  hr.space {
+    background: #fff;
+    color: #fff; }
 
 div.hr {
   height: 16px;
@@ -39,9 +38,8 @@ div.hr {
   margin: 0 !important;
   padding: 0 !important;
   clear: both; }
-
-div.hr hr {
-  display: none; }
+  div.hr hr {
+    display: none; }
 
 /*search*/
 input.search-inner {

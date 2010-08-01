@@ -1,18 +1,25 @@
-- dev_tip_str = capture do
-  %div
-    %p 你好，开发模式下，不允许通过点击右上角的链接来达到重置页面的目的。
-    %p 如果你想重置当前页面，应该<b class="font16">点击浏览器的刷新按钮</b>，如果页面不能重置，就是BUG，得改:)
-    %p 如果你想回到首页，然后跳到另外一个功能里去，应该<b class="font16">从页面上去找链接</b>。如果找不到，就是程序里没做，就是用户体验差的因素。也得改:)
-    %p 尽量不要养成一种固定的使用模式习惯，很多时候，用户抱怨不方便，就是因为我们做出来的模式不符合他们的习惯。
-    %p 我们开发人员应该争取去多发现一些问题，不然就只能等着用户去发现。
-
 .page-head
   .nav{:class=>container_classname}
     .site-logo
       - if RAILS_ENV=='production'
         <a href="/" title="回 MindPin 首页"></a>
       - else
-        <a href='javascript:jQuery.facebox(#{dev_tip_str.to_json})' title="回 MindPin 首页"></a>
+        <a href='javascript:jQuery.facebox({div:"#hide_index_info"})' title="回 MindPin 首页"></a>
+        #hide_index_info{:style=>'display:none;'}
+          %p 
+            你好，开发模式下，不允许通过点击右上角的链接来达到重置页面的目的。
+          %p
+            如果你想重置当前页面，应该<b class="font16">点击浏览器的刷新按钮</b>，
+            如果页面不能重置，就是BUG，得改:)
+          %p 
+            如果你想回到首页，然后跳到另外一个功能里去，应该<b class="font16">从页面上去找链接</b>。
+            如果找不到，就是程序里没做，就是用户体验差的因素。也得改:)
+          %p 
+            尽量不要养成一种固定的使用模式习惯。
+            很多时候，用户抱怨不方便，就是因为我们做出来的模式不符合他们的习惯。
+          %p 
+            我们开发人员应该争取去多发现一些问题，不然就只能等着用户去发现。
+          
   
     .start
       - if logged_in?
