@@ -4,10 +4,10 @@
   -webkit-border-radius: $radius;
 }
 
-@mixin border-radius-side($side, $radius) {
-  border-#{$side}-radius: $radius;
-  -moz-border-radius-#{$side}: $radius;
-  -webkit-border-#{$side}-radius: $radius;
+@mixin border-radius-side($side1,$side2,$radius) {
+  border-#{$side1}-#{$side2}-radius: $radius;
+  -moz-border-radius-#{$side1}#{$side2}: $radius;
+  -webkit-border-#{$side1}-#{$side2}-radius: $radius;
 }
 
 @mixin box-shadow($params){

@@ -4,4 +4,7 @@
   %em &gt;
   查看全部(#{Bug.count})
 - mplist bugs,:class=>'no-line margint5 index-bugs' do |bug|
-  .bug-div=link_to truncate_u(bug.content,32),"/bugs/#bug_#{bug.id}"
+  .bug-div.clearfix
+    .ct
+      =bug_commiter(bug)
+      =link_to truncate_u(bug.content,32),"/bugs/#bug_#{bug.id}"

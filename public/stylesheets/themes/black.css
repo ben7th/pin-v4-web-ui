@@ -1,13 +1,12 @@
 /*静谧之黑*/
 body {
-  background-color: #21223C;
-  background-image: url(/images/themes/black/bg.png);
+  background-color: #36384A;
+  background-image: url(/images/themes/black/bg2.png);
   background-repeat: repeat-x;
   color: #dddddd; }
 
 .page-head {
-  height: 90px;
-  background: url(/images/themes/black/head-background.png) 0 100%;
+  background: url(/images/themes/black/head-background.png) 0 100% repeat-x;
   color: white; }
   .page-head a {
     color: #dddddd;
@@ -18,7 +17,7 @@ body {
     background-color: #999; }
 
 .page-footer {
-  background: url(/images/index/dialog-message-background.png); }
+  background: url(/images/themes/black/footer-background.png) repeat-x; }
 
 .loud {
   color: #FF7F2F !important; }

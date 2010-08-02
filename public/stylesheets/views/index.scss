@@ -38,8 +38,8 @@ form.login-form{
     }
   }
 }
-.dialog{background:url(/images/index/dialog-login-background.png);}
-.pad{background:url(/images/index/dialog-message-background.png);}
+.dialog{background:url(/images/index/dialog-login-background.png) repeat-x;}
+.pad{background:url(/images/index/dialog-message-background.png) repeat-x;}
 
 .dialog span.to_reg{font-size:12px;font-weight:normal;}
 .dialog.index span.to_reg{display:none;}
@@ -50,11 +50,27 @@ form.login-form{
   margin-top:0.6em;
 }
 
-/*以下未整理*/
-
-ul.mplist li.mli{background-image:url(/images/themes/starry/linedotl.gif);background-repeat:repeat-x;background-position:top;}
-ul.mplist li div.info_div{border-left:solid 20px #1C3D52;}
-
-ul.index-bugs a{color:#666;}
-ul.index-bugs a:hover{color:#666;}
-ul.index-bugs li div.bug-div{border-bottom:dashed 1px #ccc;padding:4px 0;}
+ul.index-bugs {
+  a{
+    color:#666;
+    &:hover{color:#7F95FF;text-decoration:none;};
+  }
+  li div.bug-div{
+    @include border-radius(4px);
+    background-color:#131426;
+    padding:5px;
+    margin-bottom:5px;
+    .ct{
+      line-height:24px;
+      float:left;
+      margin-left:10px;
+      width:260px;
+    }
+    .tiny{
+      float:left;
+      border:1px solid #C8C8C8;
+      height:20px;
+      width:20px;
+    }
+  }
+}

@@ -1,19 +1,25 @@
 @import "../ui/misc";
 
 #simple_captcha{
+  overflow:hidden;
+  width:309px;
   @include pie-pad(#C83914,#830300,5px);
-  padding:4px;
-  width:200px;
+  padding:4px 4px 5px 4px;
   margin-bottom:15px;
   .simple_captcha_image{
-    height:40px;
+    padding:4px 10px;
+    height:43px;
+    width:110px;
+    float:right;
     @include border-radius(3px);
     border:solid 1px white;
     background-color:#FFF;
-    margin-bottom:4px;
+    margin-left:5px;
   }
   .simple_captcha_field{
     padding:4px 10px;
+    height:45px;
+    float:right;
     .simple_captcha_label{
       color:#574B27;
       margin-bottom:5px;
@@ -26,6 +32,7 @@
       font-size: 12px;
       padding:0;
       background-color: white;
+      height:1.5em;
     } 
   }
 }

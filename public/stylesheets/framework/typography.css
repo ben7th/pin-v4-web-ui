@@ -38,7 +38,7 @@ pre, code, tt {font:1em 'andale mono', 'lucida console', monospace;line-height:1
 
 /*列表标签*/
 li ul, li ol{margin: 0;}
-ul, ol{margin:0 0 1em 0;}
+ul, ol{margin:0;}
 
 ul{list-style-type:none;}
 ol{list-style-type:decimal;}

@@ -42,6 +42,10 @@ module PageHelper
   def container_classname
     @get_container_classname ||= _layout_classname('container')
   end
+  
+  def head_classname
+    @mindpin_layout.head_class || ''
+  end
 
   # 获取页面布局的grid样式名
   def grid_classname
