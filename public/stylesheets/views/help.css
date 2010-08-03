@@ -1,0 +1,58 @@
+ul.help-items li, .product {
+  font-size: 16px;
+  padding: 15px;
+  background-color: #0E0E1A;
+  color: #999;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px; }
+  ul.help-items li a, .product a {
+    display: block;
+    overflow: hidden;
+    text-decoration: none; }
+  ul.help-items li span.onum, .product span.onum {
+    display: inline-block;
+    width: 22px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #7F95FF; }
+  ul.help-items li span.kind, ul.help-items li span.sp, .product span.kind, .product span.sp {
+    font-size: 18px;
+    font-weight: bold;
+    color: #7F95FF; }
+  ul.help-items li span.kind, .product span.kind {
+    float: right; }
+  ul.help-items li:hover, .product:hover {
+    color: white;
+    background-color: #131421; }
+    ul.help-items li:hover span.kind, ul.help-items li:hover span.sp, .product:hover span.kind, .product:hover span.sp {
+      color: #bff740; }
+
+.product {
+  height: 100px;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: 12px -250px; }
+  .product a.block {
+    color: #999;
+    height: 100px;
+    width: 100%;
+    padding: 10px 0; }
+    .product a.block .info {
+      padding-left: 100px;
+      padding-right: 15px; }
+    .product a.block:hover {
+      color: #758060; }
+  .product span.sp {
+    color: #999; }
+  .product:hover {
+    background-position: 12px -50px; }
+    .product:hover span.sp {
+      color: #bff740; }
+
+.product.demo {
+  background-image: url(/images/help/demo.png); }
+
+.product.mindmap {
+  background-image: url(/images/help/mindmap.png); }

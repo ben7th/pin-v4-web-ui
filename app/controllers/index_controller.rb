@@ -8,8 +8,7 @@ class IndexController < ApplicationController
         if current_user.is_admin?
           return render :template => 'index/index_admin'
         end
-        flash[:notice] = '欢迎来访'
-        redirect_to '/welcome'
+        return render :template => 'index/welcome'
       end
     end
   end
@@ -65,9 +64,4 @@ class IndexController < ApplicationController
     render :update do |page|end
   end
 
-  def welcome
-    if !logged_in?
-      redirect_to '/'
-    end
-  end
 end

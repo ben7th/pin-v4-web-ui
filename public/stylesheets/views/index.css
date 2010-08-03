@@ -8,9 +8,9 @@ form.login-form .form_actions {
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
-  box-shadow: 0 0 10px #040307;
-  -moz-box-shadow: 0 0 10px #040307;
-  -webkit-box-shadow: 0 0 10px #040307;
+  box-shadow: 0 0 10px #09070e;
+  -moz-box-shadow: 0 0 10px #09070e;
+  -webkit-box-shadow: 0 0 10px #09070e;
   padding: 15px;
   margin-bottom: 10px; }
   .dialog h3, .pad h3 {
@@ -70,7 +70,7 @@ ul.index-bugs li div.bug-div {
   border-radius: 4px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
-  background-color: #131426;
+  background-color: #191C2A;
   padding: 5px;
   margin-bottom: 5px; }
   ul.index-bugs li div.bug-div .ct {

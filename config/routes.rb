@@ -9,7 +9,12 @@ ActionController::Routing::Routes.draw do |map|
   map.welcome '/welcome',:controller=>'index',:action=>'welcome'
   map.v09 '/v09',:controller=>'index',:action=>'v09'
   map.v09_up '/v09_up',:controller=>'index',:action=>'v09_up'
-
+  
+  # ---------------- 功能演示 ---------------
+  map.namespace :demo do |demo|
+    demo.root :controller=>'index',:action=>'index'
+  end
+  
   # ---------------- 用户认证相关 -----------
 
   map.login_ajax '/login_ajax',:controller=>'sessions',:action=>'new_ajax'

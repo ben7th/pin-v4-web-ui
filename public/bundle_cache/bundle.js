@@ -1064,11 +1064,11 @@ if (pie.isFF()){
   
     // -- add active class to active elements
     $("form select, form .text, form textarea")
-    .focus(function( ){
+    .live('focus',function( ){
       $(this).closest("div.field").addClass("active");
       $(this).closest("fieldset").addClass("active");
     })
-    .blur(function( ){
+    .live('blur',function( ){
       $(this).closest("div.field").removeClass("active");
       $(this).closest("fieldset").removeClass("active");
     });
@@ -1080,8 +1080,8 @@ if (pie.isFF()){
     });
     
     $("input[type='submit']")
-      .mousedown(function(){$(this).addClass("mousedown")})
-      .bind("mouseup mouseleave",function(){$(this).removeClass("mousedown")});
+      .live('mousedown',function(){$(this).addClass("mousedown")})
+      .live("mouseup mouseleave",function(){$(this).removeClass("mousedown")});
   });
 })(jQuery);/* --------- /javascripts/ui/mplist.js --------- */ 
 pie.mplist = {

@@ -1,1 +1,23 @@
-这是欢迎页面
+-require_css 'help',false
+
+.font14.marginb3em
+  请在下面选择
+
+.grid_8.alpha
+  .product.demo
+    -link_to '/demo',:class=>'block' do
+      .info
+        %span.sp echo board
+        .desc.font12
+          互动讨论，包含迭代，共笔，分支<br/>
+          产品开发中..
+
+.grid_8       
+  .product.mindmap
+    -link_to 'http://www.mindpin.com',:target=>'_blank',:class=>'block' do
+      .info
+        %span.sp mindmap editor
+        .desc.font12
+          在线思维导图，支持多种格式<br/>
+          产品已上线
+

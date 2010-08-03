@@ -8,7 +8,7 @@ form.login-form{
 .dialog,.pad{
   border:1px solid #242438;
   @include border-radius(10px);
-  @include box-shadow(0 0 10px #040307);
+  @include box-shadow(0 0 10px #09070E);
   padding:15px;
   margin-bottom:10px;
   h3{margin-bottom:15px;}
@@ -57,7 +57,7 @@ ul.index-bugs {
   }
   li div.bug-div{
     @include border-radius(4px);
-    background-color:#131426;
+    background-color:#191C2A;
     padding:5px;
     margin-bottom:5px;
     .ct{
