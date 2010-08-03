@@ -59,3 +59,8 @@ ul.help-items li,.product{
   background-image:url(/images/help/mindmap.png);
 }
 
+a.tip{
+  border-bottom:dashed 1px;
+  &:hover{text-decoration:none;};
+}
+

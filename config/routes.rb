@@ -13,6 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   # ---------------- 功能演示 ---------------
   map.namespace :demo do |demo|
     demo.root :controller=>'index',:action=>'index'
+    demo.workspace '/workspace',:controller=>'index',:action=>'workspace'
   end
   
   # ---------------- 用户认证相关 -----------

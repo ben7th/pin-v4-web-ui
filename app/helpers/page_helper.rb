@@ -75,6 +75,15 @@ module PageHelper
     csspath = "views/#{csspath}" if !csspath.include?('/')
     render :partial=>'layouts/parts/require_css',:locals=>{:csspath=>csspath,:iefix=>iefix}
   end
+  
+  def render_tabs
+    tabs_path = controller.class.name.downcase.sub('::','/').sub('controller','/tabs')
+    begin
+      render :partial=>tabs_path
+    rescue Exception => ex
+      ''
+    end
+  end
 
   include MindpinUiConvention
 end

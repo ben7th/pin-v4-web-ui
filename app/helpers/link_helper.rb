@@ -243,5 +243,10 @@ EOF
       </div>
     ~
   end
+  
+  def tabs_link_to(name, options = {}, html_options = {}, &block)
+    return link_to(name, options, html_options.merge(:class=>'selected'), &block) if current_page?(options)
+    link_to(name, options, html_options, &block)
+  end
 
 end
