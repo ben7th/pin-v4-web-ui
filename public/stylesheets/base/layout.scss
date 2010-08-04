@@ -26,9 +26,8 @@ body {margin:0;}
         ul{
           margin-top:15px;
           padding:6px 10px;
-          border:solid 1px #1D1D2A;
           @include border-radius(5px);
-          
+          border:solid 1px #464660;
           background-color:#222433;
           position:relative;
           overflow:hidden;

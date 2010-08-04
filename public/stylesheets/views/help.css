@@ -58,6 +58,105 @@ ul.help-items li, .product {
   background-image: url(/images/help/mindmap.png); }
 
 a.tip {
-  border-bottom: dashed 1px; }
+  border-bottom: dashed 1px;
+  color: #6D8EC0; }
   a.tip:hover {
     text-decoration: none; }
+
+ul.discuss {
+  overflow: hidden; }
+  ul.discuss li {
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    background-color: #0E0E1A;
+    border-color: #0E0E16 #2E2E3C #2E2E3C #0E0E16;
+    border-style: solid;
+    border-width: 1px;
+    overflow: hidden;
+    padding: 10px; }
+    ul.discuss li .body {
+      overflow: hidden; }
+    ul.discuss li .logo.tiny {
+      width: 20px;
+      height: 20px;
+      float: left;
+      margin-right: 10px; }
+    ul.discuss li .content {
+      font-size: 12px;
+      float: left; }
+      ul.discuss li .content span.uname {
+        color: #FF7F2F; }
+      ul.discuss li .content .attach {
+        margin-top: 15px; }
+        ul.discuss li .content .attach .at {
+          float: left;
+          padding: 10px;
+          border-radius: 4px;
+          -moz-border-radius: 4px;
+          -webkit-border-radius: 4px;
+          background-color: #000; }
+          ul.discuss li .content .attach .at .logo {
+            display: block;
+            margin-bottom: 10px; }
+      ul.discuss li .content .ceye {
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        background-color: #000;
+        padding-right: 10px;
+        background-image: url(/images/demo/eye.png);
+        background-repeat: no-repeat;
+        height: 24px;
+        line-height: 24px;
+        padding-left: 28px;
+        margin-top: 10px;
+        color: #888; }
+      ul.discuss li .content .edit {
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        background-color: #000;
+        padding-right: 10px;
+        height: 24px;
+        line-height: 24px;
+        padding-left: 10px;
+        margin-top: 10px;
+        color: #888;
+        float: left;
+        margin-right: 10px; }
+    ul.discuss li ul.discuss {
+      margin-top: 10px;
+      margin-left: 16px; }
+
+.label {
+  overflow: hidden; }
+  .label .tiny {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-right: 10px; }
+  .label .content {
+    width: 240px;
+    font-size: 12px;
+    float: left; }
+    .label .content span.uname {
+      color: #FF7F2F; }
+
+.joiners {
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  background-color: #0E0E1A;
+  border-color: #0E0E16 #2E2E3C #2E2E3C #0E0E16;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  padding: 10px;
+  margin-bottom: 15px;
+  line-height: 36px; }
+  .joiners .tiny {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    float: left; }
