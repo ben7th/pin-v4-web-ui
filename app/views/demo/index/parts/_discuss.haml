@@ -5,6 +5,9 @@
     %img.logo.tiny{:src=>'/images/demo/zfc.png'}
   %img.logo.tiny{:src=>'/images/demo/hg.png'}
   %img.logo.tiny{:src=>'/images/demo/pt.png'}
+  %img.logo.tiny{:src=>'/images/demo/lb.png'}
+  %img.logo.tiny{:src=>'/images/demo/ls.png'}
+  %img.logo.tiny{:src=>'/images/demo/sq.png'}
   .fleft
     %a{:tip=>'任何讨论话题的参与者都是自然形成的动态群组，可以加入常用群组列表'} 加入常用群组
 
@@ -30,6 +33,26 @@
           ：抢板凳！
           .ceye
             周瑜，诸葛亮　<span tipr='#ceye'>选择不看</span>
+            
+      %li
+        %img.logo.tiny{:src=>'/images/demo/sq.png'}
+        .content
+          %span.uname> 孙权
+          ：打还是不打，请大家投票
+          .attach
+            .at
+              .vote
+                支持
+                .n 2
+              .vote
+                中立
+                .n 3
+              .vote{:tipr=>'#vote'}
+                反对
+                .n 1
+              .clearfix
+              .quiet.margint5
+                孙权发起的投票　诸葛亮等6人参与
           
       %li
         %img.logo.tiny{:src=>'/images/demo/zgl.png'}
@@ -78,6 +101,16 @@
                   诸葛亮
                   　<span tipr='讨论参与者可以在其他人的发言上添加标注'>标注2次</span>
                   　<span tipr='标注可以随时隐藏和显示'>隐藏</span>
+          %li
+            %img.logo.tiny{:src=>'/images/demo/zgl.png'}
+            .content
+              %span.uname> 诸葛亮
+              ：还是以图示来说明吧：
+              .attach
+                .at{:tipr=>'#mindmap'}
+                  %img{:src=>'/images/demo/mindmap.png',:style=>''}
+                  .clearfix
+                  思维导图：火攻
               
 
 #caochuan.hide
@@ -104,4 +137,11 @@
   而且每次修改的版本都会被系统记录下来，便于大家查看:)
   
 #hideuser.hide
-  张飞一直在捣乱，所以刘备<span class="loud">隐藏了张飞所有发言</loud>
+  张飞一直在捣乱，所以刘备<span class="loud">隐藏了张飞所有发言</span>
+  
+#mindmap.hide
+  讨论过程可以嵌入一些辅助组件，例如<span class="loud">思维导图</span><br/>
+  这个组件会在初期提供
+  
+#vote.hide
+  投票组件也是为了解决分歧所比较常用的组件

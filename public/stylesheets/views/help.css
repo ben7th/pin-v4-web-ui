@@ -160,3 +160,18 @@ ul.discuss {
     height: 32px;
     margin-right: 10px;
     float: left; }
+
+.vote {
+  float: left;
+  padding: 5px 15px;
+  font-size: 14px;
+  margin-right: 15px;
+  text-align: center;
+  background-color: #222433;
+  border: 1px solid #464660;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px; }
+  .vote .n {
+    font-size: 18px;
+    font-weight: bold; }
