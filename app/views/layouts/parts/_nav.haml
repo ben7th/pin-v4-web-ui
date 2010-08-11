@@ -3,9 +3,6 @@
     .site-logo
       <a href="/" title="回 MindPin 首页"></a>
     
-    - if logged_in?
-      =render :partial=>'users/parts/user_nav_box'
-    - else
       .start
         %span.home>= link_to '首页',root_url
         %span>= link_to '<b class="font14">用户注册</b>',signup_url

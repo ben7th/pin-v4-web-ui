@@ -9,6 +9,10 @@ module ImagesHelper
     end
   end
   
+  def guest_logo
+    "<img alt='guest' class='logo guest' src='/images/logo/default_unknown_tiny.png'/>"
+  end
+
   # 带链接的user logo
   def user_logo_link(user)
     link_to logo(user),user,:title=>"查看#{user.name}的档案"

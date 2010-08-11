@@ -1,16 +1,6 @@
 class IndexController < ApplicationController
   def index
-    if !logged_in?
-      return render :layout=>'black_index',:template=>'auth/index'
-    end
-    respond_to do |format|
-      format.html do
-        if current_user.is_admin?
-          return render :template => 'index/index_admin'
-        end
-        return render :template => 'index/welcome'
-      end
-    end
+    render :template => 'index/welcome'
   end
 
   def updating

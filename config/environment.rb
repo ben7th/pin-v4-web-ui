@@ -6,19 +6,6 @@ RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
-MINDPIN_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/mindpin_config.yml")[RAILS_ENV]
-
-ATTACHED_FILE_PATH_ROOT = MINDPIN_CONFIG['ATTACHED_FILE_PATH_ROOT']
-ATTACHED_FILE_URL_ROOT = MINDPIN_CONFIG['ATTACHED_FILE_URL_ROOT']
-APP_PREFIX = MINDPIN_CONFIG['APP_PREFIX']
-THIS_SITE = MINDPIN_CONFIG['THIS_SITE']
-RSS_THUMB_SITE = MINDPIN_CONFIG['RSS_THUMB_SITE']
-IMAGE_CACHE_SITE = MINDPIN_CONFIG['IMAGE_CACHE_SITE']
-REPOSITORY_SERVICE_SITE = MINDPIN_CONFIG["REPOSITORY_SERVICE_SITE"]
-GIT_REPO_PATH = MINDPIN_CONFIG["GIT_REPO_PATH"]
-
-CELLS = [:panel,:paper]
-
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
@@ -34,15 +21,11 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
-  config.gem 'mislav-will_paginate', :version => '~> 2.3.8', :lib => 'will_paginate', :source => 'http://gems.github.com'
-  config.gem "rubyzip", :version => '0.9.1', :lib => "zip/zip"
+
   config.gem "nokogiri"
-  config.gem "sanitize"
-  config.gem 'BlueCloth',:version=>'1.0.1', :lib => 'bluecloth'
   config.gem "haml"
   config.gem 'coderay'
   config.gem 'haml-coderay'
-  
   config.gem 'pie-ui'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
