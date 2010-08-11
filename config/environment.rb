@@ -40,6 +40,10 @@ Rails::Initializer.run do |config|
   config.gem "sanitize"
   config.gem 'BlueCloth',:version=>'1.0.1', :lib => 'bluecloth'
   config.gem "haml"
+  config.gem 'coderay'
+  config.gem 'haml-coderay'
+  
+  config.gem 'pie-ui'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -77,3 +81,5 @@ ActionMailer::Base.smtp_settings = {
   :user_name => "mindpin",
   :password => "m1ndp1ngood!!!"
 }
+
+Haml::Filters::CodeRay.encoder_options = {:css=>:class}

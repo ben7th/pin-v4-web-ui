@@ -21,6 +21,13 @@ ActionController::Routing::Routes.draw do |map|
     demo.d '/widget',:controller=>'index',:action=>'widget'
   end
   
+  # ---------------- Pie Ui Demo ---------------
+  map.namespace :'pieui' do |pie|
+    pie.root :controller=>'index',:action=>'index'
+    pie.ui '/list',:controller=>'index',:action=>'list'
+    pie.ui '/list/:name',:controller=>'index',:action=>'list'
+  end
+
   # ---------------- 用户认证相关 -----------
 
   map.login_ajax '/login_ajax',:controller=>'sessions',:action=>'new_ajax'
