@@ -1,19 +1,4 @@
-- bundle :css_path=>'/bundle_cache',:compress=>false do
-  = stylesheet_link_tag 'framework/reset'
-  = stylesheet_link_tag 'framework/typography'
-  = stylesheet_link_tag 'framework/sticky_footer'
-
-  = stylesheet_link_tag '/javascripts/facebox/facebox'
-  = stylesheet_link_tag '/javascripts/tipsy/tipsy'
-
-  = stylesheet_link_tag 'base/screen'
-  = stylesheet_link_tag 'base/layout'
-  = stylesheet_link_tag 'base/misc'
-  
-  = stylesheet_link_tag 'ui/form'
-  = stylesheet_link_tag 'ui/coderay'
-
-= grid_css
+= stylesheet_bundle 'common','ui'
 
 - theme = get_user_theme_str
 
@@ -21,9 +6,7 @@
 
 /[if lt IE 9]
   = stylesheet_link_tag "themes/#{theme}.ie",:t=>'themeie'
-  - bundle :css_path=>'/bundle_cache_ie',:compress=>false do
-    = stylesheet_link_tag 'framework/iefix'
-    = stylesheet_link_tag 'ui/form.ie'
+
 
 /[if !IE 7]
   :css

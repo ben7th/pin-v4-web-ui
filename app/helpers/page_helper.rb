@@ -56,25 +56,6 @@ module PageHelper
     return "#{prefix}_#{@mindpin_layout.grid}" if @mindpin_layout.grid
     return ''
   end
-
-  # 加载页面布局的gridcss文件
-  def grid_css
-    case @mindpin_layout.grid
-    when 24
-      stylesheet_link_tag 'framework/grid_960_24',:media=>'screen, projection'
-    when 19
-      stylesheet_link_tag 'framework/grid_760_19',:media=>'screen, projection'
-    when 'auto'
-      stylesheet_link_tag 'framework/grid_auto',:media=>'screen, projection'
-    end
-  end
-
-  # 加载css文件
-  def require_css(cssname, iefix = false)
-    csspath = cssname
-    csspath = "views/#{csspath}" if !csspath.include?('/')
-    render :partial=>'layouts/parts/require_css',:locals=>{:csspath=>csspath,:iefix=>iefix}
-  end
   
   def render_tabs
     tabs_path = controller.class.name.downcase.sub('::','/').sub('controller','/tabs')

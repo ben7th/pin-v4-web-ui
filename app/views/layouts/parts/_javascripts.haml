@@ -1,16 +1,6 @@
-- bundle :js_path=>'/bundle_cache',:compress=>false do
-  = javascript_include_tag 'lib/prototype/protoaculous.1.8.3.min.js'
-  = javascript_include_tag 'lib/prototype/builder.js'
-  = javascript_include_tag 'lib/jquery/jquery-1.4.2.min.noconflict.js'
-  = javascript_include_tag 'lib/jquery/jrails.js'
-  
-  = javascript_include_tag 'facebox/facebox'
-  = javascript_include_tag 'tipsy/jquery.tipsy'
+= javascript_dev ['prototype/protoaculous.1.8.3.min','prototype/protoaculous.1.8.3.min']
+= javascript_dev ['jquery/jquery-1.4.2.min.noconflict','jquery/jquery-1.4.2.min.noconflict']
 
-  = javascript_include_tag 'pie/core'
-  = javascript_include_tag 'ui/form'
-  = javascript_include_tag 'ui/mplist'
-  
-  = javascript_include_tag 'ui/textarea_adapt_height'
+= javascript_bundle 'common','mindpin'
 
 = yield :javascripts
