@@ -126,8 +126,8 @@ pie.mplist = {
       $(list).insert(editing_dom);
     }
 
-    init_rich_text_editor();
-    pie.inline_menu.init();
+    //init_rich_text_editor();
+    //pie.inline_menu.init();
   },
 
   //切换到行编辑模式
@@ -143,8 +143,8 @@ pie.mplist = {
     
     this.editing_li = li;
 
-    init_rich_text_editor();
-    pie.inline_menu.init();
+    //init_rich_text_editor();
+    //pie.inline_menu.init();
   },
 
   //关闭行编辑模式
@@ -192,11 +192,11 @@ pie.mplist = {
     $(li).highlight({duration:0.3,afterFinish:function(){pie.mplist.clear_background(li)}});
     
     try{
-      init_rich_text_editor();
-      pie.inline_menu.init();
+      //init_rich_text_editor();
+      //pie.inline_menu.init();
   
-      pie.tab.show_content_in_tab(list);
-      init_mini_buttons();
+      //pie.tab.show_content_in_tab(list);
+      //init_mini_buttons();
     }catch(e){alert()}
 
     
@@ -215,8 +215,8 @@ pie.mplist = {
   update_li: function(li,new_li_html_str){
     this.close_edit_form();
     $(li).update(new_li_html_str);
-    init_rich_text_editor();
-    pie.inline_menu.init();
+    //init_rich_text_editor();
+    //pie.inline_menu.init();
     $(li).highlight({duration:0.3,afterFinish:function(){pie.mplist.clear_background(li)}});
   },
 

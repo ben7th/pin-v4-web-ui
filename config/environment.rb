@@ -26,6 +26,8 @@ Rails::Initializer.run do |config|
   config.gem "haml"
   config.gem 'coderay'
   config.gem 'haml-coderay'
+
+  config.gem 'pie-auth'
   config.gem 'pie-ui'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
@@ -56,13 +58,5 @@ Rails::Initializer.run do |config|
 end
 
 require "ap"
-
-ActionMailer::Base.smtp_settings = {
-  :address => "mail.mindpin.com",
-  :domain => "mindpin.com",
-  :authentication => :plain,
-  :user_name => "mindpin",
-  :password => "m1ndp1ngood!!!"
-}
 
 Haml::Filters::CodeRay.encoder_options = {:css=>:class}

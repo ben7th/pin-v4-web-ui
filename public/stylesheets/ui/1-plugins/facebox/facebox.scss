@@ -81,8 +81,9 @@
   }
   h3.f_box {
     @include border-radius(4px);
-    background-color:#4086FF;
+    @include gradient(#4086FF,#2B5AAB);
     color:white;
+    text-shadow:1px 1px 0 #333;
     letter-spacing:4px;
     margin:-7px -7px 10px;
     text-align:center;
@@ -90,6 +91,36 @@
   form{
     .text, textarea{
       @include border-radius(3px);
-      background-color:#eee;}
+      background-color:#eee;
+    }
+    .active{
+      .text, textarea{
+        @include border-radius(3px);
+        background-color:white;
+      }
+    }
+      
+    .fieldWithErrors{
+      .text, textarea{
+        background-color:#FEF1D9;
+        border-color:#FCCC9C;
+      }
+    }
+    .fielderror{
+      color:red;
+    }
   }
+  
+  .flash-error{
+    @include gradient(#DF0024,#960014);
+    text-shadow:1px 1px 0 #333;
+    margin-bottom:15px;
+    span{
+      background-image:url(/images/piece/notice-error-icon.png);
+      background-position:0 4px;
+      background-repeat:no-repeat;font-size:14px;
+      line-height:32px;height:32px;padding-left:27px;display:block;
+    }
+  }
+  
 } 
