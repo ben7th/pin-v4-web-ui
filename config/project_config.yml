@@ -1,4 +1,14 @@
 development:
   name: ui
-  url: http://192.168.1.8:3002/
-  master_url: http://192.168.1.8:3000/
+  url:  http://192.168.1.8:3002/
+  master_url:  http://192.168.1.8:3000/
+
+test:
+  name: ui
+  url:  http://192.168.1.8:3002/
+  master_url:  http://192.168.1.8:3000/
+
+production:
+  name: ui
+  url:  http://2010.mindpin.com/ui
+  master_url:  http://2010.mindpin.com/config
