@@ -1,8 +1,0 @@
-<% content_cell do %>
-  <%#= page_link :paper, t("page.messages.return"),:url=>messages_path(:display_mode=>params[:display_mode]),:method=>:get %>
-  <% if message.draft? %>
-    <%= render :partial=>'messages/parts/draft_message',:locals=>{:message=>message} %>
-  <% elsif message.namespace == 'site_mail' %>
-    <%= render :partial=>'messages/parts/site_mail_message',:locals=>{:message=>message} %>
-  <% end %>
-<% end %>

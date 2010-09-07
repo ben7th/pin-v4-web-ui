@@ -1,8 +1,0 @@
-<% content_cell do%>
-  <% cell_head do %>
-    <%= link_to_remote "新应用",:url=>new_admin_app_path,:method=>:get %>
-  <% end %>
-  <% mplist @apps,:for=>App do |app|%>
-    <%= render :partial=>"admin/apps/info_app",:locals=>{:app=>app} %>
-  <% end %>
-<% end %>

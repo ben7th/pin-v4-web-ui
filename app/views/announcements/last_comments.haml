@@ -1,8 +1,0 @@
-= render :partial=>"comments/form_comment",:locals=>{:markable=>@announcement}
--mplist @last_comments,:for=>Comment,:hide_empty_text=>true
-
--comments_count = @announcement.comments.count
--if comments_count > 10
-  还有#{comments_count-10}条评论
-  =link_to "< 查看",@announcement
-

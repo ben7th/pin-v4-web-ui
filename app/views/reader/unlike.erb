@@ -1,6 +1,0 @@
-<% content_cell do %>
-  <% mplist @unlike_feelings, :for=>Feeling do |feeling| %>
-    <%= render :partial=>"entries/meta_entry",:locals=>{:entry=>feeling.feelable} %>
-    <%= link_to_remote "取消标记",:url=>feeling_path(feeling),:method=>:delete %>
-  <% end %>
-<% end %>

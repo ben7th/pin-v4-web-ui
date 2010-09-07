@@ -1,7 +1,0 @@
-<% content_cell do%>
-  <%= render :partial=>"entries/cell_show",:locals=>{:entry=>@entry}  %>
-  <div style="clear:left;overflow:auto;">
-    <span>评论区</span>
-    <%= render :partial=>"comments/parts/comments",:locals=>{:markable=>@entry} %>
-  </div>
-<% end %>

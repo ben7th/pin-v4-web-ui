@@ -1,9 +1,0 @@
-<a href="#"><%=image_mark.content%></a>
-<span>
-  -- <%=image_mark.creator.name%>
-</span>
-<% if current_user == image_mark.creator %>
-  <span>
-    <%=link_to_remote "删除",:url=>entry_image_mark_path(image_mark.markable,image_mark),:method=>:delete,:confirm=>"确定删除？" %>
-  </span>
-<% end %>
