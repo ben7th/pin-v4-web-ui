@@ -23,13 +23,18 @@ body {
     margin-top: -30px;
     margin-bottom: 60px; }
     .page-content .cell .cellhead {
-      margin-bottom: 30px; }
+      margin-bottom: 30px;
+      position: relative; }
       .page-content .cell .cellhead .avatared .logo {
         float: left;
         margin-right: 10px; }
       .page-content .cell .cellhead .avatared .hello {
         line-height: 36px;
         font-size: 14px; }
+      .page-content .cell .cellhead .actions {
+        position: absolute;
+        top: 7px;
+        right: 0px; }
       .page-content .cell .cellhead .tabs ul {
         margin-top: 15px;
         padding: 6px 10px;

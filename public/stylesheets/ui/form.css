@@ -95,7 +95,7 @@ form .form_actions {
 /*ui*/
 textarea.adapt-packed, textarea#virtual_textarea {
   overflow: hidden;
-  font-family: Tahoma,宋体;
+  font-family: Tahoma, 宋体;
   border: solid 1px;
   word-wrap: break-word;
   font-style: 12px;

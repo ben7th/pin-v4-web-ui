@@ -243,4 +243,10 @@ pie.mplist = {
   }
 };
 
+(function($) {
+  jQuery(document).ready(function() {
+    $('.mplist li:even').addClass('even');
+  });
+})(jQuery);
+
 

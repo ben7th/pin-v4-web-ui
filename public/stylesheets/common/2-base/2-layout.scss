@@ -1,4 +1,4 @@
-@import "../ui/misc";
+@import "../../ui/misc";
 
 /*页面基础容器*/
 body {margin:0;}
@@ -18,9 +18,15 @@ body {margin:0;}
     margin-bottom:60px;
     .cellhead{
       margin-bottom:30px;
+      position:relative;
       .avatared{
         .logo{float:left;margin-right:10px;}
         .hello{line-height:36px;font-size:14px;}
+      }
+      .actions{
+        position:absolute;
+        top:7px;
+        right:0px;
       }
       .tabs{
         ul{
