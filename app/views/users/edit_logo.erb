@@ -1,9 +1,0 @@
-<%content_cell do -%>
-  <div class="padding5">
-    <%=flash_info%>
-    <% mindpin_form_for [:logo,current_user],:method=>:put,:html=>{:class=>'common_form',:multipart=>true} do |f|%>
-      <%=f.file_field(:logo)%>
-      <%=f.submit "上传图片"%>
-    <%end%>
-  </div>
-<%end%>

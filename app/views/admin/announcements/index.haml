@@ -1,6 +1,0 @@
--content_cell do
-  %div{:style=>"font-size:18px;"}
-    = link_to_remote "新建公告",:url=>new_admin_announcement_path,:method=>:get
-  -mplist @announcements,:for=>Announcement do |announcement|
-    =render :partial=>"/announcements/info_announcement",:locals=>{:announcement=>announcement}
-  = will_paginate @announcements,{:position=>:paper}

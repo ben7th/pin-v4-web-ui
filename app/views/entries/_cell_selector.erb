@@ -1,7 +1,0 @@
-<% content_cell :title=>"" do %>
-  <%= selector_link_to "文件",entries_path(:type=>"file") %>
-  <%= selector_link_to "文本",entries_path(:type=>"text") %>
-  <%= selector_link_to "书签",entries_path(:type=>"bookmark") %>
-  <%= selector_link_to "订阅",entries_path(:type=>"subscription") %>
-  <%= selector_link_to "资源引用",new_user_entry_show_path(current_user) %>
-<% end %>

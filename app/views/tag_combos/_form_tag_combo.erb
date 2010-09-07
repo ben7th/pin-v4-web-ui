@@ -1,7 +1,0 @@
-<% mindpin_remote_form_for tag_combo do |f| %>
-  <%= f.text_field :name,:size=>50, :maxlength=>250 %>
-  <% tags.each do |tag| %>
-    <%= hidden_field_tag "tag_ids[]",tag.id %>
-  <% end %>
-  <%= f.submit t("page.form.save") %>
-<% end %>

@@ -1,8 +1,0 @@
-<ul>
-  <% users.each do |user| %>
-    <li id="<%= user.id %>" name="<%= user.name %>">
-      <div class="user_logo"><%= logo user,:mini %></div>
-      <div class="user_name"><%= "#{user.name}(#{user.email})" %></div>
-    </li>
-  <% end %>
-</ul>

@@ -1,6 +1,0 @@
-<% content_cell :title=>t("page.messages.station_message") do%>
-  <%= selector_link_to t("page.messages.new_message"),new_message_path(:namespace=>"site_mail") %>
-  <%= selector_link_to t("page.messages.inbox"),messages_path(:box=>'in')%>
-  <%= selector_link_to t("page.messages.outbox"),messages_path(:box=>'out')%>
-  <%= selector_link_to t("page.messages.draftbox"),messages_path(:box=>'draft')%>
-<% end %>

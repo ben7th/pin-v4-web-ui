@@ -1,7 +1,0 @@
-<% mindpin_form_for entry,:url=>collector_create_path,:html=>{:multipart=>true} do |f| %>
-  <%= hidden_field_tag "title",params[:title]||"" %>
-  <%= hidden_field_tag "web_site_url",params[:web_site_url] %>
-  <%= f.hidden_field "resource_meta[type]", :value=>"FileEntry" %>
-  <%= file_field_tag "entry[resource_meta][data][content]" %>
-  <%= f.submit t("page.form.submit") %>
-<% end %>

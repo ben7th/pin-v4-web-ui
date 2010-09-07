@@ -1,9 +1,0 @@
-<% subscription_entry = entry.resource %>
-<% rss_feed = subscription_entry.rss_feed %>
-<% count = rss_feed.unread_count(current_user) %>
-<div class="<%=(count == 0 ? "": "bold")%>">
-  <%= page_link :paper,rss_feed.title,:url=>subscription_path(:id=>subscription_entry.id)%>
-  <span id="rss_feed_<%= rss_feed.id %>_unread_items_count" class="<%=(count == 0 ? "hide": "")%>">
-    <%= "(#{count})" %>
-  </span>
-</div>

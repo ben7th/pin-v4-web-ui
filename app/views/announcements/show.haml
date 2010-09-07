@@ -1,7 +1,0 @@
--content_cell do
-  .announcement_content
-    =@announcement.content
-    %div
-      =qdatetimefull(@announcement.updated_at)
-  .readable_comments
-    =render :partial=>"comments/parts/comments",:locals=>{:markable=>@announcement}

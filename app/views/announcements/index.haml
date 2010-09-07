@@ -1,9 +1,0 @@
--content_cell do
-  -mplist @announcements,:for=>Announcement
-
-  =will_paginate @announcements,{:position=>:paper}
--content_for :head do
-  =stylesheet_link_tag "/stylesheets/views/announcements"
--content_for :javascripts do
-  :javascript
-    new MarkableListComments("mplist_announcements",{markable:"announcements"})
