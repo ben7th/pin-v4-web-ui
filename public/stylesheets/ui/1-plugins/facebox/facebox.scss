@@ -35,7 +35,13 @@
     width: 370px;
   }
   
-  .loading {text-align: center;}
+  .loading {
+    text-align: center;
+    margin:auto;
+    width:32px;
+    height:32px;
+    background:url(/images/plugins/facebox/loading.gif);
+  }
   
   .image {text-align: center;}
   
@@ -49,6 +55,14 @@
     padding-top: 5px;
     margin-top: 10px;
     text-align: right;
+    overflow:hidden;
+    .close{
+      float:right;
+      display:block;
+      width:66px;
+      height:22px;
+      background:url(/images/plugins/facebox/closelabel.gif);
+    }
   }
 }
 

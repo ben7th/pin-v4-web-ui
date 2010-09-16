@@ -31,7 +31,11 @@
     background: #fff;
     width: 370px; }
   #facebox .loading {
-    text-align: center; }
+    text-align: center;
+    margin: auto;
+    width: 32px;
+    height: 32px;
+    background: url(/images/plugins/facebox/loading.gif); }
   #facebox .image {
     text-align: center; }
   #facebox img {
@@ -41,7 +45,14 @@
     border-top: 1px solid #DDDDDD;
     padding-top: 5px;
     margin-top: 10px;
-    text-align: right; }
+    text-align: right;
+    overflow: hidden; }
+    #facebox .footer .close {
+      float: right;
+      display: block;
+      width: 66px;
+      height: 22px;
+      background: url(/images/plugins/facebox/closelabel.gif); }
 
 #facebox_overlay {
   position: fixed;

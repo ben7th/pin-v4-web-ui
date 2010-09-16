@@ -79,8 +79,6 @@
     settings: {
       opacity      : 0.4,
       overlay      : true,
-      loadingImage : '/javascripts/facebox/loading.gif',
-      closeImage   : '/javascripts/facebox/closelabel.gif',
       imageTypes   : [ 'png', 'jpg', 'jpeg', 'gif' ],
       faceboxHtml  : '\
     <div id="facebox" style="display:none;"> \
@@ -97,7 +95,6 @@
                 </div> \
                 <div class="footer"> \
                   <a href="#" class="close"> \
-                    <img src="/javascripts/facebox/closelabel.gif" title="close" class="close_image" /> \
                   </a> \
                 </div> \
               </td> \
@@ -119,7 +116,7 @@
 
       $('#facebox .content').empty()
       $('#facebox .body').children().hide().end().
-        append('<div class="loading"><img src="'+$.facebox.settings.loadingImage+'"/></div>')
+        append('<div class="loading"></div>')
 
       $('#facebox').css({
         top:	getPageScroll()[1] + (getPageHeight() / 10),
@@ -190,8 +187,6 @@
     $('body').append($.facebox.settings.faceboxHtml)
 
     var preload = [ new Image(), new Image() ]
-    preload[0].src = $.facebox.settings.closeImage
-    preload[1].src = $.facebox.settings.loadingImage
 
     $('#facebox').find('.b:first, .bl, .br, .tl, .tr').each(function() {
       preload.push(new Image())
@@ -199,7 +194,6 @@
     })
 
     $('#facebox .close').click($.facebox.close)
-    $('#facebox .close_image').attr('src', $.facebox.settings.closeImage)
   }
   
   // getPageScroll() by quirksmode.com
@@ -235,8 +229,6 @@
   function makeCompatible() {
     var $s = $.facebox.settings
 
-    $s.loadingImage = $s.loading_image || $s.loadingImage
-    $s.closeImage = $s.close_image || $s.closeImage
     $s.imageTypes = $s.image_types || $s.imageTypes
     $s.faceboxHtml = $s.facebox_html || $s.faceboxHtml
   }

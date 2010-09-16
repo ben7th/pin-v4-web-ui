@@ -1,3 +1,3 @@
 jQuery(document).ready(function($) {
-  $('a[rel*=facebox]').facebox()
+  $('a[rel*=facebox]').facebox();
 })
