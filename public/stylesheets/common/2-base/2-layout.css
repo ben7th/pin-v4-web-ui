@@ -132,6 +132,16 @@ body {
           float: left;
           line-height: 24px;
           margin-left: 15px; }
+    .page-head .nav .topbar {
+      clear: right;
+      float: right;
+      margin: 9px 4px 0 0; }
+      .page-head .nav .topbar ul {
+        display: inline;
+        clear: right; }
+        .page-head .nav .topbar ul li {
+          display: inline;
+          margin: 0 15px 0 0; }
   .page-head.basic {
     height: 90px; }
 

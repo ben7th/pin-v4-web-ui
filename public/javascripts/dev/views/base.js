@@ -2,27 +2,27 @@ pie.load(function(){
   pie.cell.init();
   pie.tab.init();
   pie.mplist.init();
-  init_mini_buttons();
+//  init_mini_buttons();
 });
 
-function init_mini_buttons(){
-  $$('a.minibutton').each(function(btn){
-    if(btn.hasClassName('inited')) return;
-    btn
-      .observe('mousedown',minibutton_toggle_mousedown)
-      .observe('mouseup',minibutton_toggle_mouseup)
-      .observe('mouseleave',minibutton_toggle_mouseup);
-    btn.addClassName('inited');
-  })
-}
-
-function minibutton_toggle_mousedown(){
-  $(this).addClassName('mousedown');
-}
-
-function minibutton_toggle_mouseup(){
-  $(this).removeClassName('mousedown');
-}
+//function init_mini_buttons(){
+//  $$('a.minibutton').each(function(btn){
+//    if(btn.hasClassName('inited')) return;
+//    btn
+//      .observe('mousedown',minibutton_toggle_mousedown)
+//      .observe('mouseup',minibutton_toggle_mouseup)
+//      .observe('mouseleave',minibutton_toggle_mouseup);
+//    btn.addClassName('inited');
+//  })
+//}
+//
+//function minibutton_toggle_mousedown(){
+//  $(this).addClassName('mousedown');
+//}
+//
+//function minibutton_toggle_mouseup(){
+//  $(this).removeClassName('mousedown');
+//}
 
 //此处放置一些全局的函数
 

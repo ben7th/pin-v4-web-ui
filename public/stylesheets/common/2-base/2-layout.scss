@@ -103,6 +103,19 @@ body {margin:0;}
         .sp{float:left;line-height:24px;margin-left:15px;}
       }
     }
+    .topbar{
+      clear:right;
+      float:right;
+      margin:9px 4px 0 0;
+      ul{
+        display:inline;
+        clear:right;
+        li{
+          display:inline;
+          margin:0 15px 0 0;
+        }
+      }
+    }
   }
   &.basic{height:90px}
 }
