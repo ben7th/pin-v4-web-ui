@@ -44,6 +44,10 @@
 .tipsy-se .tipsy-arrow{bottom:0;right:10px;background-position:bottom left;}
 .tipsy-e .tipsy-arrow{top:50%;margin-top:-4px;right:0;width:5px;height:9px;background-position:top right;}
 .tipsy-w .tipsy-arrow{top:50%;margin-top:-4px;left:0;width:5px;height:9px;}
+.mpaccordion-toggler{cursor:pointer;overflow:hidden;padding:4px 6px;font-size:13px;}
+.mpaccordion-toggler.close{color:black;}
+.mpaccordion-toggler.open{color:white;}
+.mpaccordion-content{overflow:hidden;zoom:1;}
 .CodeRay{background-color:#232323;border:1px solid black;font-family:'Courier New','Terminal',monospace;color:#E6E0DB;padding:3px 5px;overflow:auto;font-size:12px;margin:0 0 12px 0;}
 .CodeRay pre{margin:0;padding:0;}
 .CodeRay .an{color:#E7BE69;}

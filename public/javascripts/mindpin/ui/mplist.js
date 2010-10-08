@@ -246,6 +246,7 @@ pie.mplist = {
 (function($) {
   jQuery(document).ready(function() {
     $('.mplist li:even').addClass('even');
+    pie.mplist.init();
   });
 })(jQuery);
 

@@ -65,12 +65,3 @@ function toggle_theme(theme){
     csslink_ie.href = '/stylesheets/themes/'+theme+'.ie.css'
   }
 }
-
-function show_fbox(string){
-  Prototype.facebox(string);
-  pie.tab.init();
-}
-
-function close_fbox(){
-  Prototype.facebox.close()
-};
