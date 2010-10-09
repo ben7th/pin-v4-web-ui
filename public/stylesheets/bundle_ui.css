@@ -88,10 +88,6 @@ form .submit.mousedown{background:-moz-linear-gradient(-90deg,#0770a0,#0ca6dd);b
 form .form_actions{line-height:30px;}
 textarea.adapt-packed,textarea#virtual_textarea{overflow:hidden;font-family:Tahoma,宋体;border:solid 1px;word-wrap:break-word;font-style:12px;line-height:18px;resize:none;}
 textarea#virtual_textarea{position:absolute;left:-10000px;top:-10000px;height:0;}
-textarea{overflow:auto;}
-input.text{font-family:宋体;vertical-align:baseline;padding:10px 7px 4px;zoom:1;}
-input.checkbox{position:relative;top:1px;}
-form .submit{font-family:宋体;zoom:1;}
 .minibutton{display:inline-block;height:23px;padding:0 0 0 3px;font-size:12px;font-weight:bold;color:#333;text-shadow:1px 1px 0 #fff;background:url(/images/modules/buttons/minibutton_matrix.png) 0 0 no-repeat;white-space:nowrap;border:none;overflow:visible;cursor:pointer;}
 input[type=text]+.minibutton{margin-left:5px;}
 button.minibutton::-moz-focus-inner{margin:-1px -3px;}
